@@ -137,8 +137,8 @@ PRODUCT_PACKAGES += \
 
 # Camera
 PRODUCT_PACKAGES += \
-    mm-qcamera-app \
     camera.msm8937 \
+    mm-qcamera-app \
     libmmcamera_interface \
     libmm-qcamera \
     libmmjpeg_interface \
