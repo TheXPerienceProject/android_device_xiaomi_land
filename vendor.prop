@@ -23,6 +23,7 @@ persist.vendor.audio.fluence.voicerec=true
 persist.vendor.audio.fluence.speaker=true
 persist.vendor.bt.enable.splita2dp=false
 ro.config.media_vol_steps=25
+ro.config.vc_call_vol_steps=7
 audio.offload.disable=true
 vendor.audio.tunnel.encode=false
 vendor.audio.offload.buffer.size.kb=64
