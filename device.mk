@@ -233,7 +233,8 @@ PRODUCT_PACKAGES += \
     libshims_ims \
     libshims_is_wifi_driver_loaded \
     libshims_get_process_name \
-	libshims_camera
+    libshim_ims_camera \
+    libshims_camera
 #    libshim_camera
 
 # Lights
