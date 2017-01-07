@@ -205,6 +205,10 @@ PRODUCT_PACKAGES += \
     android.hardware.health@1.0-convert \
     android.hardware.health@1.0-service
 
+# IMS
+PRODUCT_PACKAGES += \
+    com.android.ims.rcsmanager
+
 # Init
 PRODUCT_PACKAGES += \
     init.qcom.fm.sh
