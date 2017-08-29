@@ -28,6 +28,7 @@
    IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
+#include <android-base/properties.h>
 #include <fcntl.h>
 #include <stdlib.h>
 #include <iostream>
@@ -45,6 +46,7 @@
 #include "util.h"
 
 static std::string board_id;
+using android::base::GetProperty;
 
 //Take care about 3gb ram
 int is3GB()
@@ -158,7 +160,11 @@ void read_ramconfig()
 
 void variant_properties()
 {
-    if (property_get("ro.xpe.device") != "land")
+
+    std::string device;
+
+    device = GetProperty("ro.xpe.device", "");
+    if (device != "land")
         return;
 
     import_kernel_cmdline1(0, import_cmdline);
