@@ -126,10 +126,10 @@ on fs
     restorecon_recursive   /dsp
 
 on post-fs
-    start qseecomd
+    start vendor.qseecomd
     write /proc/sys/vm/page-cluster 0
     write /proc/sys/vm/swappiness 100
-    start qseecomd
+    start vendor.qseecomd
     chmod 0755 /sys/kernel/debug/tracing
 
 # msm specific files that need to be created on /data
@@ -197,14 +197,14 @@ on post-fs-data
     mkdir /data/vendor/ramdump/bluetooth 0770 bluetooth bluetooth
 
 #Start up peripheral manager
-service per_mgr /vendor/bin/pm-service
+service vendor.per_mgr /vendor/bin/pm-service
     class core
     user system
     group system net_raw
     ioprio rt 4
     seclabel u:r:per_mgr:s0
 
-service per_proxy /vendor/bin/pm-proxy
+service vendor.per_proxy /vendor/bin/pm-proxy
     class core
     user system
     group system
@@ -212,10 +212,10 @@ service per_proxy /vendor/bin/pm-proxy
     seclabel u:r:per_mgr:s0
 
 on property:init.svc.per_mgr=running
-    start per_proxy
+    start vendor.per_proxy
 
 on property:sys.shutdown.requested=*
-    stop per_proxy
+    stop vendor.per_proxy
 
     # Create the directories used by the Wireless subsystem
     mkdir /data/vendor/wifi 0770 wifi wifi
@@ -571,7 +571,7 @@ on boot
     chmod 0644 /dev/goodix_fp
 
     setprop persist.sys.fp.vendor none
-    start gx_fpd
+    start vendor.gx_fpd
 
 on class_start:late_start
     write /proc/sys/net/ipv6/conf/default/accept_ra_defrtr 1
@@ -581,14 +581,14 @@ on class_start:late_start
     write /data/vendor/radio/db_check_done 1
 
 
-service iop /vendor/bin/iop
+service vendor.iop /vendor/bin/iop
     class main
     user root
     group root
     disabled
     socket iop seqpacket 0666 root system
 
-service qcomsysd /system/bin/qcom-system-daemon
+service vendor.qcomsysd /system/bin/qcom-system-daemon
     class main
     user root
     group root oem_2950
@@ -607,24 +607,27 @@ on property:persist.sys.chgdisabled=0
     write /sys/class/power_supply/battery/charging_enabled 1
 
 on property:vold.decrypt=trigger_restart_framework
-    start wcnss-service
+    start vendor.wcnss-service
     stop camera-provider-2-4
     start camera-provider-2-4
+    stop vendor.camera-provider-2-4 
+    start vendor.camera-provider-2-4
+#idk if the system declares this as vendor at the moment when i write this im not checket yet
 
 on property:persist.env.fastdorm.enabled=true
     setprop persist.radio.data_no_toggle 1
 
-service dpmQmiMgr /vendor/bin/dpmQmiMgr
+service vendor.dpmQmiMgr /vendor/bin/dpmQmiMgr
     class main
     user system
     group system
 
-service irsc_util /vendor/bin/irsc_util "/vendor/etc/sec_config"
+service vendor.irsc_util /vendor/bin/irsc_util "/vendor/etc/sec_config"
     class core
     user root
     oneshot
 
-service rmt_storage /vendor/bin/rmt_storage
+service vendor.rmt_storage /vendor/bin/rmt_storage
     class core
     user root
     shutdown critical
@@ -632,18 +635,18 @@ service rmt_storage /vendor/bin/rmt_storage
     group wakelock
     seclabel u:r:rmt_storage:s0
 
-service tftp_server /vendor/bin/tftp_server
+service vendor.tftp_server /vendor/bin/tftp_server
    class core
    user root
    seclabel u:r:rfs_access:s0
 
 on property:wc_transport.start_hci=true
-    start start_hci_filter
+    start vendor.start_hci_filter
 
 on property:wc_transport.start_hci=false
-    stop start_hci_filter
+    stop vendor.start_hci_filter
 
-service start_hci_filter /vendor/bin/wcnss_filter
+service vendor.start_hci_filter /vendor/bin/wcnss_filter
     class late_start
     user bluetooth
     group bluetooth diag system wakelock
@@ -657,22 +660,22 @@ on property:hw.fm.init=0
 on property:hw.fm.init=1
      write /sys/module/radio_iris_transport/parameters/fmsmd_set 1
 
-service netmgrd /vendor/bin/netmgrd
+service vendor.netmgrd /vendor/bin/netmgrd
     class main
     seclabel u:r:netmgrd:s0
 
-service qti /vendor/bin/qti
+service vendor.qti /vendor/bin/qti
     class main
     user radio
     group radio net_raw diag usb net_admin
 
-service sensors /vendor/bin/sensors.qcom
+service vendor.sensors /vendor/bin/sensors.qcom
     class core
     user root
     group root
     seclabel u:r:sensors:s0
 
-service qvop-daemon /vendor/bin/qvop-daemon
+service vendor.qvop-daemon /vendor/bin/qvop-daemon
     class late_start
     user system
     group system drmrpc
@@ -698,18 +701,18 @@ service wpa_supplicant /vendor/bin/hw/wpa_supplicant \
     disabled
     oneshot
 
-service loc_launcher /vendor/bin/loc_launcher
+service vendor.loc_launcher /vendor/bin/loc_launcher
     #loc_launcher will start as root and set its uid to gps
     class late_start
     group gps inet diag wifi
     seclabel u:r:location:s0
 
-service qcom-sh /vendor/bin/init.qcom.sh
+service vendor.qcom-sh /vendor/bin/init.qcom.sh
     class late_start
     user root
     oneshot
 
-service ril-daemon2 /vendor/bin/hw/rild -c 2
+service vendor.ril-daemon2 /vendor/bin/hw/rild -c 2
     class main
     socket rild2 stream 660 root radio
     socket rild-debug2 stream 660 radio system
@@ -717,7 +720,7 @@ service ril-daemon2 /vendor/bin/hw/rild -c 2
     group radio cache inet misc audio sdcard_r sdcard_rw diag oem_2901 log
     capabilities BLOCK_SUSPEND NET_ADMIN NET_RAW
 
-service usb_uicc_enable /vendor/bin/sh /system/etc/init.qcom.uicc.sh
+service vendor.usb_uicc_enable /vendor/bin/sh /system/etc/init.qcom.uicc.sh
     class late_start
     user root
     disabled
@@ -725,19 +728,19 @@ service usb_uicc_enable /vendor/bin/sh /system/etc/init.qcom.uicc.sh
     seclabel u:r:qti_init_shell:s0
 
 on property:sys.usb_uicc.enabled=1
-    start usb_uicc_enable
+    start vendor.usb_uicc_enable
 
 on property:sys.usb_uicc.enabled=0
-    start usb_uicc_enable
+    start vendor.usb_uicc_enable
 
-service hcidump /vendor/bin/sh /system/etc/hcidump.sh
+service vendor.hcidump /vendor/bin/sh /system/etc/hcidump.sh
     user bluetooth
     group bluetooth system net_bt_admin net_admin
     disabled
     oneshot
     seclabel u:r:qti_init_shell_exec:s0
 
-service charger /sbin/chargeonlymode
+service vendor.charger /sbin/chargeonlymode
     class charger
     group graphics system
     seclabel u:r:healthd:s0
@@ -761,45 +764,45 @@ service vendor.msm_irqbalance /vendor/bin/msm_irqbalance -f /vendor/etc/msm_irqb
     group root
     disabled
 
-service cnd /vendor/bin/cnd
+service vendor.cnd /vendor/bin/cnd
     class main
     user system
     group system wifi inet radio wakelock net_admin
     seclabel u:r:cnd:s0
 
-service qseeproxydaemon /vendor/bin/qseeproxydaemon
+service vendor.qseeproxydaemon /vendor/bin/qseeproxydaemon
     class late_start
     user system
     group system
     seclabel u:r:qseeproxy:s0
 
 # Add poweroffhandler
-service poweroffhandler /system/bin/poweroffhandler
+service vendor.poweroffhandler /system/bin/poweroffhandler
     class core
     user media
     group graphics audio
     disabled
     oneshot
 
-service gx_fpd /vendor/bin/gx_fpd
+service vendor.gx_fpd /vendor/bin/gx_fpd
     class core
     user system
     group system drmrpc
 
 on property:persist.sys.fp.vendor=switchf
-    stop gx_fpd
+    stop vendor.gx_fpd
     setprop persist.sys.fp.vendor searchf
     setprop ro.boot.fpsensor fpc
     setprop ro.hardware.fingerprint searchf
-    start fps_hal
+    start vendor.fps_hal
 
 on property:persist.sys.fp.vendor=goodix
     setprop ro.boot.fpsensor gdx
     setprop ro.hardware.fingerprint goodix
-    start fps_hal
+    start vendor.fps_hal
 
 # Start camera server as daemon
-service qcamerasvr /vendor/bin/mm-qcamera-daemon
+service vendor.qcamerasvr /vendor/bin/mm-qcamera-daemon
     class late_start
     user camera
     group camera system inet input graphics
@@ -813,18 +816,18 @@ on property:persist.usb.chgdisabled=1
 on property:persist.usb.chgdisabled=0
     write /sys/class/power_supply/battery/charging_enabled 1
 
-service qseecomd /vendor/bin/qseecomd
+service vendor.qseecomd /vendor/bin/qseecomd
     class core
     user root
     group root
     seclabel u:r:tee:s0
 
-service perfd /vendor/bin/perfd
+service vendor.perfd /vendor/bin/perfd
     class main
     user root
     group root system
 
-service thermal-engine /vendor/bin/thermal-engine
+service vendor.thermal-engine /vendor/bin/thermal-engine
     class main
     user root
     socket thermal-send-client stream 0666 system system
@@ -833,27 +836,27 @@ service thermal-engine /vendor/bin/thermal-engine
     socket thermal-send-rule stream 0660 system system
     group root
 
-service time_daemon /vendor/bin/time_daemon
+service vendor.time_daemon /vendor/bin/time_daemon
     class main
     user root
     group root
     seclabel u:r:time_daemon:s0
 
-service wcnss-service /vendor/bin/wcnss_service
+service vendor.wcnss-service /vendor/bin/wcnss_service
     class main
     user system
     group system wifi radio
     oneshot
 
 #IMS
-service imsqmidaemon /vendor/bin/imsqmidaemon
+service vendor.imsqmidaemon /vendor/bin/imsqmidaemon
       class main
       user system
       socket ims_qmid stream 0660 system radio
       group radio log diag
       seclabel u:r:ims:s0
 
-service imsdatadaemon /vendor/bin/imsdatadaemon
+service vendor.imsdatadaemon /vendor/bin/imsdatadaemon
       class main
       user system
       socket ims_datad stream 0660 system radio
@@ -862,16 +865,16 @@ service imsdatadaemon /vendor/bin/imsdatadaemon
       seclabel u:r:ims:s0
 
 on property:vendor.ims.QMI_DAEMON_STATUS=1
-      start imsdatadaemon
+      start vendor.imsdatadaemon
 
-service ims_rtp_daemon /vendor/bin/ims_rtp_daemon
+service vendor.ims_rtp_daemon /vendor/bin/ims_rtp_daemon
      class main
      user system
      group radio diag inet log
      disabled
      seclabel u:r:hal_imsrtp:s0
 
-service imsrcsservice /vendor/bin/imsrcsd
+service vendor.imsrcsservice /vendor/bin/imsrcsd
      class main
      user system
      group radio diag inet log
@@ -879,11 +882,11 @@ service imsrcsservice /vendor/bin/imsrcsd
      seclabel u:r:ims:s0
 
 on property:vendor.ims.DATA_DAEMON_STATUS=1
-   start ims_rtp_daemon
-   start imsrcsservice
+   start vendor.ims_rtp_daemon
+   start vendor.imsrcsservice
 
 #IMS
-service ppd /vendor/bin/mm-pp-dpps
+service vendor.ppd /vendor/bin/mm-pp-dpps
     class late_start
     disabled
     user system
@@ -892,54 +895,54 @@ service ppd /vendor/bin/mm-pp-dpps
     seclabel u:r:mm-pp-daemon:s0
 
 on property:init.svc.surfaceflinger=stopped
-    stop ppd
+    stop vendor.ppd
 
 on property:init.svc.surfaceflinger=running
-    start ppd
+    start vendor.ppd
 
 on property:init.svc.surfaceflinger=restarting
-    stop ppd
+    stop vendor.ppd
 
 on property:init.svc.zygote=stopped
-    stop ppd
+    stop vendor.ppd
 
 on property:init.svc.zygote=running
-    start ppd
+    start vendor.ppd
 
 on property:init.svc.zygote=restarting
-    stop ppd
+    stop vendor.ppd
 
 on charger
     setprop persist.sys.usb.config mass_storage
     setprop persist.sys.usb.config mass_storage
-    start hvdcp_opti
-    start thermal-engine
+    start vendor.hvdcp_opti
+    start vendor.thermal-engine
 
-service hbtp /vendor/bin/hbtp_daemon
+service vendor.hbtp /vendor/bin/hbtp_daemon
     class main
     user system
     group system
     disabled
 
-service adsprpcd /vendor/bin/adsprpcd
+service vendor.adsprpcd /vendor/bin/adsprpcd
     class main
     user media
     group media
     seclabel u:r:adsprpcd:s0
 
-service hvdcp_opti /vendor/bin/hvdcp_opti
+service vendor.hvdcp_opti /vendor/bin/hvdcp_opti
     class main
     user root
     group system wakelock
     seclabel u:r:hvdcp:s0
 
-service energy-awareness /vendor/bin/energy-awareness
+service vendor.energy-awareness /vendor/bin/energy-awareness
     class main
     user root
     group system
     oneshot
 
-service mdtpd /vendor/bin/mdtpd
+service vendor.mdtpd /vendor/bin/mdtpd
     class late_start
     user root
     group system radio drmrpc
