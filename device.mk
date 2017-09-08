@@ -85,7 +85,8 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.audio@2.0-impl \
     android.hardware.audio.effect@2.0-impl \
-
+    android.hardware.broadcastradio@1.0-impl \
+    android.hardware.soundtrigger@2.0-impl
 
 #Audio mixer
 PRODUCT_COPY_FILES += \
@@ -110,6 +111,7 @@ PRODUCT_COPY_FILES += \
 
 # Bluetooth HIDL
 PRODUCT_PACKAGES += \
+    libbt-vendor \
     android.hardware.bluetooth@1.0-impl
 
 # Camera
@@ -133,7 +135,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.graphics.allocator@2.0-impl \
     android.hardware.graphics.mapper@2.0-impl \
-    android.hardware.graphics.composer@2.1-impl
+    android.hardware.graphics.composer@2.1-impl \
+    android.hardware.graphics.allocator@2.0-service \
+    android.hardware.memtrack@1.0-impl \
+    android.hardware.renderscript@1.0-impl
 
 # Display calibration
 PRODUCT_PACKAGES += \
@@ -142,6 +147,10 @@ PRODUCT_PACKAGES += \
 # DRM
 PRODUCT_PACKAGES += \
     libprotobuf-cpp-lite
+
+# DRM HIDL
+PRODUCT_PACKAGES += \
+    android.hardware.drm@1.0-impl
 
 # Fingerprint
 PRODUCT_PACKAGES += \
@@ -154,6 +163,14 @@ PRODUCT_PACKAGES += \
     libqcomfm_jni \
     qcom.fmradio
 
+# Gatekeeper HAL
+PRODUCT_PACKAGES += \
+    android.hardware.gatekeeper@1.0-impl
+
+# GNSS HAL
+PRODUCT_PACKAGES += \
+    android.hardware.gnss@1.0-impl
+
 # GPS
 PRODUCT_BOOT_JARS += \
     com.qti.location.sdk
@@ -162,6 +179,10 @@ PRODUCT_PACKAGES += \
     gps.msm8937 \
     libgnsspps \
     libcurl
+
+# HIDL Manifest
+PRODUCT_COPY_FILES += \
+$(LOCAL_PATH)/manifest.xml:system/vendor/manifest.xml
 
 # Init
 PRODUCT_PACKAGES += \
