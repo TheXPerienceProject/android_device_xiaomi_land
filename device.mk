@@ -161,6 +161,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.biometrics.fingerprint@2.1-service
 
+TARGET_FS_CONFIG_GEN += \
+    $(LOCAL_PATH)/fs_config/file_caps.fs
+
 # FM
 PRODUCT_PACKAGES += \
     FM2 \
