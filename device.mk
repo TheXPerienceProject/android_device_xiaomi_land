@@ -183,7 +183,8 @@ PRODUCT_BOOT_JARS += \
 PRODUCT_PACKAGES += \
     gps.msm8937 \
     libgnsspps \
-    libcurl
+    libcurl \
+    libshims_get_process_name
 
 # HIDL Manifest
 PRODUCT_COPY_FILES += \
