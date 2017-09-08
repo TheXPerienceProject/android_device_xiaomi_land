@@ -81,6 +81,12 @@ PRODUCT_PACKAGES += \
     libqcomvoiceprocessing \
     tinymix
 
+#Audio HIDL
+PRODUCT_PACKAGES += \
+    android.hardware.audio@2.0-impl \
+    android.hardware.audio.effect@2.0-impl \
+
+
 #Audio mixer
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio/aanc_tuning_mixer.txt:system/etc/aanc_tuning_mixer.txt \
@@ -102,6 +108,10 @@ PRODUCT_COPY_FILES += \
     $(TOPDIR)frameworks/av/services/audiopolicy/config/default_volume_tables.xml:/system/etc/default_volume_tables.xml \
     $(TOPDIR)frameworks/av/services/audiopolicy/config/r_submix_audio_policy_configuration.xml:/system/etc/r_submix_audio_policy_configuration.xml \
 
+# Bluetooth HIDL
+PRODUCT_PACKAGES += \
+    android.hardware.bluetooth@1.0-impl
+
 # Camera
 PRODUCT_PACKAGES += \
     Snap \
@@ -118,6 +128,12 @@ PRODUCT_PACKAGES += \
     hwcomposer.msm8937 \
     libtinyxml \
     memtrack.msm8937
+
+#Display HIDL
+PRODUCT_PACKAGES += \
+    android.hardware.graphics.allocator@2.0-impl \
+    android.hardware.graphics.mapper@2.0-impl \
+    android.hardware.graphics.composer@2.1-impl
 
 # Display calibration
 PRODUCT_PACKAGES += \
@@ -165,6 +181,10 @@ PRODUCT_PACKAGES += \
     init.recovery.qcom.rc \
     ueventd.qcom.rc
 
+# Keymaster
+PRODUCT_PACKAGES += \
+    android.hardware.keymaster@3.0-impl
+
 # Libshims
 PRODUCT_PACKAGES += \
     libshims_ims \
@@ -173,6 +193,10 @@ PRODUCT_PACKAGES += \
 # Lights
 PRODUCT_PACKAGES += \
     lights.msm8937
+
+#Light HIDL
+PRODUCT_PACKAGES += \
+    android.hardware.light@2.0-impl
 
 # Media
 PRODUCT_PACKAGES += \
@@ -213,6 +237,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     power.msm8937
 
+# Power HIDL
+PRODUCT_PACKAGES += \
+    android.hardware.power@1.0-impl
+
 # RIL
 PRODUCT_PACKAGES += \
     libcnefeatureconfig \
@@ -222,6 +250,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     sensors.msm8937
 
+# Sensors HIDL
+PRODUCT_PACKAGES += \
+    android.hardware.sensors@1.0-impl
+
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/sensors/hals.conf:system/etc/sensors/hals.conf \
     $(LOCAL_PATH)/configs/sensors/sensor_def_qcomdev.conf:system/etc/sensors/sensor_def_qcomdev.conf
@@ -229,6 +261,10 @@ PRODUCT_COPY_FILES += \
 # Thermal
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/thermal-engine.conf:system/etc/thermal-engine.conf
+
+#vibrator HIDL HAL
+PRODUCT_PACKAGES += \
+    android.hardware.vibrator@1.0-impl
 
 # WiFi HAL
 PRODUCT_PACKAGES += \
