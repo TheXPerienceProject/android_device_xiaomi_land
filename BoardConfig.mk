@@ -138,7 +138,7 @@ BOARD_HARDWARE_CLASS += \
     hardware/cyanogen/cmhw
 
 # CNE / DPM
-BOARD_USES_QCNE := true
+#BOARD_USES_QCNE := true
 
 # Dexpreopt
 ifeq ($(HOST_OS),linux)
@@ -223,8 +223,8 @@ TARGET_RELEASETOOLS_EXTENSIONS := device/qcom/common
 USE_SENSOR_MULTI_HAL := true
 
 # SELinux
-BOARD_SEPOLICY_DIRS += \
-    $(DEVICE_PATH)/sepolicy
+#BOARD_SEPOLICY_DIRS += \
+#    $(DEVICE_PATH)/sepolicy
 #include device/qcom/sepolicy/sepolicy.mk
 
 # Time
