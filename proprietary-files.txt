@@ -133,7 +133,7 @@ vendor/lib64/libcneapiclient.so|4c0cb432a35087959369141a4edec7a540a896a1
 vendor/lib64/libcneconn.so
 vendor/lib64/libcneqmiutils.so
 vendor/lib64/libvendorconn.so
-vendor/lib64/libprotobuf-cpp-lxpe.so|7a8800e4a1b6cb72d79be9fa2e410b7152a36934
+vendor/lib64/libprotobuf-cpp-lxpe.so|1d3df8a8878a764642b2614aaa1aa3dbf39b4b79
 vendor/lib64/libwqe.so
 vendor/lib64/libxml.so
 
