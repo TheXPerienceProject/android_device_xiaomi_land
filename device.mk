@@ -325,6 +325,7 @@ PRODUCT_PACKAGES += \
     libcld80211 \
     libQWiFiSoftApCfg \
     hostapd \
+    hostapd_default.conf \
     wificond \
     wifilogd \
     libwpa_client \
