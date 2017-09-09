@@ -120,7 +120,7 @@ framework/cneapiclient.jar
 framework/com.quicinc.cne.jar
 -priv-app/CNEService/CNEService.apk
 vendor/lib/libNimsWrap.so
-vendor/lib/libcne.so
+vendor/lib/libcne.so|d8ce8e7c11417bcc75e6bdd4505f3c5ab9ca0f4c
 vendor/lib/libcneapiclient.so
 vendor/lib/libcneconn.so
 vendor/lib/libcneqmiutils.so
@@ -128,11 +128,12 @@ vendor/lib/libvendorconn.so
 vendor/lib/libwqe.so
 vendor/lib/libxml.so
 vendor/lib64/libNimsWrap.so
-vendor/lib64/libcne.so
-vendor/lib64/libcneapiclient.so
+vendor/lib64/libcne.so|2ba55917449ce3b9fd0f93231e4de75e4fcb1ada
+vendor/lib64/libcneapiclient.so|4c0cb432a35087959369141a4edec7a540a896a1
 vendor/lib64/libcneconn.so
 vendor/lib64/libcneqmiutils.so
 vendor/lib64/libvendorconn.so
+vendor/lib64/libprotobuf-cpp-lxpe.so|7a8800e4a1b6cb72d79be9fa2e410b7152a36934
 vendor/lib64/libwqe.so
 vendor/lib64/libxml.so
 
