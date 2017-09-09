@@ -111,7 +111,6 @@ PRODUCT_COPY_FILES += \
 
 # Bluetooth HIDL
 PRODUCT_PACKAGES += \
-    libbt-vendor \
     android.hardware.bluetooth@1.0-impl
 
 # Camera
@@ -162,10 +161,10 @@ PRODUCT_PACKAGES += \
     android.hardware.biometrics.fingerprint@2.1-service
 
 TARGET_FS_CONFIG_GEN += \
-    $(LOCAL_PATH)/fs_config/file_caps.fs
+    device/xiaomi/land/fs_config/file_caps.fs
 
 # FM
-PRODUCT_PACKAGES += \
+#PRODUCT_PACKAGES += \
     FM2 \
     libfmjni \
     libqcomfm_jni \
@@ -217,8 +216,8 @@ PRODUCT_PACKAGES += \
 
 # Libshims
 PRODUCT_PACKAGES += \
-    libshims_ims \
-    libshim_camera
+    libshims_ims
+#    libshim_camera
 
 # Lights
 PRODUCT_PACKAGES += \
@@ -324,7 +323,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 
 #for internal debug we can remove this
-ADDITIONAL_DEFAULT_PROPERTIES += \
+#ADDITIONAL_DEFAULT_PROPERTIES += \
+PRODUCT_PROPERTY_OVERRIDES += \
  ro.secure=0 \
  ro.adb.secure=0 \
  ro.debuggable=1 \

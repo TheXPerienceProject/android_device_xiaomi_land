@@ -21,11 +21,11 @@
 #include <utils/Singleton.h>
 #include <binder/IBinder.h>
 #include <binder/IServiceManager.h>
-#include <gui/ISensorServer.h>
-#include <gui/ISensorEventConnection.h>
-#include <gui/Sensor.h>
+#include "gui/ISensorServer.h"
+#include "gui/ISensorEventConnection.h"
+#include "gui/Sensor.h"
 #include <gui/SensorManager.h>
-#include <gui/SensorEventQueue.h>
+#include "gui/SensorEventQueue.h"
 // ----------------------------------------------------------------------------
 namespace android {
 // ----------------------------------------------------------------------------
