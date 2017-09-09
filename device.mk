@@ -322,9 +322,11 @@ PRODUCT_PACKAGES += \
 
 # Wi-Fi
 PRODUCT_PACKAGES += \
+    libcld80211 \
     libQWiFiSoftApCfg \
     hostapd \
     wificond \
+    wifilogd \
     libwpa_client \
     wpa_supplicant \
     wpa_supplicant.conf
