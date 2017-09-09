@@ -129,6 +129,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     consumerir.msm8937
 
+# Consumerir HIDL
+PRODUCT_PACKAGES += \
+    android.hardware.ir@1.0-impl \
+
 # Display
 PRODUCT_PACKAGES += \
     copybit.msm8937 \
