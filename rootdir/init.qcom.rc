@@ -544,7 +544,7 @@ service qcom-sh /system/bin/sh /init.qcom.sh
 service ril-daemon2 /vendor/bin/hw/rild -c 2
     class main
     user radio
-    group radio cache inet misc auio log readproc wakelock
+    group radio cache inet misc audio log readproc wakelock diag
     capabilities BLOCK_SUSPEND NET_ADMIN NET_RAW
 
 service usb_uicc_enable /system/bin/sh /system/etc/init.qcom.uicc.sh
@@ -731,13 +731,13 @@ service ims_rtp_daemon /system/bin/ims_rtp_daemon
     class main
     user system
     socket ims_rtpd stream 0660 system radio
-    group radio net_raw diag diag inet log
+    group radio net_raw diag inet log
     disabled
 
 service imscmservice /system/bin/imscmservice
     class main
     user system
-    group radio net_raw diag diag log
+    group radio net_raw diag log
     disabled
 
 on property:sys.ims.DATA_DAEMON_STATUS=1
