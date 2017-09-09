@@ -249,6 +249,10 @@ PRODUCT_COPY_FILES += \
     frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:system/etc/media_codecs_google_video.xml
 
 #NET
+
+PRODUCT_PACKAGES += \
+    netutils-wrapper-1.0
+
 # IPv6
 PRODUCT_PACKAGES += \
     ebtables \
@@ -274,6 +278,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libcnefeatureconfig \
     librmnetctl \
+    libprotobuf-cpp-full \
     rild_socket
 
 # Seccomp policy
@@ -313,6 +318,7 @@ PRODUCT_PACKAGES += \
     libQWiFiSoftApCfg \
     hostapd \
     wificond \
+    libwpa_client \
     wpa_supplicant \
     wpa_supplicant.conf
 
