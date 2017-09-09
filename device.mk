@@ -72,17 +72,14 @@ PRODUCT_PACKAGES += \
 #Audio
 PRODUCT_PACKAGES += \
     audiod \
-    audio.primary.msm8937 \
     audio.a2dp.default \
-    audio.usb.default \
+    audio.primary.msm8937 \
     audio.r_submix.default \
+    audio.usb.default \
     libaudio-resampler \
-
-PRODUCT_PACKAGES += \
-    audio_policy.msm8937 \
     libqcompostprocbundle \
     libqcomvoiceprocessing \
-    libqcomvoiceprocessingdescriptors
+    tinymix
 
 #Audio HIDL
 PRODUCT_PACKAGES += \
