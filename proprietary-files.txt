@@ -109,7 +109,7 @@ vendor/lib/libbtnv.so
 vendor/lib64/libbtnv.so
 
 # CNE
-bin/cnd
+bin/cnd|5368611cfd1ceeed5206b804a3d3670212f84749
 etc/cne/SwimConfig.xml
 etc/cne/andsfCne.xml
 etc/permissions/ConnectivityExt.xml
