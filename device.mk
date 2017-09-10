@@ -197,6 +197,12 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
 $(LOCAL_PATH)/manifest.xml:system/vendor/manifest.xml
 
+#Healthd hal
+PRODUCT_PACKAGES += \
+    android.hardware.health@1.0-impl \
+    android.hardware.health@1.0-convert \
+    android.hardware.health@1.0-service
+
 # Init
 PRODUCT_PACKAGES += \
     init.qcom.fm.sh
