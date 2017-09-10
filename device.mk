@@ -192,8 +192,7 @@ PRODUCT_BOOT_JARS += \
 PRODUCT_PACKAGES += \
     gps.msm8937 \
     libgnsspps \
-    libcurl \
-    libshims_get_process_name
+    libcurl
 
 # HIDL Manifest
 PRODUCT_COPY_FILES += \
@@ -229,7 +228,9 @@ PRODUCT_PACKAGES += \
 
 # Libshims
 PRODUCT_PACKAGES += \
-    libshims_ims
+    libshims_ims \
+    libshims_is_wifi_driver_loaded \
+    libshims_get_process_name
 #    libshim_camera
 
 # Lights
