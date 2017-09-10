@@ -547,7 +547,7 @@ service qcom-sh /system/bin/sh /init.qcom.sh
     user root
     oneshot
 
-service ril-daemon2 /system/vendor/bin/hw/rild -c 2
+service ril-daemon2 /vendor/bin/hw/rild -c 2
     class main
     user radio
     group radio cache inet misc audio log readproc wakelock
