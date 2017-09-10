@@ -1,0 +1,13 @@
+allow init graphics_device:chr_file write;
+allow init logd:dir getattr;
+allow init misc_partition:blk_file relabelfrom;
+allow init property_socket:sock_file write;
+allow init servicemanager:binder call;
+allow init self:capability2 block_suspend;
+allow init self:netlink_kobject_uevent_socket read;
+allow init self:netlink_route_socket read;
+allow init self:socket { create read write };
+allow init socket_device:sock_file { create setattr };
+allow init system_data_file:sock_file write;
+allow init tee_device:chr_file { write };
+

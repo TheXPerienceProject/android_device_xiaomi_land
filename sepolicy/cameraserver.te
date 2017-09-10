@@ -1,0 +1,2 @@
+#============= cameraserver ==============
+allow cameraserver debugfs_tracing:file { open write };
