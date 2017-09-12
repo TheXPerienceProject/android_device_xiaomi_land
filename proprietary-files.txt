@@ -40,7 +40,6 @@ etc/sound_trigger_mixer_paths_wcd9330.xml
 etc/sound_trigger_mixer_paths_wcd9335.xml
 etc/surround_sound_3mic/surround_sound_rec_AZ.cfg
 etc/surround_sound_3mic/surround_sound_rec_5.1.cfg
-lib/hw/audio.primary.msm8937.so
 lib/soundfx/libdirac.so
 vendor/etc/audio_output_policy.conf
 vendor/etc/diracmobile.config
@@ -109,7 +108,7 @@ vendor/lib/libbtnv.so
 vendor/lib64/libbtnv.so
 
 # CNE
-bin/cnd|5368611cfd1ceeed5206b804a3d3670212f84749
+vendor/bin/cnd|5368611cfd1ceeed5206b804a3d3670212f84749
 etc/cne/SwimConfig.xml
 etc/cne/andsfCne.xml
 etc/permissions/ConnectivityExt.xml
@@ -1066,7 +1065,7 @@ vendor/lib64/libdpmnsrm.so
 vendor/lib64/libdpmtcm.so
 
 # DRM
-bin/qseecomd
+vendor/bin/qseecomd
 vendor/bin/mdtpd
 vendor/bin/qseeproxydaemon
 vendor/lib/libcppf.so
@@ -1099,11 +1098,10 @@ vendor/lib64/libtzdrmgenprov.so
 bin/gx_fpcmd
 bin/gx_fpd
 lib/hw/fingerprint.msm8937.so #:lib/hw/fingerprint.msm8937.so
-lib/hw/fingerprint.searchf.so
 lib/libcom_fingerprints_service.so
+lib64/hw/fingerprint.default.so
 lib64/hw/fingerprint.msm8937.so #:lib64/hw/fingerprint.msm8937.so
 lib64/hw/fingerprint.goodix.so
-lib64/hw/fingerprint.searchf.so
 lib64/hw/gxfingerprint.default.so
 lib64/libcom_fingerprints_service.so
 lib64/libfp_client.so
@@ -1114,68 +1112,70 @@ lib64/libfpservice.so
 vendor/lib/hw/gatekeeper.msm8937.so
 vendor/lib64/hw/gatekeeper.msm8937.so
 
-# GPS
-bin/loc_launcher
-bin/lowi-server
-bin/xtwifi-client
-bin/xtwifi-inet-agent
-etc/flp.conf
-etc/izat.conf
-etc/lowi.conf
-etc/permissions/com.qti.location.sdk.xml
-etc/permissions/com.qualcomm.location.xml
-etc/cacert_location.pem
-etc/xtra_root_cert.pem
-etc/sap.conf
-etc/xtwifi.conf
--framework/com.qti.location.sdk.jar
-lib/libloc_api_v02.so
-lib/libloc_ds_api.so
-lib64/libloc_api_v02.so
-lib64/libloc_ds_api.so
-#-priv-app/com.qualcomm.location/com.qualcomm.location.apk
-vendor/lib/hw/flp.default.so
-vendor/lib/libalarmservice_jni.so
-vendor/lib/libdataitems.so
-vendor/lib/libflp.so
-vendor/lib/libgeofence.so
-vendor/lib/libizat_core.so
-vendor/lib/liblbs_core.so
-vendor/lib/libloc_ext.so
-vendor/lib/liblocationservice.so
-vendor/lib/liblocationservice_glue.so
-vendor/lib/liblowi_client.so
-vendor/lib/liblowi_wifihal.so
-vendor/lib/liblowi_wifihal_nl.so
-vendor/lib/libulp2.so
-vendor/lib/libxtadapter.so
-vendor/lib/libxtwifi_ulp_adaptor.so
-vendor/lib/libxt_native.so
-vendor/lib64/hw/flp.default.so
-vendor/lib64/libalarmservice_jni.so
-vendor/lib64/libasn1cper.so
-vendor/lib64/libasn1crt.so
-vendor/lib64/libasn1crtx.so
-vendor/lib64/libdataitems.so
-vendor/lib64/libflp.so
-vendor/lib64/libgdtap.so
-vendor/lib64/libgeofence.so
-vendor/lib64/libizat_core.so
-vendor/lib64/liblbs_core.so
-vendor/lib64/libloc_ext.so
-vendor/lib64/libloc_xtra.so
-vendor/lib64/liblocationservice.so
-vendor/lib64/liblocationservice_glue.so
-vendor/lib64/liblowi_client.so
-vendor/lib64/liblowi_wifihal.so
-vendor/lib64/liblowi_wifihal_nl.so
-vendor/lib64/libulp2.so
-vendor/lib64/libxt_native.so
-vendor/lib64/libxtadapter.so
-vendor/lib64/libxtwifi_ulp_adaptor.so
-vendor/lib64/libDRPlugin.so
-vendor/lib64/libdrplugin_client.so
-vendor/lib64/libevent_observer.so
+# GPS - from oxygen (MiMax 2)
+-framework/com.qti.location.sdk.jar|c580c72be92ff493995dc6b262a176bfde73c8b7
+-priv-app/com.qualcomm.location/com.qualcomm.location.apk|fd63c0acf5a87280f37fe38ecb164853dc82d25d
+bin/loc_launcher|6aa71f397f4404e3244e9b151002ac4038e5252c
+bin/lowi-server|f75c748585f85719fb2e351a69533c7f77c8242e
+bin/xtwifi-client|bf0b6607d4912953a924eb3c8fa399cda3b1d6e5
+bin/xtwifi-inet-agent|69b16c8e813dc1f520d6905eea7acbae3f9848d3
+etc/cacert_location.pem|0789bf799c7e45d352a83e2f79ddb0cea86db85b
+etc/permissions/com.qti.location.sdk.xml|cb68a566bd77dcc75bb7547199d528289fac01cb
+etc/permissions/com.qualcomm.location.vzw_library.xml|c25d37a4aa23cfd98d01d5d3121e43d0b6b37f05
+etc/permissions/com.qualcomm.location.xml|8896841bc23fa47bb26fb3dacfa82747f6966330
+etc/permissions/izat.xt.srv.xml|a0f460056f27b5495a4d6e959eecf0e429c42a57
+etc/xtra_root_cert.pem|f55a31ec4d9cf8ce2724acadecf00c779f8767db
+framework/com.qualcomm.location.vzw_library.jar|a0cc3eea8ccfc5215846914f057e909eec797557
+framework/izat.xt.srv.jar|da31c6183f8d29251ce5656ddab6d4b386934382
+lib/libloc_api_v02.so|c5c5d2ca200ef59cb091475becf68a5455d774d1
+lib/libloc_ds_api.so|127a6dc3f55a05880895721eb32fd692d49370ff
+lib64/libloc_api_v02.so|44bdad0ca52a0a9ae1fe9cbab575cf4044eeb604
+lib64/libloc_ds_api.so|0e6cbcec843cf5dbdddb0828c785b47eb5d53c59
+vendor/bin/slim_daemon|63bcb44a826177141750651ff677c1ad1d782a6e
+vendor/lib/hw/flp.default.so|9e360ae26bc376910ff67ef29ba5bd8754745bfb
+vendor/lib/libalarmservice_jni.so|10b0d211f34ad1480e4c5a97429c4888ed47bbe3
+vendor/lib/libdataitems.so|f23a7509da7d6a6179be933fb74a4a6fee6a7371
+vendor/lib/libflp.so|48daaf60d638c67a631b500f9056cfd2efeafd01
+vendor/lib/libgeofence.so|35880d58777e7dca594bb891ba8b96b5d4ca1748
+vendor/lib/libizat_core.so|661260d4ba8ed75cf422ab9b78c3d1a7aa5e0059
+vendor/lib/liblbs_core.so|039f75d7bc01f28c41a2cf256dd8086b4759477e
+vendor/lib/libloc_ext.so|ead84b0ad0b5b3b01733a079c7500b1045b1e2b8
+vendor/lib/liblocationservice.so|fcf26cf0e0d65bba630384929b63a9370d71d673
+vendor/lib/liblocationservice_glue.so|314dbaa831a3d54879823cdb0505c4cb108743e8
+vendor/lib/liblowi_client.so|e9cf1b543c58d2cd9cb2a31f213b0aba38d23a65
+vendor/lib/liblowi_wifihal.so|5cbc234a750a550a66bc40ace51e36dd31753651
+vendor/lib/liblowi_wifihal_nl.so|52307242bb2b75ae350e5e764ab53c4fdca351d2
+vendor/lib/libslimclient.so|6c4e8151cff5ae428a2800855575ab63f115723a
+vendor/lib/libulp2.so|77f3b27396d34f58283641d21356525de903675b
+vendor/lib/libxt_native.so|704188e1abba2cab206f10806fe16e8452551a62
+vendor/lib/libxtadapter.so|d8ce356a1ff6f691860599a78d42e125281e9ef4
+vendor/lib/libxtwifi_ulp_adaptor.so|43435aaae76393714ecc21890a5919ea9269827c
+vendor/lib64/hw/flp.default.so|aecf9c2ed04dd34576e1c28c70e1d8315208e266
+vendor/lib64/libDRPlugin.so|b00ae086b7fda447df361d2b6ae5274c55d640ab
+vendor/lib64/libalarmservice_jni.so|7ab6dbd42bad4f9dae9e888243cc875e6989e27a
+vendor/lib64/libasn1cper.so|cecf35a0ba7817a9e0fe7e8e4e4b953594639e2d
+vendor/lib64/libasn1crt.so|c4db894b49ddebc58ce4d9d05f2d519d2f55d1ea
+vendor/lib64/libasn1crtx.so|cd2e8acc2221485d0dbcc231fa06dadff1ce9e3f
+vendor/lib64/libdataitems.so|191a35b9f1248cef3f6057bd26c9c7db17ae5fc2
+vendor/lib64/libdrplugin_client.so|f0529d9f05372515bce33397718cd3f2a9808782
+vendor/lib64/libevent_observer.so|474a2989d1a3f0df015b653ace1ab3a5212ee8a2
+vendor/lib64/libflp.so|dd2ba6a181435c0eb1e5e626df65ddfac7e467f6
+vendor/lib64/libgdtap.so|07f6458a830f87b616ea4b24e13e77a861732248
+vendor/lib64/libgeofence.so|ec4e68dc800f4a29e05c40ab35e274e2ea1b69c3
+vendor/lib64/libizat_client_api.so|41e935b9b087c3ab4f2083cca90e6d22d6444912
+vendor/lib64/libizat_core.so|c5321760427b29d3c8d335add412347326dcae21
+vendor/lib64/liblbs_core.so|872ce633eef10a065a12f73285d250f95ce42485
+vendor/lib64/libloc_ext.so|d7066ec07358814a246e7d2f5dba2724ae8b6249
+vendor/lib64/liblocationservice.so|b838a0df886a59ac5af79169daa32df2953e4634
+vendor/lib64/liblocationservice_glue.so|5e2a7be26e44636577c10612e1284ebc4f65d604
+vendor/lib64/liblowi_client.so|38364a4e9d7556dba8098ca58a5bbc1c987b9f5b
+vendor/lib64/liblowi_wifihal.so|7c9344c592d91d5e8cd6810d680471d250727fbd
+vendor/lib64/liblowi_wifihal_nl.so|f02c0c7dee4b7ab53da6415a16ac6b982f0fbf80
+vendor/lib64/libslimclient.so|fcf769e1d08dc63232222b5b19bf069ca064da37
+vendor/lib64/libulp2.so|4812125c26f787547263e1fbcb4830dd0c1dda80
+vendor/lib64/libxt_native.so|e9a1765518d10c684fd75a5ccaf8fb93ce43a693
+vendor/lib64/libxtadapter.so|5860fd01f064491362ee210ce564dd6d5fbb5931
+vendor/lib64/libxtwifi_ulp_adaptor.so|9d98a1e1fdea88d288d290baefc62fa3137154dc
 
 # Graphics
 vendor/lib/egl/eglSubDriverAndroid.so
@@ -1346,8 +1346,8 @@ vendor/lib64/libqti-iop-client.so
 vendor/lib64/libqti-perfd-client.so
 
 # Peripheral manager
-bin/pm-proxy
-bin/pm-service
+vendor/bin/pm-proxy
+vendor/bin/pm-service
 vendor/lib/libperipheral_client.so
 vendor/lib64/libperipheral_client.so
 
@@ -1442,10 +1442,10 @@ vendor/lib64/libprotobuf-cpp-pxpe.so|5fde534d196444e2861577b01d9dacf4b0db510b
 vendor/qcril.db
 
 # Radio - IMS - from oxygen (MiMax 2)
-bin/ims_rtp_daemon|2155d928832594933ebfb79ee29319ff5d3e250c
-bin/imscmservice|0b3cc1e3dedcbcfa60633db344c0f622f1812459
-bin/imsdatadaemon|e44dabe3dc093dade15691df8b4329495e614b1e
-bin/imsqmidaemon|35826dc5a6ad5a50a8df384884264156c85af782
+vendor/bin/ims_rtp_daemon|2155d928832594933ebfb79ee29319ff5d3e250c
+vendor/bin/imscmservice|0b3cc1e3dedcbcfa60633db344c0f622f1812459
+vendor/bin/imsdatadaemon|e44dabe3dc093dade15691df8b4329495e614b1e
+vendor/bin/imsqmidaemon|35826dc5a6ad5a50a8df384884264156c85af782
 etc/permissions/imscm.xml|8b99ec26c783966bbea1fcb8e72c7c0206a4e802
 framework/imscmlibrary.jar|0c24d6540c06efede52169c1445272f43748180f
 framework/rcsimssettings.jar|566a0f637344ca3182aca33753e404977fc77ecc
@@ -1496,7 +1496,7 @@ lib/hw/consumerir.default.so
 lib64/hw/consumerir.default.so
 
 # Sensors
-bin/sensors.qcom
+vendor/bin/sensors.qcom
 vendor/lib/hw/activity_recognition.msm8937.so
 vendor/lib/libsensor1.so
 vendor/lib/libsensor_reg.so
