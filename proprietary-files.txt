@@ -1541,9 +1541,9 @@ bin/cnss-daemon
 bin/cnss_diag
 bin/wcnss_service
 etc/firmware/wlan/prima/WCNSS_cfg.dat
-etc/hostapd/hostapd.accept
-etc/hostapd/hostapd_default.conf
-etc/hostapd/hostapd.deny
+#etc/hostapd/hostapd.accept
+#etc/hostapd/hostapd_default.conf
+#etc/hostapd/hostapd.deny
 etc/wifi/WCNSS_qcom_cfg.ini
 etc/wifi/fstman.ini
 etc/wifi/p2p_supplicant_overlay.conf
