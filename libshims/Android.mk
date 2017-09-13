@@ -123,9 +123,12 @@ LOCAL_C_INCLUDES += \
 	system/media/private/camera/include
 
 LOCAL_MODULE:= libshim_ims_camera
+LOCAL_MODULE_TAGS := optional
+include $(BUILD_SHARED_LIBRARY)
 
 include $(CLEAR_VARS)
 LOCAL_SRC_FILES := atomic.cpp
 LOCAL_MODULE := libshim_atomic
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
 include $(BUILD_SHARED_LIBRARY)
+
