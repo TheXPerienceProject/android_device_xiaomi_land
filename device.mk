@@ -356,6 +356,7 @@ PRODUCT_PACKAGES += \
     wificond \
     wifilogd \
     libwpa_client \
+    libwcnss_qmi \
     wpa_supplicant \
     wpa_supplicant.conf
 
@@ -373,6 +374,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
  ro.debuggable=1 \
  persist.service.adb.enable=1 \
  security.perf_harden=0
+
+# WCNSS Service
+PRODUCT_PACKAGES += \
+    wcnss_service
 
 # Inherit proprietary files
 $(call inherit-product-if-exists, vendor/xiaomi/land/land-vendor.mk)
