@@ -17,3 +17,7 @@ allow init uio_device:chr_file write;
 allow init vfat:file { getattr open read };
 allow init video_device:chr_file ioctl;
 
+allow init init:udp_socket ioctl;
+allow init init:netlink_socket bind;
+allow init init:netlink_socket {create write};
+allow init init:netlink_route_socket read;
