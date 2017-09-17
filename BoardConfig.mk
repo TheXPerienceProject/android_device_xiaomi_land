@@ -136,7 +136,7 @@ BOARD_CHARGER_ENABLE_SUSPEND := true
 #    hardware/cyanogen/cmhw
 
 # CNE / DPM
-#BOARD_USES_QCNE := true
+BOARD_USES_QCNE := true
 
 # Dexpreopt
 ifeq ($(HOST_OS),linux)
@@ -209,7 +209,7 @@ BOARD_USES_QCOM_HARDWARE := true
 TARGET_POWERHAL_VARIANT := qcom
 
 # RIL
-TARGET_RIL_VARIANT := caf
+#TARGET_RIL_VARIANT := caf
 
 # Recovery
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/fstab.qcom
