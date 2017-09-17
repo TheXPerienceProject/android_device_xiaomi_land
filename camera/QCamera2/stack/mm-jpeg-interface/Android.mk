@@ -5,7 +5,8 @@ include $(LOCAL_PATH)/../../../common.mk
 include $(CLEAR_VARS)
 
 LOCAL_CLANG_CFLAGS += \
-        -Wno-error=unused-variable
+        -Wno-error=unused-variable \
+		-Wno-error=uninitialized
 
 LOCAL_32_BIT_ONLY := $(BOARD_QTI_CAMERA_32BIT_ONLY)
 LOCAL_CFLAGS+= -D_ANDROID_ -DQCAMERA_REDEFINE_LOG
@@ -27,6 +28,13 @@ LOCAL_C_INCLUDES += \
 ifeq ($(strip $(TARGET_USES_ION)),true)
     LOCAL_CFLAGS += -DUSE_ION
 endif
+
+LOCAL_CLANG_CFLAGS += \
+        -Wno-error=memsize-comparison \
+        -Wno-error=missing-field-initializers \
+        -Wno-error=pointer-bool-conversion \
+        -Wno-error=unused-variable \
+        -Wno-error=unused-parameter
 
 ifneq (,$(filter  msm8610,$(TARGET_BOARD_PLATFORM)))
     LOCAL_CFLAGS+= -DLOAD_ADSP_RPC_LIB
@@ -63,7 +71,7 @@ LOCAL_SRC_FILES := \
     src/mm_jpeg_mpo_composer.c
 
 LOCAL_MODULE           := libmmjpeg_interface
-LOCAL_CLANG := false
+#LOCAL_CLANG := false
 LOCAL_PRELINK_MODULE   := false
 LOCAL_SHARED_LIBRARIES := libdl libcutils liblog libqomx_core libmmcamera_interface
 LOCAL_MODULE_TAGS := optional

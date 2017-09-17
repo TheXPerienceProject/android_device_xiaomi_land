@@ -15,6 +15,14 @@ ifeq ($(strip $(TARGET_USES_ION)),true)
 LOCAL_CFLAGS += -DUSE_ION
 endif
 
+LOCAL_CLANG_CFLAGS += \
+        -Wno-error=memsize-comparison \
+        -Wno-error=missing-field-initializers \
+        -Wno-error=pointer-bool-conversion \
+        -Wno-error=unused-variable \
+        -Wno-error=unused-parameter \
+		-Wno-error=unused-function
+
 LOCAL_CFLAGS += -D_ANDROID_ -DQCAMERA_REDEFINE_LOG
 
 # System header file path prefix
@@ -96,7 +104,7 @@ LOCAL_MODULE_TAGS := optional
 LOCAL_32_BIT_ONLY := $(BOARD_QTI_CAMERA_32BIT_ONLY)
 
 LOCAL_MODULE:= mm-qcamera-app
-LOCAL_CLANG := false
+#LOCAL_CLANG := false
 
 include $(BUILD_EXECUTABLE)
 
@@ -112,6 +120,14 @@ LOCAL_CFLAGS:= \
 ifeq ($(strip $(TARGET_USES_ION)),true)
 LOCAL_CFLAGS += -DUSE_ION
 endif
+
+LOCAL_CLANG_CFLAGS += \
+        -Wno-error=memsize-comparison \
+        -Wno-error=missing-field-initializers \
+        -Wno-error=pointer-bool-conversion \
+        -Wno-error=unused-variable \
+        -Wno-error=unused-parameter \
+		-Wno-error=unused-function
 
 LOCAL_CFLAGS += -D_ANDROID_ -DQCAMERA_REDEFINE_LOG
 
@@ -194,7 +210,7 @@ LOCAL_MODULE_TAGS := optional
 LOCAL_32_BIT_ONLY := $(BOARD_QTI_CAMERA_32BIT_ONLY)
 
 LOCAL_MODULE:= libmm-qcamera
-LOCAL_CLANG := false
+#LOCAL_CLANG := false
 
 include $(BUILD_SHARED_LIBRARY)
 
