@@ -10,7 +10,7 @@ allow init self:netlink_kobject_uevent_socket { bind create setopt };
 allow init self:netlink_route_socket read;
 allow init self:rawip_socket { create getopt setopt };
 allow init self:socket { create read write };
-allow init socket_device:sock_file { create setattr };
+allow init socket_device:sock_file { create setattr unlink };
 allow init system_data_file:sock_file write;
 allow init tee_device:chr_file { write };
 allow init uio_device:chr_file write;

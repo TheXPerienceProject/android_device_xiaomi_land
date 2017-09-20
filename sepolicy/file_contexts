@@ -6,7 +6,23 @@
 /data/misc/netmgr/log\.txt			u:object_r:netmgrd_data_file:s0
 
 #net
-/dev/socket/qmux_audio(/.*)?                                                      u:object_r:qmuxd_socket:s0
-/dev/socket/qmux_bluetooth(/.*)?                                                  u:object_r:qmuxd_socket:s0
-/dev/socket/qmux_gps(/.*)?                                                        u:object_r:qmuxd_socket:s0
-/dev/socket/qmux_radio(/.*)?                                                      u:object_r:qmuxd_socket:s0
+/dev/socket/qmux_audio(/.*)?                            u:object_r:qmuxd_socket:s0
+/dev/socket/qmux_bluetooth(/.*)?                        u:object_r:qmuxd_socket:s0
+/dev/socket/qmux_gps(/.*)?                              u:object_r:qmuxd_socket:s0
+/dev/socket/qmux_radio(/.*)?                            u:object_r:qmuxd_socket:s0
+
+#ims
+/system/vendor/bin/imsdatadaemon                       u:object_r:ims_exec:s0
+/system/vendor/bin/imsqmidaemon                        u:object_r:ims_exec:s0
+/system/vendor/bin/ims_rtp_daemon                      u:object_r:ims_exec:s0
+
+/dev/socket/cnd  u:object_r:cnd_socket:s0
+/system/bin/cnd  u:object_r:cnd_exec:s0
+
+#Add context for IMS Socket node
+/dev/socket/ims_qmid            u:object_r:ims_socket:s0
+/dev/socket/ims_datad           u:object_r:ims_socket:s0
+/dev/socket/ims_rtpd            u:object_r:ims_socket:s0
+
+# Used by keystore to access trustzone
+/dev/qseecom                   u:object_r:tee_device:s0
