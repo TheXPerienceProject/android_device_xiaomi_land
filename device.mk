@@ -346,7 +346,6 @@ PRODUCT_PACKAGES += \
 # Wi-Fi
 PRODUCT_PACKAGES += \
     libcld80211 \
-    libQWiFiSoftApCfg \
     wificond \
     wifilogd \
     libwpa_client \
