@@ -1,17 +1,25 @@
+allow init block_device:blk_file write;
+allow init debugfs_tracing:dir { add_name create write };
+allow init debugfs_tracing:file write;
+allow init device:chr_file rw_file_perms;
 allow init graphics_device:chr_file write;
 allow init logd:dir getattr;
 allow init misc_partition:blk_file relabelfrom;
+allow init netd:unix_stream_socket connectto;
+allow init netd_socket:sock_file write;
 allow init property_socket:sock_file write;
 allow init servicemanager:binder call;
 allow init self:capability { net_bind_service sys_module };
 allow init self:capability2 block_suspend;
 allow init self:netlink_kobject_uevent_socket read;
 allow init self:netlink_kobject_uevent_socket { bind create setopt };
-allow init self:netlink_route_socket read;
+allow init self:netlink_route_socket { bind create getattr nlmsg_read setopt write read };
+allow init self:netlink_socket { bind create write }
 allow init self:rawip_socket { create getopt setopt };
-allow init self:socket { create read write };
-allow init socket_device:sock_file { create setattr };
+allow init self:socket { create read write connect };
+allow init socket_device:sock_file { create setattr write };
 allow init system_data_file:sock_file write;
+allow init system_server:sock_file write;
 allow init tee_device:chr_file { write };
 allow init uio_device:chr_file write;
 allow init vfat:file { getattr open read };
