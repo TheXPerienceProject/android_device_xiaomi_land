@@ -115,9 +115,7 @@ PRODUCT_PACKAGES += \
 
 # Camera
 PRODUCT_PACKAGES += \
-    camera.msm8937 \
-    libmm-qcamera \
-    Snap \
+    Camera2 \
     libxml2
 
 # Camera HIDL HAL
@@ -234,7 +232,8 @@ PRODUCT_PACKAGES += \
     libshims_is_wifi_driver_loaded \
     libshims_get_process_name \
     libshim_ims_camera \
-    libshims_camera
+    libshims_camera \
+	libshim_ril
 #    libshim_camera
 
 # Lights
