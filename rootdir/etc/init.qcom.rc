@@ -909,7 +909,7 @@ service adsprpcd /system/vendor/bin/adsprpcd
 service hvdcp_opti /system/vendor/bin/hvdcp_opti
     class main
     user root
-    group root
+    group system wakelock
 
 service energy-awareness /system/vendor/bin/energy-awareness
     class main
