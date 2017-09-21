@@ -1,6 +1,7 @@
 allow init graphics_device:chr_file write;
 allow init logd:dir getattr;
 allow init misc_partition:blk_file relabelfrom;
+allow init modem_efs_partition_device:blk_file write;
 allow init netd:unix_stream_socket connectto;
 allow init netd_socket:sock_file write;
 allow init property_socket:sock_file write;
