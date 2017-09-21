@@ -1,0 +1,8 @@
+allow toolbox diag_device:chr_file { read write };
+allow toolbox init:fifo_file { read write };
+allow toolbox init:netlink_route_socket { read write };
+allow toolbox init:netlink_socket { read write };
+allow toolbox init:netlink_xfrm_socket { read write };
+allow toolbox netmgrd_data_file:file { read write };
+allow toolbox self:capability net_admin;
+allow toolbox self:udp_socket { create ioctl };
