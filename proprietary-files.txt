@@ -1441,7 +1441,7 @@ vendor/lib64/libsystem_health_mon.so
 vendor/lib64/libril-qc-ltedirectdisc.so
 vendor/lib64/librilqmiservices.so
 vendor/lib64/libsettings.so|222c4139bd62e39e01b5c6725aaad7dc7be843e8
-vendor/lib64/libprotobuf-cpp-pxpe.so|5fde534d196444e2861577b01d9dacf4b0db510b
+vendor/lib64/libprotobuf-cpp-pxpe.so|6a4a2987d51913da9f63126fa744997a583f1b82
 vendor/qcril.db
 
 # Radio - IMS - from oxygen (MiMax 2)
