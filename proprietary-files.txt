@@ -1117,7 +1117,7 @@ vendor/lib64/hw/gatekeeper.msm8937.so
 
 # GPS - from oxygen (MiMax 2)
 -framework/com.qti.location.sdk.jar|c580c72be92ff493995dc6b262a176bfde73c8b7
--priv-app/com.qualcomm.location/com.qualcomm.location.apk|fd63c0acf5a87280f37fe38ecb164853dc82d25d
+-priv-app/com.qualcomm.location/com.qualcomm.location.apk|ab8cd109897928265235f393a2e71250ec5d28af
 bin/loc_launcher|6aa71f397f4404e3244e9b151002ac4038e5252c
 bin/lowi-server|f75c748585f85719fb2e351a69533c7f77c8242e
 bin/xtwifi-client|bf0b6607d4912953a924eb3c8fa399cda3b1d6e5
@@ -1521,7 +1521,7 @@ vendor/lib64/libthermalclient.so
 vendor/lib64/libthermalioctl.so
 
 # Time services
--app/TimeService/TimeService.apk
+-app/TimeService/TimeService.apk|cf992f00c8e73463b26f0ea6828522a3edfcdbb4
 bin/time_daemon
 -vendor/lib/libtime_genoff.so
 vendor/lib/libTimeService.so
