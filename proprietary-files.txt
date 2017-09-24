@@ -121,8 +121,8 @@ etc/permissions/cneapiclient.xml
 etc/permissions/com.quicinc.cne.xml
 framework/ConnectivityExt.jar
 framework/cneapiclient.jar
-framework/com.quicinc.cne.jar
--priv-app/CNEService/CNEService.apk
+framework/com.quicinc.cne.jar|22ea8d18593b0da6c7b3e0eee573922ce28579aa
+-priv-app/CNEService:priv-app/CNEService/CNEService.apk:PRESIGNED|c0d783b8bf06b2536724796528e25f3f5d41709d
 vendor/lib/libNimsWrap.so
 vendor/lib/libcne.so|d8ce8e7c11417bcc75e6bdd4505f3c5ab9ca0f4c
 vendor/lib/libcneapiclient.so
