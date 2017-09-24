@@ -119,6 +119,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     camera.msm8937 \
     libmm-qcamera \
+    libqomx_core \
     Snap \
     libxml2
 
