@@ -9,11 +9,7 @@ LOCAL_CLANG_CFLAGS += \
         -Wno-error=strlcpy-strlcat-size \
         -Wno-error=gnu-designator \
         -Wno-error=unused-variable \
-        -Wno-error=unused-parameter \
-		-Wno-error=unused-label \
-		-Wno-error=tautological-pointer-compare \
-		-Wno-error=overloaded-virtual \
-        -Wno-error=format 
+        -Wno-error=format
 
 LOCAL_SRC_FILES := \
         util/QCameraBufferMaps.cpp \
@@ -121,7 +117,7 @@ endif
 
 LOCAL_MODULE_RELATIVE_PATH := hw
 LOCAL_MODULE := camera.$(TARGET_BOARD_PLATFORM)
-#LOCAL_CLANG := false
+LOCAL_CLANG := false
 LOCAL_MODULE_TAGS := optional
 
 LOCAL_32_BIT_ONLY := $(BOARD_QTI_CAMERA_32BIT_ONLY)

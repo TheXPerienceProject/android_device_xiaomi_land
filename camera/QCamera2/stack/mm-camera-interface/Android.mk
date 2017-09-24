@@ -9,10 +9,7 @@ LOCAL_CLANG_CFLAGS += \
         -Wno-error=missing-field-initializers \
         -Wno-error=pointer-bool-conversion \
         -Wno-error=unused-variable \
-        -Wno-error=unused-parameter \
-		-Wno-error=unused-function \
-		-Wno-error=unused-private-field \
-		-Wno-everything
+        -Wno-error=unused-parameter
 
 MM_CAM_FILES := \
         src/mm_camera_interface.c \
@@ -63,7 +60,7 @@ LOCAL_CFLAGS += -Wall -Wextra -Werror
 LOCAL_SRC_FILES := $(MM_CAM_FILES)
 
 LOCAL_MODULE           := libmmcamera_interface
-#LOCAL_CLANG := false
+LOCAL_CLANG := false
 LOCAL_PRELINK_MODULE   := false
 LOCAL_SHARED_LIBRARIES := libdl libcutils liblog
 LOCAL_MODULE_TAGS := optional
