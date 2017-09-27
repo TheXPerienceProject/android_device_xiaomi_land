@@ -1,6 +1,7 @@
 allow init cameraserver:fd use;
 allow init graphics_device:chr_file write;
 allow init hal_camera_default:fd use;
+allow init ion_device:chr_file write;
 allow init logd:dir getattr;
 allow init misc_partition:blk_file relabelfrom;
 allow init modem_efs_partition_device:blk_file write;
@@ -10,6 +11,7 @@ allow init property_socket:sock_file write;
 allow init servicemanager:binder call;
 allow init self:capability { net_bind_service sys_module };
 allow init self:capability2 block_suspend;
+allow init self:netlink_generic_socket { read write };
 allow init self:netlink_kobject_uevent_socket read;
 allow init self:netlink_kobject_uevent_socket { bind create setopt };
 allow init self:netlink_route_socket { read bind create getattr nlmsg_read nlmsg_write setopt write };
@@ -26,5 +28,5 @@ allow init system_server:unix_stream_socket { read write };
 allow init tee_device:chr_file { write };
 allow init uio_device:chr_file write;
 allow init vfat:file { getattr open read };
-allow init video_device:chr_file ioctl;
+allow init video_device:chr_file { ioctl write };
 

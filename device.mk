@@ -118,7 +118,6 @@ PRODUCT_PACKAGES += \
 # Camera
 PRODUCT_PACKAGES += \
     camera.msm8937 \
-    libmm-qcamera \
     libqomx_core \
     Snap \
     libxml2
@@ -176,7 +175,7 @@ TARGET_FS_CONFIG_GEN += \
     device/xiaomi/land/fs_config/file_caps.fs
 
 # FM
-#PRODUCT_PACKAGES += \
+PRODUCT_PACKAGES += \
     FMRadio \
     libfmjni
 
@@ -235,6 +234,7 @@ PRODUCT_PACKAGES += \
 
 # Libshims
 PRODUCT_PACKAGES += \
+    libshim_atomic \
     libshims_ims \
     libshims_is_wifi_driver_loaded \
     libshims_get_process_name \
@@ -314,7 +314,7 @@ PRODUCT_PACKAGES += \
 
 # Seccomp policy
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/seccomp_policy/mediacodec.policy:system/vendor/etc/seccomp_policy/mediacodec.policy
+    $(LOCAL_PATH)/seccomp_policy/mediacodec.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/mediacodec.policy
 
 # Sensors
 PRODUCT_PACKAGES += \
