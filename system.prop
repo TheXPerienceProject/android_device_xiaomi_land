@@ -60,14 +60,17 @@ ro.qualcomm.bt.hci_transport=smd
 qcom.bluetooth.soc=smd
 
 #Camera
-camera.hal1.packagelist=com.skype.raider,com.google.android.talk
+camera.hal1.packagelist=com.skype.raider,com.google.android.talk,com.whatsapp
 persist.camera.is_type=1
 persist.camera.gyro.android=1
+persist.camera.time.monotonic=1
+media.camera.ts.monotonic=1
 camera.display.umax=1920x1080
 camera.display.lmax=1280x720
 persist.ts.postmakeup=true
 persist.ts.rtmakeup=true
 persist.camera.HAL3.enabled=1
+
 
 #CNE
 persist.cne.feature=1
@@ -100,9 +103,6 @@ ro.frp.pst=/dev/block/bootdevice/by-name/config
 persist.gps.qc_nlp_in_use=1 
 persist.loc.nlp_name=com.qualcomm.location 
 ro.gps.agps_provider=1
-
-# SdcardFs
-ro.sys.sdcardfs=true
 
 #Media
 media.msm8956.version=0
