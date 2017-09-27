@@ -1123,6 +1123,11 @@ bin/lowi-server|f75c748585f85719fb2e351a69533c7f77c8242e
 bin/xtwifi-client|bf0b6607d4912953a924eb3c8fa399cda3b1d6e5
 bin/xtwifi-inet-agent|69b16c8e813dc1f520d6905eea7acbae3f9848d3
 etc/cacert_location.pem|0789bf799c7e45d352a83e2f79ddb0cea86db85b
+etc/flp.conf
+etc/izat.conf
+etc/lowi.conf
+etc/sap.conf
+etc/xtwifi.conf
 etc/permissions/com.qti.location.sdk.xml|cb68a566bd77dcc75bb7547199d528289fac01cb
 etc/permissions/com.qualcomm.location.vzw_library.xml|c25d37a4aa23cfd98d01d5d3121e43d0b6b37f05
 etc/permissions/com.qualcomm.location.xml|8896841bc23fa47bb26fb3dacfa82747f6966330
