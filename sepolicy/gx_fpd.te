@@ -54,5 +54,5 @@ allow gx_fpd self:capability dac_override;
 allow gx_fpd storage_file:dir search;
 allow gx_fpd storage_file:lnk_file read;
 allow gx_fpd vfat:dir search;
-allow gx_fpd vfat:file  { read write getattr };
+allow gx_fpd vfat:file  { read write getattr open };
 r_dir_file(gx_fpd, firmware_file)
