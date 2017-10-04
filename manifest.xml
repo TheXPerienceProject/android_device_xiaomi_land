@@ -244,5 +244,15 @@
             <instance>uimRemoteServer1</instance>
         </interface>
     </hal>
+    <!--usb-->
+    <hal format="hidl">
+        <name>android.hardware.usb</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>IUsb</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
 </manifest>
 
