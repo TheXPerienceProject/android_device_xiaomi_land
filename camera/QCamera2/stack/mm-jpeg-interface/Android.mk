@@ -64,6 +64,7 @@ LOCAL_SRC_FILES := \
 
 LOCAL_MODULE           := libmmjpeg_interface
 LOCAL_CLANG := false
+LOCAL_PROPRIETARY_MODULE := true
 LOCAL_PRELINK_MODULE   := false
 LOCAL_SHARED_LIBRARIES := libdl libcutils liblog libqomx_core libmmcamera_interface
 LOCAL_MODULE_TAGS := optional

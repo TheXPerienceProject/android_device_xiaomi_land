@@ -30,6 +30,7 @@ LOCAL_SRC_FILES := \
 
 LOCAL_MODULE           := libmmlib2d_interface
 LOCAL_PRELINK_MODULE   := false
+LOCAL_PROPRIETARY_MODULE := true
 LOCAL_SHARED_LIBRARIES := libdl libcutils liblog
 LOCAL_MODULE_TAGS := optional
 
