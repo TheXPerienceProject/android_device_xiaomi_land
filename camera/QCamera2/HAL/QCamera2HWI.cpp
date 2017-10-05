@@ -6080,7 +6080,7 @@ int32_t QCamera2HardwareInterface::processAutoFocusEvent(cam_auto_focus_data_t &
                 (focus_data.focus_state == CAM_AF_STATE_PASSIVE_SCAN)) {
             LOGD("Skip sending scan state to app, if depth focus");
             break;
-   
+        }
 
         //These are the AF states for which we need to send notification to app in CAF mode.
         //This includes both regular CAF (PASSIVE) events as well as ACTIVE events ( in case
