@@ -1303,6 +1303,7 @@ typedef struct {
     cam_focus_mode_type focus_mode;        /* focus mode from backend */
     uint32_t focused_frame_idx;
     int32_t focus_pos;
+    uint8_t isDepth;
 } cam_auto_focus_data_t;
 
 typedef struct {
@@ -1823,6 +1824,7 @@ typedef enum {
     CAM_INTF_META_URGENT_FRAME_NUMBER,
     /*Number of streams and size of streams in current configuration*/
     CAM_INTF_META_STREAM_INFO,
+    CAM_INTF_META_FOCUS_DEPTH_INFO,
     /* List of areas to use for metering */
     CAM_INTF_META_AEC_ROI,
     /* Whether the HAL must trigger precapture metering.*/
