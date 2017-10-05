@@ -2822,7 +2822,7 @@ QCameraMemory *QCamera2HardwareInterface::allocateStreamBuf(
                 }
             } else {
                 videoMemory =
-                        new QCameraVideoMemory(mGetMemory, mCallbackCookie, bCachedMem)
+                        new QCameraVideoMemory(mGetMemory, mCallbackCookie, bCachedMem);
                 if (videoMemory == NULL) {
                     LOGE("Out of memory for video obj");
                     return NULL;
