@@ -2,4 +2,3 @@
 allow system_server radio_prop:property_service set;
 allow system_server qti_debugfs:file { getattr open read };
 allow system_server unlabeled:file unlink;
-

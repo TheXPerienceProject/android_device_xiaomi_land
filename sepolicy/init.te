@@ -17,7 +17,7 @@ allow init self:netlink_kobject_uevent_socket { bind create setopt };
 allow init self:netlink_route_socket { read bind create getattr nlmsg_read nlmsg_write setopt write };
 allow init self:netlink_socket { bind create read write };
 allow init self:rawip_socket { create getopt setopt };
-allow init self:socket { create read write };
+allow init self:socket create_socket_perms_no_ioctl;
 allow init self:tcp_socket { create ioctl };
 allow init self:udp_socket ioctl;
 allow init servicemanager:binder transfer;
