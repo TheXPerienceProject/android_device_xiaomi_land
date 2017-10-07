@@ -58,13 +58,10 @@ camera.hal1.packagelist=com.skype.raider,com.google.android.talk
 persist.camera.is_type=1
 persist.camera.gyro.android=1
 persist.camera.time.monotonic=1
-media.camera.ts.monotonic=0
-camera.display.umax=1920x1080
-camera.display.lmax=1280x720
+media.camera.ts.monotonic=1
+persist.camera.HAL3.enabled=0
 persist.ts.postmakeup=true
 persist.ts.rtmakeup=true
-media.stagefright.legacyencoder=true
-media.stagefright.less-secure=true
 
 #CNE
 persist.cne.feature=1
@@ -105,6 +102,12 @@ ro.sys.sdcardfs=true
 #Media
 media.msm8956.version=0
 media.msm8956hw=0
+media.stagefright.enable-player=true
+media.stagefright.enable-http=true
+media.stagefright.enable-aac=true
+media.stagefright.enable-qcp=true
+media.stagefright.enable-fma2dp=true
+media.stagefright.enable-scan=true
 mm.enable.smoothstreaming=true
 mmp.enable.3g2=true
 media.aac_51_output_enabled=true
