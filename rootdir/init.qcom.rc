@@ -85,13 +85,7 @@ on post-fs-data
     mkdir /data/misc/qsee 0770 system system
 
     #Create folder for mm-qcamera-daemon
-    mkdir /data/vendor/camera 0770 camera camera
-
-# Start camera server as daemon
-service qcamerasvr /system/vendor/bin/mm-qcamera-daemon
-    class late_start
-    user camera
-    group camera system inet input graphics
+    mkdir /data/misc/camera 0770 camera camera
 
     mkdir /data/media 0770 media_rw media_rw
     chown media_rw media_rw /data/media
@@ -677,6 +671,13 @@ on property:persist.sys.fp.onstart=1
 on property:ro.boot.fpsensor=gdx
     setprop ro.hardware.fingerprint goodix
 
+# Start camera server as daemon
+service qcamerasvr /system/bin/mm-qcamera-daemon
+    class late_start
+    user camera
+    group camera system inet input graphics
+#    writepid /dev/cpuset/system-background/tasks
+
 # Allow usb charging to be disabled peristently
 on property:persist.usb.chgdisabled=1
     write /sys/class/power_supply/battery/charging_enabled 0
@@ -706,7 +707,7 @@ service thermal-engine /system/vendor/bin/thermal-engine
     socket thermal-send-rule stream 0660 system system
     group root
 
-service time_daemon /system/vendor/bin/time_daemon
+service time_daemon /system/bin/time_daemon
     class late_start
     user root
     group root
@@ -798,7 +799,7 @@ service hbtp /system/vendor/bin/hbtp_daemon
     group system
     disabled
 
-service adsprpcd /system/vendor/bin/adsprpcd
+service adsprpcd /system/bin/adsprpcd
     class main
     user media
     group media
