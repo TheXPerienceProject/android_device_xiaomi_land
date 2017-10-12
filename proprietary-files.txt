@@ -1054,7 +1054,7 @@ etc/permissions/dpmapi.xml
 framework/com.qti.dpmframework.jar
 framework/dpmapi.jar
 framework/tcmclient.jar
-#-priv-app/dpmserviceapp/dpmserviceapp.apk
+-priv-app/dpmserviceapp/dpmserviceapp.apk
 vendor/lib/libdpmctmgr.so
 vendor/lib/libdpmfdmgr.so
 vendor/lib/libdpmframework.so
@@ -1125,11 +1125,15 @@ etc/izat.conf
 etc/lowi.conf
 etc/permissions/com.qti.location.sdk.xml
 etc/permissions/com.qualcomm.location.xml
+etc/permissions/com.qualcomm.location.vzw_library.xml
+etc/permissions/izat.xt.srv.xml
 etc/cacert_location.pem
 etc/xtra_root_cert.pem
 etc/sap.conf
 etc/xtwifi.conf
 -framework/com.qti.location.sdk.jar
+framework/izat.xt.srv.jar|da31c6183f8d29251ce5656ddab6d4b386934382
+framework/com.qualcomm.location.vzw_library.jar|7f5e8ef70a853a154f8367fafdbdd5b103de7348
 lib/libloc_api_v02.so
 lib/libloc_ds_api.so
 lib64/libloc_api_v02.so
@@ -1408,6 +1412,7 @@ vendor/lib64/libsmemlog.so
 -app/fastdormancy/fastdormancy.apk
 -app/QtiTelephonyService/QtiTelephonyService.apk
 -app/shutdownlistener/shutdownlistener.apk
+-app/TimeService/TimeService.apk|cf992f00c8e73463b26f0ea6828522a3edfcdbb4
 bin/netmgrd
 bin/qmuxd
 bin/radish
