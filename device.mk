@@ -86,6 +86,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.audio@2.0-impl \
     android.hardware.audio.effect@2.0-impl \
+    android.hardware.broadcastradio@1.0-impl \
     android.hardware.soundtrigger@2.0-impl
 
 #Audio mixer
@@ -233,9 +234,12 @@ PRODUCT_PACKAGES += \
     init.recovery.qcom.rc \
     ueventd.qcom.rc
 
-#custom keylayout
+# Keylayout
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/keylayout/msm8952-sku1-snd-card_Button_Jack.kl:system/usr/keylayout/msm8952-sku1-snd-card_Button_Jack.kl
+    $(LOCAL_PATH)/keylayout/ist30xx_ts_input.kl:system/usr/keylayout/ist30xx_ts_input.kl \
+    $(LOCAL_PATH)/keylayout/msm8952-sku1-snd-card_Button_Jack.kl:system/usr/keylayout/msm8952-sku1-snd-card_Button_Jack.kl \
+    $(LOCAL_PATH)/keylayout/uinput-fpc.kl:system/usr/keylayout/uinput-fpc.kl \
+    $(LOCAL_PATH)/keylayout/uinput-gdx.kl:system/usr/keylayout/uinput-gdx.kl
 
 # Keymaster
 PRODUCT_PACKAGES += \
