@@ -246,7 +246,6 @@ PRODUCT_COPY_FILES += \
 # Wi-Fi
 PRODUCT_PACKAGES += \
     libQWiFiSoftApCfg \
-    libwcnss_qmi \
     hostapd \
     wpa_supplicant \
     wpa_supplicant.conf
@@ -254,10 +253,6 @@ PRODUCT_PACKAGES += \
 # Properties
 PRODUCT_PROPERTY_OVERRIDES += \
     wifi.interface=wlan0
-
-# WCNSS Service
-PRODUCT_PACKAGES += \
-    wcnss_service
 
 # Inherit proprietary files
 $(call inherit-product-if-exists, vendor/xiaomi/land/land-vendor.mk)
