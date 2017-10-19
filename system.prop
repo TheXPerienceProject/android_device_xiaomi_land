@@ -46,6 +46,11 @@ audio.dolby.ds2.hardbypass=true
 flac.sw.decoder.24bit.support=true
 qcom.hw.aac.encoder=true
 
+#APTX
+persist.bt.enableAptXHD=true
+persist.service.btui.use_aptx=1
+persistent.bt.a2dp_offload_cap=sbc-aptx-aptXHD
+
 #Bluetooth
 ro.bluetooth.dun=true 
 ro.bluetooth.hfp.ver=1.7 
