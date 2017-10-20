@@ -1043,26 +1043,26 @@ vendor/lib/libmmcamera_isp_color_xform_viewfinder40.so
 # Charger
 bin/hvdcp_opti
 
-# DPM
-bin/dpmd
-etc/dpm/dpm.conf
-etc/dpm/nsrm/NsrmConfiguration.xml
-etc/permissions/com.qti.dpmframework.xml
+# DPM from garlic
+-framework/com.qti.dpmframework.jar|e99d002926751212cc65e249b1ad6fd202500480
+-framework/dpmapi.jar|0015235ff71d52d1b340b10ce4fa737fa26975ef
+-framework/tcmclient.jar|e7149c664f4b1841139ab816c0d4e0942df0583c
+-priv-app/dpmserviceapp/dpmserviceapp.apk|b1fca92058d4b24610af379d8acfaf1b89b772d5
+bin/dpmd|e54c1714a9742104b26270bb2e8c68b13e31e6db
+etc/dpm/dpm.conf|4044e359cfde5a4e8c1ef31a684b3009bca31058
+etc/dpm/nsrm/NsrmConfiguration.xml|c406e5aaaa4ab278a7f7b62405ad5d91c8084835
+etc/permissions/com.qti.dpmframework.xml|36b94c9338069e434b83359a92cdc7ff62b822df
 etc/permissions/dpmapi.xml
-framework/com.qti.dpmframework.jar
-framework/dpmapi.jar
-framework/tcmclient.jar
--priv-app/dpmserviceapp/dpmserviceapp.apk
-vendor/lib/libdpmctmgr.so
-vendor/lib/libdpmfdmgr.so
-vendor/lib/libdpmframework.so
-vendor/lib/libdpmnsrm.so
-vendor/lib/libdpmtcm.so
-vendor/lib64/libdpmctmgr.so
-vendor/lib64/libdpmfdmgr.so
-vendor/lib64/libdpmframework.so
-vendor/lib64/libdpmnsrm.so
-vendor/lib64/libdpmtcm.so
+vendor/lib64/libdpmctmgr.so|9da94f6adfbcfdcc65ea05185b9ef88271ac61ca
+vendor/lib64/libdpmfdmgr.so|b5f2fb5f20b5a95b087f5123e9fc02019f8af9a3
+vendor/lib64/libdpmframework.so|3ac49fb28f81f476a7c0a60f3bf4ecdf2be812c5
+vendor/lib64/libdpmnsrm.so|550a09e9da986311178876cceaf71167b01d70b4
+vendor/lib64/libdpmtcm.so|4c2025b0882276ff7e742591b45c6e728ffedb11
+vendor/lib/libdpmctmgr.so|9998fb47922ec5fb8c9c8cdae65c8f0cfa119cf3
+vendor/lib/libdpmfdmgr.so|f0759efe4fcf5733def2cd4fdabde43449273e39
+vendor/lib/libdpmframework.so|c7faa2b99e3425ad3f3d779390de02fedff058a2
+vendor/lib/libdpmnsrm.so|aa1c21a5b02dae625353cd7370551f48890505c7
+vendor/lib/libdpmtcm.so|920de84cdac03220386d9103956866c22041afd8
 
 # DRM
 bin/qseecomd
