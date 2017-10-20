@@ -1112,9 +1112,9 @@ vendor/lib/hw/gatekeeper.msm8937.so
 vendor/lib64/hw/gatekeeper.msm8937.so
 
 # GPS
--framework/com.qti.location.sdk.jar|1dfd9cd968b3016c1b7bbb1ceb16835407302ed7
+-framework/com.qti.location.sdk.jar
 -framework/izat.xt.srv.jar|da31c6183f8d29251ce5656ddab6d4b386934382
--framework/com.qualcomm.location.vzw_library.jar|1dfd9cd968b3016c1b7bbb1ceb16835407302ed7
+-framework/com.qualcomm.location.vzw_library.jar
 -priv-app/com.qualcomm.location/com.qualcomm.location.apk|ab8cd109897928265235f393a2e71250ec5d28af
 bin/loc_launcher|bf752f942d8706f75037202d94780386a7452480
 bin/lowi-server|0f08b0bca70a7ffadb8bbbc5256477f930a5b029
