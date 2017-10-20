@@ -1098,11 +1098,9 @@ vendor/lib64/libtzdrmgenprov.so
 bin/gx_fpcmd
 bin/gx_fpd
 lib/hw/fingerprint.default.so:lib/hw/fingerprint.msm8937.so
-lib/hw/fingerprint.searchf.so
 lib/libcom_fingerprints_service.so
 lib64/hw/fingerprint.default.so:lib64/hw/fingerprint.msm8937.so
 lib64/hw/fingerprint.goodix.so
-lib64/hw/fingerprint.searchf.so
 lib64/hw/gxfingerprint.default.so
 lib64/libcom_fingerprints_service.so
 lib64/libfp_client.so
@@ -1248,6 +1246,7 @@ vendor/lib64/libc2d30_bltlib.so
 vendor/lib64/libgsl.so
 vendor/lib64/libllvm-glnext.so
 vendor/lib64/libllvm-qcom.so
+vendor/lib64/libllvm-qgl.so|6586cc2b0f4e35fbaf3fdad6de1cd8bbb805c244
 vendor/lib64/libmm-disp-apis.so
 vendor/lib64/libmm-dspp-utils.so
 vendor/lib64/libmm-hdcpmgr.so
@@ -1475,9 +1474,11 @@ bin/imscmservice|0b3cc1e3dedcbcfa60633db344c0f622f1812459
 bin/imsdatadaemon|e44dabe3dc093dade15691df8b4329495e614b1e
 bin/imsqmidaemon|35826dc5a6ad5a50a8df384884264156c85af782
 etc/permissions/imscm.xml|8b99ec26c783966bbea1fcb8e72c7c0206a4e802
+etc/permissions/qti-vzw-ims-internal.xml|0fd2dd6e1209824758289fdadd4a3e2a33c01b99
 framework/imscmlibrary.jar|0c24d6540c06efede52169c1445272f43748180f
 framework/rcsimssettings.jar|566a0f637344ca3182aca33753e404977fc77ecc
--vendor/app/ims/ims.apk|d9e709f6e4c5bb971ec33ea3538c8bc23856806a
+-vendor/framework/qti-vzw-ims-internal.jar|5cfd76b7a140396f6f192695f7fde8100062b7c7
+-vendor/app/ims/ims.apk|66fa3ab695d7be55a334cbee6e9c94d60089ac2a
 -vendor/app/imssettings/imssettings.apk|e652c67b7bf6863e0c3cddc9b80439788883ffd2
 vendor/lib64/lib-dplmedia.so|9f8c41a42240397f54441ba6cc1d975a22eefec5
 vendor/lib64/lib-ims-rcscmjni.so|af39ee3bd691d5316632a2d449254fbb42e30a09
