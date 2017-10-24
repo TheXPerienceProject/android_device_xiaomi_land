@@ -1,7 +1,9 @@
 allow init cameraserver:fd use;
 allow init graphics_device:chr_file write;
 allow init hal_camera_default:fd use;
+allow init hal_graphics_allocator_default:fd use;
 allow init ion_device:chr_file write;
+allow init ion_device:chr_file ioctl;
 allow init logd:dir getattr;
 allow init misc_partition:blk_file relabelfrom;
 allow init modem_efs_partition_device:blk_file write;
@@ -20,7 +22,9 @@ allow init self:rawip_socket { create getopt setopt };
 allow init self:socket create_socket_perms_no_ioctl;
 allow init self:tcp_socket { create ioctl };
 allow init self:udp_socket ioctl;
+allow init shell_exec:file execute_no_trans;
 allow init servicemanager:binder transfer;
+allow init smd_device:chr_file { ioctl write };
 allow init socket_device:sock_file { create setattr };
 allow init system_data_file:sock_file write;
 allow init system_server:fd use;
@@ -29,4 +33,6 @@ allow init tee_device:chr_file { write };
 allow init uio_device:chr_file write;
 allow init vfat:file { getattr open read };
 allow init video_device:chr_file { ioctl write };
+
+binder_call(init, system_server);
 
