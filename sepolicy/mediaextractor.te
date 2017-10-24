@@ -1,2 +1,0 @@
-#============= mediaextractor ==============
-allow mediaextractor fuse:file { getattr read};
