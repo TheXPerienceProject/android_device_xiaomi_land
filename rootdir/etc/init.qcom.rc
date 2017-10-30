@@ -519,7 +519,7 @@ on class_start:late_start
     write /data/misc/radio/db_check_done 1
 
 
-service iop /system/bin/iop
+service iop /vendor/bin/iop
     class main
     user root
     group root
