@@ -285,11 +285,11 @@ PRODUCT_COPY_FILES += \
     frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:system/etc/media_codecs_google_video.xml
 
 #NET
-
 PRODUCT_PACKAGES += \
     netutils-wrapper-1.0 \
     android.system.net.netd@1.0 \
-    libandroid_net
+    libandroid_net \
+    libandroid_net_32
 
 # IPv6
 PRODUCT_PACKAGES += \
