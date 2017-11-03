@@ -1327,6 +1327,7 @@ vendor/lib/libsmwrapper.so
 etc/firmware/DE.o.msm8937
 lib/libOmxSwVdec.so|708449a8a7398b3340bd9dad2281060f93cdfff2
 lib/libOmxSwVencMpeg4.so|a5656b290b1a951eac5c29dab9c72593b0131590
+lib/libOmxVdecHevc.so|ec53293c9dd8f6be731b4485c9b4c7f0aca9b542
 lib/libOmxVpp.so|2ff6daa35af6e06bc8d8cf13ef90c7fb6e928532
 lib/libvpplibrary.so|b747b41dd5b0dc17aec31247598a0b1f4dbe6191
 lib/libstagefright_soft_flacdec.so|50ec6939cf706adacf2b2e110ff427f1235876ff
@@ -1371,6 +1372,7 @@ vendor/lib64/libOmxEvrcDec.so|7b732a2d5712b495752df88f12815c63ba0d2e4c
 vendor/lib64/libOmxMux.so|a0bcd4bf81649e9cd6191fb1b56e94c5d72433a7
 vendor/lib64/libOmxQcelp13Dec.so|05076719b67291caf83cf0312d01077df6908eb4
 vendor/lib64/libOmxWmaDec.so|524a82675bcdbffed9f81c83e97dea2691d311dc
+vendor/lib/libHevcSwDecoder.so|0972a49766ea1b4f9f3e734c1e3a6aa27910cc09
 vendor/media/LMspeed_508.emd
 vendor/media/PFFprec_600.emd
 
