@@ -639,6 +639,16 @@ service fingerprintd /system/bin/fingerprintd
     system system
     disabled
 
+service biometric_hal /vendor/bin/hw/android.hardware.biometrics.fingerprint@2.1-service
+    # "class hal" causes a race condition on some devices due to files created
+    # in /data. As a workaround, postpone startup until later in boot once
+    # /data is mounted.
+    class late_start
+    socket fpce stream 0666 system system
+    user system
+    group system
+    disabled
+
 service gx_fpd /system/bin/gx_fpd
     class late_start
     user root
@@ -649,7 +659,8 @@ service gx_fpd /system/bin/gx_fpd
 on property:persist.sys.fp.vendor=switchf
     stop gx_fpd
     setprop persist.sys.fp.vendor searchf
-    start fingerprintd  
+    start fingerprintd
+    start biometric_hal
     setprop ro.boot.fpsensor fpc
 
 on property:persist.sys.fp.vendor=goodix
@@ -667,7 +678,8 @@ on property:persist.sys.fp.onstart=0
    start gx_fpd
 
 on property:persist.sys.fp.onstart=1
-   start fingerprintd 
+   start fingerprintd
+   start biometric_hal
 
 on property:ro.boot.fpsensor=gdx
     setprop ro.hardware.fingerprint goodix
