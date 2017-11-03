@@ -183,7 +183,8 @@ PRODUCT_PACKAGES += \
 
 # Gatekeeper HAL
 PRODUCT_PACKAGES += \
-    android.hardware.gatekeeper@1.0-impl
+    android.hardware.gatekeeper@1.0-impl \
+    android.hardware.gatekeeper@1.0-service
 
 # GNSS HAL
 PRODUCT_PACKAGES += \
@@ -236,7 +237,8 @@ PRODUCT_COPY_FILES += \
 
 # Keymaster
 PRODUCT_PACKAGES += \
-    android.hardware.keymaster@3.0-impl
+    android.hardware.keymaster@3.0-impl \
+    android.hardware.keymaster@3.0-service
 
 # Libshims
 PRODUCT_PACKAGES += \
@@ -247,7 +249,7 @@ PRODUCT_PACKAGES += \
     libshim_ims_camera \
     libshims_camera \
     libshim_camera \
-	libshims_sensor
+    libshims_sensor
 
 # Lights
 PRODUCT_PACKAGES += \
