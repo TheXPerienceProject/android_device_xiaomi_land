@@ -1298,7 +1298,7 @@ vendor/lib/hw/sound_trigger.primary.msm8937.so
 vendor/lib/libadpcmdec.so
 vendor/lib/libsmwrapper.so
 
-# Media
+# Media - from santoni (Redmi 4X)
 etc/firmware/DE.o.msm8937
 lib/libOmxVpp.so
 lib/libvpplibrary.so

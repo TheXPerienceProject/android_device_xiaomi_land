@@ -270,6 +270,8 @@ PRODUCT_PACKAGES += \
     libOmxQcelp13Enc \
     libOmxVdec \
     libOmxVenc \
+    libOmxSwVencMpeg4 \
+    libOmxSwVdec \
     libstagefrighthw
 
 #media OMX
