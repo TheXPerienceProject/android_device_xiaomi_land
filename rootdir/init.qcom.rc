@@ -646,7 +646,7 @@ service biometric_hal /vendor/bin/hw/android.hardware.biometrics.fingerprint@2.1
     class late_start
     socket fpce stream 0666 system system
     user system
-    group system
+    group system  sdcard_rw
     disabled
 
 service gx_fpd /system/bin/gx_fpd
