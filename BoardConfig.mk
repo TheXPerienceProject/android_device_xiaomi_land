@@ -183,6 +183,9 @@ TARGET_RECOVERY_DEVICE_MODULES := libinit_land
 # Keystore
 TARGET_KEYMASTER_WAIT_FOR_QSEE := true
 
+# Lights
+TARGET_PROVIDES_LIBLIGHT := true
+
 # Malloc
 MALLOC_SVELTE := true
 
