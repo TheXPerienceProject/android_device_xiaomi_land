@@ -127,7 +127,6 @@ LOCAL_C_INCLUDES += \
 	system/media/private/camera/include
 
 LOCAL_MODULE:= libshim_ims_camera
-LOCAL_CLANG := false
 LOCAL_MODULE_TAGS := optional
 include $(BUILD_SHARED_LIBRARY)
 
