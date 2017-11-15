@@ -78,6 +78,7 @@ PRODUCT_PACKAGES += \
     audio.r_submix.default \
     audio.usb.default \
     libaudio-resampler \
+    libqcomvisualizer \
     libqcompostprocbundle \
     libqcomvoiceprocessing \
     tinymix
@@ -128,7 +129,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     camera.device@1.0-impl \
     camera.device@3.2-impl \
-    android.hardware.camera.provider@2.4-impl
+    android.hardware.camera.provider@2.4-impl \
+    vendor.qti.hardware.camera.device@1.0 \
+    vendor.qti.hardware.camera.device@1.0_vendor
 
 #configStore HIDL HAL service
 PRODUCT_PACKAGES += \
@@ -148,6 +151,8 @@ PRODUCT_PACKAGES += \
     gralloc.msm8937 \
     hwcomposer.msm8937 \
     libtinyxml \
+    liboverlay \
+    libgenlock \
     memtrack.msm8937
 
 #Display HIDL
@@ -275,7 +280,6 @@ PRODUCT_PACKAGES += \
     libOmxQcelp13Enc \
     libOmxVdec \
     libOmxVenc \
-    libOmxSwVencMpeg4 \
     libOmxSwVdec \
     libstagefrighthw
 
