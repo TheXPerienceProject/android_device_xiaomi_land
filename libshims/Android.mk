@@ -82,8 +82,11 @@ LOCAL_SRC_FILES := \
 
 LOCAL_SHARED_LIBRARIES := libc
 LOCAL_MODULE := libshims_camera
+LOCAL_CLANG := false
+LOCAL_CXX_STL := none
+LOCAL_SANITIZE := never
 LOCAL_MODULE_TAGS := optional
-LOCAL_32_BIT_ONLY := true
+LOCAL_MODULE_CLASS := SHARED_LIBRARIES
 include $(BUILD_SHARED_LIBRARY)
 
 include $(CLEAR_VARS)
@@ -124,6 +127,7 @@ LOCAL_C_INCLUDES += \
 	system/media/private/camera/include
 
 LOCAL_MODULE:= libshim_ims_camera
+LOCAL_CLANG := false
 LOCAL_MODULE_TAGS := optional
 include $(BUILD_SHARED_LIBRARY)
 

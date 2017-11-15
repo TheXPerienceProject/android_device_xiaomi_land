@@ -116,10 +116,11 @@ PRODUCT_PACKAGES += \
 
 # Camera
 PRODUCT_PACKAGES += \
+    mm-qcamera-app \
     camera.msm8937 \
-    libqomx_core \
-    Snap \
-    libxml2
+    libmm-qcamera \
+    libmmjpeg_interface \
+    Snap
 
 # Camera HIDL HAL
 PRODUCT_PACKAGES += \
@@ -321,6 +322,7 @@ PRODUCT_PACKAGES += \
     libcnefeatureconfig \
     librmnetctl \
     libprotobuf-cpp-full \
+    libxml2 \
     rild_socket
 
 # Seccomp policy

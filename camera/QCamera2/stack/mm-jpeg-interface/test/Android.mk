@@ -19,7 +19,7 @@ endif
 LOCAL_CFLAGS += -DSYSTEM_HEADER_PREFIX=sys
 
 OMX_HEADER_DIR := frameworks/native/include/media/openmax
-OMX_CORE_DIR := $(call project-path-for,qcom-camera)/mm-image-codec
+OMX_CORE_DIR := $(MM_JPEG_TEST_PATH)/../../../../mm-image-codec
 
 LOCAL_C_INCLUDES := $(MM_JPEG_TEST_PATH)
 LOCAL_C_INCLUDES += $(MM_JPEG_TEST_PATH)/../inc
@@ -63,7 +63,7 @@ endif
 LOCAL_CFLAGS += -DSYSTEM_HEADER_PREFIX=sys
 
 OMX_HEADER_DIR := frameworks/native/include/media/openmax
-OMX_CORE_DIR := $(call project-path-for,qcom-camera)/mm-image-codec
+OMX_CORE_DIR := $(MM_JPEG_TEST_PATH)/../../../../mm-image-codec
 
 LOCAL_C_INCLUDES := $(MM_JPEG_TEST_PATH)
 LOCAL_C_INCLUDES += $(MM_JPEG_TEST_PATH)/../inc
@@ -82,7 +82,7 @@ LOCAL_32_BIT_ONLY := $(BOARD_QTI_CAMERA_32BIT_ONLY)
 LOCAL_MODULE           := mm-jpegdec-interface-test
 LOCAL_PROPRIETARY_MODULE := true
 LOCAL_PRELINK_MODULE   := false
-LOCAL_SHARED_LIBRARIES := libcutils libdl libmmjpeg_interface liblog
+LOCAL_SHARED_LIBRARIES := libcutils libdl libmmjpeg_interface  liblog
 
 include $(BUILD_EXECUTABLE)
 
