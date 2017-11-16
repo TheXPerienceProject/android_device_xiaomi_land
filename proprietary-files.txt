@@ -142,7 +142,6 @@ vendor/lib64/libwqe.so
 vendor/lib64/libxml.so
 
 # Camera
-bin/mm-qcamera-app
 bin/mm-qcamera-daemon
 etc/camera/ofilm_s5k5e8_chromatix.xml
 etc/camera/ov13853_q13853a_chromatix.xml
@@ -176,9 +175,9 @@ etc/camera/s5k3l8_mono_chromatix.xml
 etc/camera/s5k3m2xm_chromatix.xml
 etc/camera/s5k3m2xm_chromatix_bear.xml
 etc/camera/s5k3m2xx_chromatix.xml
+lib/libqomx_core.so
 lib/libRecoFace.so
 lib/libmmcamera_interface.so
-lib/libmmjpeg_interface.so
 lib/libmorpho_memory_allocator.so
 lib/libmorpho_panorama.so
 vendor/lib/libFaceGrade.so
@@ -1316,7 +1315,7 @@ usr/keylayout/synaptics_rmi4_i2c.kl
 # Keystore
 vendor/lib/hw/keystore.msm8937.so
 vendor/lib64/hw/keystore.msm8937.so
-vendor/lib64/hw/keystore.default.so
+lib64/hw/keystore.default.so
 
 # Listen
 vendor/lib/hw/sound_trigger.primary.msm8937.so
@@ -1503,10 +1502,10 @@ vendor/lib64/libprotobuf-cpp-pxpe.so|6a4a2987d51913da9f63126fa744997a583f1b82
 vendor/qcril.db
 
 # Radio - IMS - from oxygen (MiMax 2) / op3 (OnePlus 3/3T) / Land (Redmi3s)
-bin/ims_rtp_daemon|2155d928832594933ebfb79ee29319ff5d3e250c
-bin/imscmservice|0b3cc1e3dedcbcfa60633db344c0f622f1812459
-bin/imsdatadaemon|e44dabe3dc093dade15691df8b4329495e614b1e
-bin/imsqmidaemon|35826dc5a6ad5a50a8df384884264156c85af782
+bin/ims_rtp_daemon:vendor/bin/ims_rtp_daemon|2155d928832594933ebfb79ee29319ff5d3e250c
+bin/imscmservice:vendor/bin/imscmservice|0b3cc1e3dedcbcfa60633db344c0f622f1812459
+bin/imsdatadaemon:vendor/bin/imsdatadaemon|e44dabe3dc093dade15691df8b4329495e614b1e
+bin/imsqmidaemon:vendor/bin/imsqmidaemon|35826dc5a6ad5a50a8df384884264156c85af782
 etc/permissions/imscm.xml|8b99ec26c783966bbea1fcb8e72c7c0206a4e802
 etc/permissions/qti-vzw-ims-internal.xml|0fd2dd6e1209824758289fdadd4a3e2a33c01b99
 framework/imscmlibrary.jar|0c24d6540c06efede52169c1445272f43748180f
@@ -1608,7 +1607,7 @@ vendor/lib64/libthermalioctl.so
 
 # Time services
 -app/TimeService/TimeService.apk|cf992f00c8e73463b26f0ea6828522a3edfcdbb4
-bin/time_daemon
+bin/time_daemon:vendor/bin/time_daemon
 -vendor/lib/libtime_genoff.so
 vendor/lib/libTimeService.so
 -vendor/lib64/libtime_genoff.so
