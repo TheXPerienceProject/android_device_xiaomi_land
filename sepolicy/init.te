@@ -2,6 +2,7 @@ allow init cameraserver:fd use;
 allow init graphics_device:chr_file write;
 allow init hal_camera_default:fd use;
 allow init ion_device:chr_file { ioctl write };
+allow init init:udp_socket { ioctl };
 allow init logd:dir getattr;
 allow init misc_partition:blk_file relabelfrom;
 allow init modem_efs_partition_device:blk_file write;
