@@ -654,7 +654,11 @@ service fingerprintd /system/bin/fingerprintd
     system system
     disabled
 
+<<<<<<< HEAD
 service biometric_hal /vendor/bin/hw/android.hardware.biometrics.fingerprint@2.1-service
+=======
+service fps_hal /vendor/bin/hw/android.hardware.biometrics.fingerprint@2.0-service-custom
+>>>>>>> a1c5505... land: Add custom biometrics to fox goodix fpsensor
     # "class hal" causes a race condition on some devices due to files created
     # in /data. As a workaround, postpone startup until later in boot once
     # /data is mounted.
