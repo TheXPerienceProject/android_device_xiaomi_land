@@ -17,15 +17,34 @@
 #include <stdint.h>
 #include <sys/types.h>
 #include <utils/Errors.h>
+/*
+ * Copyright (C) 2010 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+#define LOG_TAG "Sensors"
+#include <gui/SensorManager.h>
+#include <stdint.h>
+#include <sys/types.h>
+#include <utils/Errors.h>
 #include <utils/RefBase.h>
 #include <utils/Singleton.h>
 #include <binder/IBinder.h>
 #include <binder/IServiceManager.h>
-#include "gui/ISensorServer.h"
-#include "gui/ISensorEventConnection.h"
-#include "gui/Sensor.h"
-#include <gui/SensorManager.h>
-#include "gui/SensorEventQueue.h"
+#include <sensor/ISensorServer.h>
+#include <sensor/ISensorEventConnection.h>
+#include <sensor/Sensor.h>
+#include <sensor/SensorEventQueue.h>
 // ----------------------------------------------------------------------------
 namespace android {
 // ----------------------------------------------------------------------------
@@ -91,7 +110,7 @@ void SensorManager::sensorManagerDied()
     mSensorList = NULL;
     mSensors.clear();
 }
-status_t SensorManager::assertStateLocked() const {
+status_t SensorManager::assertStateLocked() {
     bool initSensorManager = false;
     if (mSensorServer == NULL) {
         initSensorManager = true;
@@ -139,7 +158,7 @@ status_t SensorManager::assertStateLocked() const {
     }
     return NO_ERROR;
 }
-ssize_t SensorManager::getSensorList(Sensor const* const** list) const
+ssize_t SensorManager::getSensorList(Sensor const* const** list)
 {
     Mutex::Autolock _l(mLock);
     status_t err = assertStateLocked();
