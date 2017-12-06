@@ -66,9 +66,11 @@ ro.qualcomm.bt.hci_transport=smd
 qcom.bluetooth.soc=smd
 
 #Camera
-camera.hal1.packagelist=com.skype.raider,com.google.android.talk,com.whatsapp
 camera.display.umax=1920x1080
 camera.display.lmax=1280x720
+camera2.portability.force_api=1
+persist.camera.is_type=2
+persist.camera.gyro.disable=1
 persist.camera.time.monotonic=1
 persist.camera.HAL3.enabled=1
 persist.ts.postmakeup=true
