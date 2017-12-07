@@ -119,6 +119,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     mm-qcamera-app \
     camera.msm8937 \
+	libmmcamera_interface \
     libmm-qcamera \
     libmmjpeg_interface \
     Snap
