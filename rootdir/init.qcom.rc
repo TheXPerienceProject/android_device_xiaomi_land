@@ -691,11 +691,7 @@ service poweroffhandler /system/bin/poweroffhandler
     disabled
     oneshot
 
-<<<<<<< HEAD
-service biometric_hal /vendor/bin/hw/android.hardware.biometrics.fingerprint@2.1-service
-=======
 service fps_hal /vendor/bin/hw/android.hardware.biometrics.fingerprint@2.0-service-custom
->>>>>>> a1c5505... land: Add custom biometrics to fox goodix fpsensor
     # "class hal" causes a race condition on some devices due to files created
     # in /data. As a workaround, postpone startup until later in boot once
     # /data is mounted.
@@ -715,7 +711,8 @@ service gx_fpd /system/bin/gx_fpd
 on property:persist.sys.fp.vendor=switchf
     stop gx_fpd
     setprop persist.sys.fp.vendor searchf
-    start biometric_hal
+    start fingerprintd
+    start fps_hal
     setprop ro.boot.fpsensor fpc
     setprop ro.hardware.fingerprint searchf
     setprop persist.sys.fp.onstart=1
@@ -729,7 +726,7 @@ on property:persist.sys.fp.onstart=0
    start gx_fpd
 
 on property:persist.sys.fp.onstart=1
-   start biometric_hal
+   start fps_hal
 
 # Start camera server as daemon
 service qcamerasvr /system/bin/mm-qcamera-daemon
