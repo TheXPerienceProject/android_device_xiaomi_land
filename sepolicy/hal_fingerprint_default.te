@@ -1,4 +1,5 @@
 #============= hal_fingerprint_default ==============
+allow hal_fingerprint_default fingerprintd_data_file:sock_file { unlink };
 allow hal_fingerprint_default firmware_file:file { read open getattr };
 allow hal_fingerprint_default firmware_file:dir search;
 allow hal_fingerprint_default sysfs:file rw_file_perms;
