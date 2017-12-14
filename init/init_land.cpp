@@ -47,6 +47,7 @@
 
 static std::string board_id;
 using android::base::GetProperty;
+using android::init::property_set;
 using android::base::Trim;
 
 //Take care about 3gb ram
@@ -85,7 +86,7 @@ static void import_cmdline(const std::string& key,
     }
 }
 
-static void init_alarm_boot_properties()
+/*static void init_alarm_boot_properties()
 {
     char const *boot_reason_file = "/proc/sys/kernel/boot_reason";
     char const *power_off_alarm_file = "/persist/alarm/powerOffAlarmSet";
@@ -109,7 +110,7 @@ static void init_alarm_boot_properties()
          * 6 -> PON1 pin toggled (for secondary PMICs)
          * 7 -> CBLPWR_N pin toggled (for external power supply)
          * 8 -> KPDPWR_N pin toggled (power key pressed)
-         */
+         *
          if ((Trim(boot_reason) == "3" || reboot_reason == "true")
                  && Trim(power_off_alarm) == "1") {
              property_set("ro.alarm_boot", "true");
@@ -118,6 +119,7 @@ static void init_alarm_boot_properties()
          }
     }
 }
+*/
 
 void read_ramconfig()
 {
@@ -235,6 +237,6 @@ void vendor_load_properties()
 
     // init 
     read_ramconfig();
-    init_alarm_boot_properties();
+    //init_alarm_boot_properties();
     variant_properties();
 }

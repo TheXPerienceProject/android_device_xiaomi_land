@@ -20,7 +20,8 @@ include $(CLEAR_VARS)
 
 LOCAL_C_INCLUDES := \
     system/core/base/include \
-    system/core/init
+    system/core/init \
+	libselinux
 
 LOCAL_CFLAGS := -Wall
 

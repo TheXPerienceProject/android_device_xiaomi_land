@@ -250,13 +250,8 @@ PRODUCT_PACKAGES += \
 # Libshims
 PRODUCT_PACKAGES += \
     libshim_atomic \
-    libshims_ims \
     libshims_is_wifi_driver_loaded \
-    libshims_get_process_name \
-    libshim_camera \
-    libshims_camera \
-    libshim_camera \
-    libshims_sensor
+    libshims_get_process_name
 
 # Copy prebuilt libc - temp hack for camera till executable shimming is fixed
 PRODUCT_COPY_FILES += \

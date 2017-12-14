@@ -21,8 +21,8 @@
 #include <utils/RefBase.h>
 #include <utils/Looper.h>
 #include <utils/Timers.h>
-#include <sensor/Sensor.h>
-#include <sensor/SensorEventQueue.h>
+#include "../Sensor.h"
+#include "../SensorEventQueue.h""
 #include <poll.h>
 using android::sp;
 using android::Sensor;
