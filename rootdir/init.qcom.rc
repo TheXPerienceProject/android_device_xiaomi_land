@@ -668,7 +668,7 @@ service fps_hal /vendor/bin/hw/android.hardware.biometrics.fingerprint@2.0-servi
     disabled
 
 service gx_fpd /system/bin/gx_fpd
-    class core
+    class late_start
     user root
     group system system
     oneshot
@@ -680,13 +680,17 @@ on property:persist.sys.fp.vendor=switchf
     start fingerprintd
     start biometric_hal
     setprop ro.boot.fpsensor fpc
-    setprop ro.hardware.fingerprint searchf
-    setprop persist.sys.fp.onstart=1
 
 on property:persist.sys.fp.vendor=goodix
     setprop ro.boot.fpsensor gdx
-    setprop ro.hardware.fingerprint goodix
-    setprop persist.sys.fp.onstart=0
+
+on property:ro.boot.fpsensor=fpc
+    setprop persist.sys.fp.goodix 0
+    setprop ro.hardware.fingerprint fpc
+
+on property:ro.boot.fpsensor=gdx
+    setprop persist.sys.fp.goodix 1
+    setprop ro.hardware.fingerprint gdx
 
 on property:persist.sys.fp.onstart=0
    start gx_fpd
@@ -694,6 +698,9 @@ on property:persist.sys.fp.onstart=0
 on property:persist.sys.fp.onstart=1
    start fingerprintd
    start biometric_hal
+
+on property:ro.boot.fpsensor=gdx
+    setprop ro.hardware.fingerprint goodix
 
 # Start camera server as daemon
 service qcamerasvr /system/bin/mm-qcamera-daemon
