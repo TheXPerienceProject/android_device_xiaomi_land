@@ -14,6 +14,14 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+[AID_QCOM_DIAG]
+value:2950
+
+[AID_RFS]
+value:2951
+
+[AID_RFS_SHARED]
+value:2952
 
 [system/vendor/bin/imsdatadaemon]
 user: AID_SYSTEM
