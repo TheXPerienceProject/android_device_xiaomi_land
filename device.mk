@@ -111,6 +111,10 @@ PRODUCT_COPY_FILES += \
     $(TOPDIR)frameworks/av/services/audiopolicy/config/r_submix_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/r_submix_audio_policy_configuration.xml \
     $(TOPDIR)frameworks/av/services/audiopolicy/config/usb_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/usb_audio_policy_configuration.xml
 
+# TEMP FIX
+PRODUCT_PACKAGES += \
+    android.hidl.base@1.0
+
 # Bluetooth HIDL
 PRODUCT_PACKAGES += \
     libbt-vendor \
