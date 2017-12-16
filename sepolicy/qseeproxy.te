@@ -1,0 +1,1 @@
+allow qseeproxy unlabeled:file rw_file_perms;

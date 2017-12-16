@@ -1,5 +1,4 @@
 allow init cameraserver:fd use;
-allow init firmware_file:dir rw_dir_perms;
 allow init graphics_device:chr_file write;
 allow init hal_camera_default:fd use;
 allow init ion_device:chr_file { ioctl write };
