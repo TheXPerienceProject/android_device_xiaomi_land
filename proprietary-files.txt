@@ -1327,11 +1327,9 @@ usr/keylayout/qpnp_pon.kl
 usr/keylayout/synaptics_dsx.kl
 usr/keylayout/synaptics_rmi4_i2c.kl
 
-# Keystore - from santoni (Redmi 4X)
-lib/hw/keystore.default.so|4fe3fd34eebf4cc6a68f16324fe26b0856db2d78
-lib64/hw/keystore.default.so|395e0c74b5c7a1d27fd8400745c8b4d792d2c5a6
-vendor/lib/hw/keystore.msm8937.so|2e93bba00f17931a02354f05ab83b25da4cc172a
-vendor/lib64/hw/keystore.msm8937.so|c3a99d799c53c153f4d7f3f758d60923b8c1cda5
+# Keystore - from OP3
+vendor/lib/hw/keystore.msm8996.so:vendor/lib/hw/keystore.msm8937.so|BD92D1CCBC294E6BCB0FDB4018749646D1BA0193
+vendor/lib64/hw/keystore.msm8996.so:vendor/lib64/hw/keystore.msm8937.so|ADE812BB2991C103F6AF397E9662460ED0E48D5F
 
 # Listen
 vendor/lib/hw/sound_trigger.primary.msm8937.so
