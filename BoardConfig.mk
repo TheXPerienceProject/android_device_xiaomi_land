@@ -247,5 +247,9 @@ WIFI_DRIVER_FW_PATH_STA := "sta"
 WIFI_DRIVER_FW_PATH_P2P := "p2p"
 WPA_SUPPLICANT_VERSION := VER_0_8_X
 
+#Device manifest
+DEVICE_MANIFEST_FILE := device/xiaomi/land/manifest.xml
+DEVICE_MATRIX_FILE := device/xiaomi/land/compatibility_matrix.xml
+
 # Inherit the proprietary files
 -include vendor/xiaomi/land/BoardConfigVendor.mk

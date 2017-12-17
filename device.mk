@@ -215,10 +215,6 @@ PRODUCT_PACKAGES += \
     libgnsspps \
     libcurl
 
-# HIDL Manifest
-PRODUCT_COPY_FILES += \
-$(LOCAL_PATH)/manifest.xml:system/vendor/manifest.xml
-
 #Healthd hal
 PRODUCT_PACKAGES += \
     android.hardware.health@1.0-impl \
