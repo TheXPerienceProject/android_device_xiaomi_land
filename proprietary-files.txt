@@ -24,7 +24,7 @@ vendor/lib/rfsa/adsp/libscveTextReco_skel.so
 #APTX HD
 lib/libaptX_encoder.so
 lib/libaptXHD_encoder.so
-vendor/lib/libaptX-1.0.0-rel-Android21-ARMv7A
+vendor/lib/libaptX-1.0.0-rel-Android21-ARMv7A.so
 vendor/lib/libaptXScheduler.so
 vendor/lib64/libaptX_encoder.so
 vendor/lib64/libaptXHD_encoder.so
@@ -98,7 +98,7 @@ vendor/etc/acdbdata/MTP/MTP_Hdmi_cal.acdb
 vendor/etc/acdbdata/MTP/MTP_Headset_cal.acdb
 vendor/etc/acdbdata/MTP/MTP_Speaker_cal.acdb
 vendor/etc/acdbdata/QRD/msm8952-sku2-snd-card/QRD_SKU2_Bluetooth_cal.acdb
-vendor/vendor/etc/acdbdata/QRD/msm8952-sku2-snd-card/QRD_SKU2_General_cal.acdb
+vendor/etc/acdbdata/QRD/msm8952-sku2-snd-card/QRD_SKU2_General_cal.acdb
 vendor/etc/acdbdata/QRD/msm8952-sku2-snd-card/QRD_SKU2_Global_cal.acdb
 vendor/etc/acdbdata/QRD/msm8952-sku2-snd-card/QRD_SKU2_Handset_cal.acdb
 vendor/etc/acdbdata/QRD/msm8952-sku2-snd-card/QRD_SKU2_Hdmi_cal.acdb
@@ -1119,7 +1119,6 @@ vendor/lib64/librpmb.so|aa4a8a24fcd64902d3553220f3f281ce6b5899a4
 vendor/lib64/libspl.so|
 vendor/lib64/libsecureui.so|
 vendor/lib64/libsecureui_svcsock.so|
-vendor/lib64/libsecureuisvc_jni.so|215e58171abf0e1b6590b04dd0ae7c5367dcea70
 vendor/lib64/libssd.so|
 vendor/lib64/libtzdrmgenprov.so|28476f814435420885c4b9551e88b016e9705c54
 
@@ -1280,10 +1279,8 @@ vendor/lib/libsdmextension.so
 vendor/lib/libtinyxml2_1.so
 vendor/lib/libOpenCL.so|e1f8c3fdb58fa9fbb1465d909e9ab7ba31176bd6
 vendor/lib/libllvd_smore.so|d08432b63c6c2863e7a197b52475df64b10b5e13
-vendor/lib/libmmQSM.so|3dc219d481787eb83eb466bed2eec4c3c5d93eda
 vendor/lib/libsc-a2xx.so|870dbba41c95cf953b4a595e8ddab4f4d601b1e8
 vendor/lib/libsc-a3xx.so|fa5c08102b8992a9e0b8b3dbf297abcde14815b4
-vendor/lib/libscale.so|332ecf4be8a221e8640177efbbc04cd1d3289a36
 #new
 vendor/lib64/egl/eglSubDriverAndroid.so|
 vendor/lib64/egl/libEGL_adreno.so|
@@ -1338,9 +1335,7 @@ vendor/lib64/egl/libRBGLESv2_adreno.so|ab6df3f7a06e2a1054af403e627ea602975abc2e
 vendor/lib64/libmm-dspp-utils.so|a7fef8a5ffe702bd9b3e4a92a2be722c4129f492
 vendor/lib64/libmm-hdcpmgr.so|4720542bc83883b643607f95b0c043e18c6d75ca
 vendor/lib64/libmm-qdcm-diag.so|017085dcb44e25f7e7ae76dca03b830d74103264
-vendor/lib64/libmmQSM.so|4322558d2894869a73a616e472c27f4fc310b95f
 vendor/lib64/libsc-a3xx.so|a19f5458656c9ba1d8c461ed492b8d13627ae7f7
-vendor/lib64/libscale.so|f4ac0c0cdefa29e938f450c00cde02877c7f33cf
 vendor/lib64/libuiblur.so|4b3fabf5ded7c4af531abde681676fc5e9248494
 
 # Graphics firmware
@@ -1423,7 +1418,6 @@ vendor/lib64/libOmxEvrcDec.so|7b732a2d5712b495752df88f12815c63ba0d2e4c
 vendor/lib64/libOmxMux.so|a0bcd4bf81649e9cd6191fb1b56e94c5d72433a7
 vendor/lib64/libOmxQcelp13Dec.so|05076719b67291caf83cf0312d01077df6908eb4
 vendor/lib64/libOmxWmaDec.so|524a82675bcdbffed9f81c83e97dea2691d311dc
-vendor/lib/libHevcSwDecoder.so|0972a49766ea1b4f9f3e734c1e3a6aa27910cc09
 vendor/media/LMspeed_508.emd
 vendor/media/PFFprec_600.emd
 
