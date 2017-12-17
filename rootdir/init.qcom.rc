@@ -33,6 +33,8 @@ on early-init
     mkdir /system 0777 root root
     symlink /data/tombstones /tombstones
     mkdir /dsp 0771 media media
+    chown root system /dev/kmsg
+    chmod 0620 /dev/kmsg
 
     mount debugfs debugfs /sys/kernel/debug
     chmod 0755 /sys/kernel/debug
@@ -48,6 +50,12 @@ on init
 
     write /sys/module/qpnp_rtc/parameters/poweron_alarm 1
 
+    # Create directory used for display
+    mkdir /persist/display 0770 system graphics
+
+    # Create vpp directory
+    mkdir /persist/vpp 0770 media media
+
     # Wifi firmware reload path
     chown wifi wifi /sys/module/wlan/parameters/fwpath
 
@@ -59,6 +67,9 @@ on fs
 
     mkdir /persist/data 0700 system system
     restorecon_recursive /persist
+    
+    wait /dev/block/bootdevice/by-name/dsp
+    restorecon_recursive   /dsp
 
 on post-fs
     start qseecomd
@@ -85,6 +96,14 @@ on post-fs-data
     mkdir /data/misc/stargate/bg_estimation 0770 system system
     mkdir /data/misc/stargate/calib_test 0770 system system
     mkdir /data/misc/stargate/database 0770 system system
+
+    # Create directory used by media clients
+    mkdir /data/vendor/media 0770 mediacodec media
+
+    mkdir /data/vendor/misc 01771 system system
+
+    # Create directory used by display clients
+    mkdir /data/vendor/display 0770 system graphics
 
     # Create directory for TZ Apps
     mkdir /data/misc/qsee 0770 system system
@@ -182,10 +201,13 @@ on post-fs-data
     mkdir /data/time/ 0700 system system
 
     mkdir /data/audio/ 0770 media audio
+    mkdir /data/vendor/audio/ 0770 media audio
 
     # Create a folder for audio delta files
     mkdir /data/audio/acdbdata 0770 media audio
     mkdir /data/audio/acdbdata/delta 0770 media audio
+    mkdir /data/vendor/audio/acdbdata 0770 media audio
+    mkdir /data/vendor/audio/acdbdata/delta 0770 media audio
 
     setprop vold.post_fs_data_done 1
 
@@ -252,6 +274,21 @@ on early-boot
     write /sys/kernel/boot_slpi/boot 1
 
     # Graphics
+    chown system graphics /sys/class/graphics/fb1/hpd
+    chmod 0664 /sys/class/graphics/fb1/hpd
+    chown system graphics /sys/class/graphics/fb1/res_info
+    chmod 0664 /sys/class/graphics/fb1/res_info
+    chown system graphics /sys/class/graphics/fb1/video_mode
+    chmod 0664 /sys/class/graphics/fb1/video_mode
+    chown system graphics /sys/class/graphics/fb1/cec/enable
+    chmod 0664 /sys/class/graphics/fb1/cec/enable
+    chown system graphics /sys/class/graphics/fb1/cec/logical_addr
+    chmod 0664 /sys/class/graphics/fb1/cec/logical_addr
+    chown system graphics /sys/class/graphics/fb1/cec/rd_msg
+    chmod 0664 /sys/class/graphics/fb1/cec/rd_msg
+    chown system graphics /sys/class/graphics/fb1/cec/wr_msg
+    chmod 0600 /sys/class/graphics/fb1/cec/wr_msg
+
     chown system graphics /sys/class/graphics/fb0/idle_time
     chmod 0664 /sys/class/graphics/fb0/idle_time
     chown system graphics /sys/class/graphics/fb0/dynamic_fps
@@ -636,6 +673,11 @@ service wfdservice /system/bin/wfdservice
     disabled
     oneshot
 
+service cnd /system/vendor/bin/cnd
+    class main
+    user system
+    group system wifi inet radio wakelock net_admin
+
 service qseeproxydaemon /system/vendor/bin/qseeproxydaemon
     class late_start
     user system
@@ -648,14 +690,6 @@ service poweroffhandler /system/bin/poweroffhandler
     group graphics audio
     disabled
     oneshot
-    
-service fingerprintd /system/bin/fingerprintd
-    class late_start
-    socket fpce stream 0666 system system
-    user system
-    group system sdcard_rw
-    system system
-    disabled
 
 service biometric_hal /vendor/bin/hw/android.hardware.biometrics.fingerprint@2.1-service
     # "class hal" causes a race condition on some devices due to files created
