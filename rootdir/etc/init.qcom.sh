@@ -332,6 +332,13 @@ else
     prev_version_info=""
 fi
 
+if [ -f /data/vendor/misc/radio/ver_info.txt ]; then
+    prev_version_info=`cat /data/vendor/misc/radio/ver_info.txt`
+else
+    prev_version_info=""
+fi
+
+
 cur_version_info=`cat /firmware/verinfo/ver_info.txt`
 if [ "$prev_version_info" != "$cur_version_info" ]; then
     rm -rf /data/misc/radio/modem_config
