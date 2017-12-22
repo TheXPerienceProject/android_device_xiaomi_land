@@ -1,4 +1,13 @@
 <manifest version="1.0" type="device">
+    <hal format="hidl">
+        <name>android.hardware.camera.provider</name>
+        <transport arch="32+64">passthrough</transport>
+        <version>2.4</version>
+        <interface>
+            <name>ICameraProvider</name>
+            <instance>legacy/0</instance>
+        </interface>
+    </hal>
      <hal format="hidl">
         <name>android.hardware.renderscript</name>
         <transport arch="32+64">passthrough</transport>
@@ -6,6 +15,16 @@
         <interface>
             <name>IDevice</name>
             <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl">
+        <name>android.hardware.gnss</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>IGnss</name>
+            <instance>default</instance>
+            <instance>gnss_vendor</instance>
         </interface>
     </hal>
     <hal format="hidl">
@@ -98,6 +117,15 @@
         </interface>
     </hal>
     <hal format="hidl">
+        <name>com.qualcomm.qti.uceservice</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>IUceService</name>
+            <instance>com.qualcomm.qti.uceservice</instance>
+        </interface>
+    </hal>
+    <hal format="hidl">
         <name>vendor.qti.gnss</name>
         <transport>hwbinder</transport>
         <version>1.0</version>
@@ -131,6 +159,17 @@
         <interface>
             <name>IServer</name>
             <instance>cnd</instance>
+        </interface>
+    </hal>
+	<!--radio-->
+    <hal format="hidl">
+        <name>vendor.qti.hardware.radio.am</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>IQcRilAudio</name>
+            <instance>slot1</instance>
+            <instance>slot2</instance>
         </interface>
     </hal>
     <hal format="hidl">
@@ -222,6 +261,15 @@
             <instance>uimRemoteServer1</instance>
         </interface>
     </hal>
+    <hal format="hidl">
+        <name>vendor.qti.imsrtpservice</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>IRTPService</name>
+            <instance>imsrtpservice</instance>
+        </interface>
+    </hal>
     <!--usb-->
     <hal format="hidl">
         <name>android.hardware.usb</name>
@@ -292,6 +340,15 @@
         </interface>
     </hal>
     <hal format="hidl">
+        <name>android.hardware.ir</name>
+        <transport arch="32+64">passthrough</transport>
+        <version>1.0</version>
+        <interface>
+            <name>IConsumerIr</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl">
         <name>android.hardware.gatekeeper</name>
         <transport>hwbinder</transport>
         <version>1.0</version>
@@ -306,6 +363,15 @@
         <version>3.0</version>
         <interface>
             <name>IKeymasterDevice</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl">
+        <name>android.hardware.light</name>
+        <transport arch="32+64">passthrough</transport>
+        <version>2.0</version>
+        <interface>
+            <name>ILight</name>
             <instance>default</instance>
         </interface>
     </hal>
