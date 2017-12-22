@@ -118,7 +118,7 @@ PRODUCT_COPY_FILES += \
 # Dummy hidl + hidl manager
 PRODUCT_PACKAGES += \
     android.hidl.base@1.0 \
-	android.hidl.manager@1.0-java
+	android.hidl.manager-V1.0-java
 
 # Bluetooth HIDL
 PRODUCT_PACKAGES += \
