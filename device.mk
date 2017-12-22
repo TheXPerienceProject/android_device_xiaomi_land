@@ -269,9 +269,7 @@ PRODUCT_PACKAGES += \
 
 # Libshims
 PRODUCT_PACKAGES += \
-    libshim_atomic \
-    libshims_is_wifi_driver_loaded \
-    libshims_get_process_name
+    libshim_atomic
 
 # Lights
 PRODUCT_PACKAGES += \
@@ -347,8 +345,7 @@ PRODUCT_PACKAGES += \
     libcnefeatureconfig \
     librmnetctl \
     libprotobuf-cpp-full \
-    libxml2 \
-    rild_socket
+    libxml2
 
 # Seccomp policy
 PRODUCT_COPY_FILES += \

@@ -17,6 +17,9 @@
 [AID_QCOM_DIAG]
 value:2950
 
+[AID_QTI_DIAG]
+value:2901
+
 [AID_RFS]
 value:2951
 

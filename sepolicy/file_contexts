@@ -21,6 +21,8 @@
 /persist/data/gxfp                          u:object_r:gx_fpd_data_file:s0
 #sys/devices/soc/soc:goodix_fp/goodix_fp 
 
+/(vendor|system/vendor)/bin/hw/android\.hardware\.biometrics\.fingerprint@2\.0-service-custom                 u:object_r:fps_hal_exec:s0
+
 # Block devices
 /dev/block/bootdevice/by-name/persist		u:object_r:persist_block_device:s0
 
@@ -34,5 +36,12 @@
 /vendor/bin/ims_rtp_daemon         u:object_r:ims_exec:s0
 /vendor/bin/imscmservice           u:object_r:imscm_exec:s0
 /vendor/bin/pm-service             u:object_r:per_mgr_exec:s0
-/vendor/bin/hw/android\.hardware\.drm@1\.0-service.widevine          u:object_r:hal_drm_widevine_exec:s0
+/vendor/bin/hw/android\.hardware\.drm@1\.0-service\.widevine          u:object_r:hal_drm_widevine_exec:s0
 /vendor/bin/qseecomd        u:object_r:tee_exec:s0
+
+#RIL Bluetooth
+/system/etc/init\.qcom\.sh           u:object_r:qti_init_shell_exec:s0
+/system/etc/init\.qcom\.bt\.sh          u:object_r:qti_init_shell_exec:s0
+/system/etc/init\.qcom\.usb\.sh         u:object_r:qti_init_shell_exec:s0
+
+/sys/kernel/debug/rmt_storage/rmts                              u:object_r:debugfs_rmts:s0

@@ -1,2 +1,4 @@
 allow dataservice_app cnd_socket:sock_file { open write };
 allow dataservice_app cnd:unix_stream_socket connectto;
+
+set_prop(dataservice_app, diag_prop);

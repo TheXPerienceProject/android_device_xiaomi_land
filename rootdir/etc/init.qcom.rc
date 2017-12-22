@@ -40,7 +40,6 @@ on early-init
     chmod 0755 /sys/kernel/debug
 
 on init
-#    export LD_SHIM_LIBS "/system/vendor/lib64/lib-imsvt.so|libshims_ims.so:/system/vendor/lib64/libizat_core.so|libshims_get_process_name.so:/system/vendor/lib64/libril-qc-qmi-1.so|rild_socket.so"
 
     # Set permissions for persist partition
     mkdir /persist 0771 root system
@@ -93,6 +92,7 @@ on post-fs-data
     mkdir /persist/qti_fp 0700 system system
     mkdir /data/misc/seemp 0700 system system
     mkdir /data/misc/audio_pp 0771 media audio
+
 
     #Create directories for Fingerprint
     mkdir /data/misc/stargate 0770 system system
@@ -153,9 +153,6 @@ on post-fs-data
     chown dhcp dhcp /data/misc/dhcp
 
     #create netmgr log dir "legacy"
-    mkdir /data/misc/netmgr 0770 radio radio
-    chmod 0770 /data/misc/netmgr
-    #new
     mkdir /data/vendor/netmgr 0770 radio radio
     chmod 0770 /data/vendor/netmgr
 
@@ -218,14 +215,7 @@ on post-fs-data
     # Mark wifi driver as unloaded - "ok" indicates loaded
     setprop wlan.driver.status not_ok
 
-    #Create directories for Location services "maintain legacy for now"
-    mkdir /data/misc/location 0770 gps gps
-    mkdir /data/misc/location/mq 0770 gps gps
-    mkdir /data/misc/location/xtwifi 0770 gps gps
-    mkdir /data/misc/location/gpsone_d 0770 system gps
-    mkdir /data/misc/location/quipc 0770 gps system
-    mkdir /data/misc/location/gsiff 0770 gps gps
-    #O
+    #Create directories for Location services 
     mkdir /data/vendor/location 0770 gps gps
     mkdir /data/vendor/location/mq 0770 gps gps
     mkdir /data/vendor/location/xtwifi 0770 gps gps
@@ -293,13 +283,6 @@ on post-fs-data
     chown radio radio /data/vendor/radio/db_check_done
     chmod 0660 /data/vendor/radio/db_check_done
 
-    # qti-logkit data legacy
-    mkdir /data/misc/qti-logkit/ 0771 system system
-    mkdir /data/misc/qti-logkit/shared-privileged/ 2770 system system
-    mkdir /data/misc/qti-logkit/shared-public/ 2770 system oem_2950
-    mkdir /data/misc/qti-logkit/socket-privileged/ 2770 system system
-    mkdir /data/misc/qti-logkit/socket-public/ 2750 system oem_2950
-    mkdir /data/misc/qti-logkit/logdata/ 2750 system shell
     # qti-logkit data
     mkdir /data/vendor/qti-logkit/ 0771 system system
     mkdir /data/vendor/qti-logkit/shared-privileged/ 2770 system system
@@ -420,35 +403,10 @@ on boot
 
     chmod 0444 /sys/devices/platform/msm_hsusb/gadget/usb_state
 
-    #For bridgemgr daemon to inform the USB driver of the correct transport
-    chown radio radio /sys/class/android_usb/f_rmnet_smd_sdio/transport
-
 #   Assign TCP buffer thresholds to be ceiling value of technology maximums
 #   Increased technology maximums should be reflected here.
     write /proc/sys/net/core/rmem_max  8388608
     write /proc/sys/net/core/wmem_max  8388608
-
-    #To allow interfaces to get v6 address when tethering is enabled
-    write /proc/sys/net/ipv6/conf/rmnet0/accept_ra 2
-    write /proc/sys/net/ipv6/conf/rmnet1/accept_ra 2
-    write /proc/sys/net/ipv6/conf/rmnet2/accept_ra 2
-    write /proc/sys/net/ipv6/conf/rmnet3/accept_ra 2
-    write /proc/sys/net/ipv6/conf/rmnet4/accept_ra 2
-    write /proc/sys/net/ipv6/conf/rmnet5/accept_ra 2
-    write /proc/sys/net/ipv6/conf/rmnet6/accept_ra 2
-    write /proc/sys/net/ipv6/conf/rmnet7/accept_ra 2
-    write /proc/sys/net/ipv6/conf/rmnet_sdio0/accept_ra 2
-    write /proc/sys/net/ipv6/conf/rmnet_sdio1/accept_ra 2
-    write /proc/sys/net/ipv6/conf/rmnet_sdio2/accept_ra 2
-    write /proc/sys/net/ipv6/conf/rmnet_sdio3/accept_ra 2
-    write /proc/sys/net/ipv6/conf/rmnet_sdio4/accept_ra 2
-    write /proc/sys/net/ipv6/conf/rmnet_sdio5/accept_ra 2
-    write /proc/sys/net/ipv6/conf/rmnet_sdio6/accept_ra 2
-    write /proc/sys/net/ipv6/conf/rmnet_sdio7/accept_ra 2
-    write /proc/sys/net/ipv6/conf/rmnet_usb0/accept_ra 2
-    write /proc/sys/net/ipv6/conf/rmnet_usb1/accept_ra 2
-    write /proc/sys/net/ipv6/conf/rmnet_usb2/accept_ra 2
-    write /proc/sys/net/ipv6/conf/rmnet_usb3/accept_ra 2
 
     # To prevent out of order acknowledgements from making
     # connection tracking to treat them as not belonging to
@@ -574,7 +532,7 @@ service dpmd /system/bin/dpmd
     socket dpmd stream 660 root system
     group system readproc
 
-service irsc_util /system/vendor/bin/irsc_util "/vendor/etc/sec_config"
+service irsc_util /vendor/bin/irsc_util "/vendor/etc/sec_config"
     class core
     user root
     oneshot
@@ -582,6 +540,8 @@ service irsc_util /system/vendor/bin/irsc_util "/vendor/etc/sec_config"
 service rmt_storage /vendor/bin/rmt_storage
     class core
     user root
+    shutdown critical
+    ioprio rt 0
     group wakelock
 
 service tftp_server /vendor/bin/tftp_server
@@ -616,10 +576,9 @@ on property:hw.fm.init=0
 on property:hw.fm.init=1
      write /sys/module/radio_iris_transport/parameters/fmsmd_set 1
 
-service netmgrd /vendor/bin/netmgrd
+service netmgrd /system/vendor/bin/netmgrd
     class main
-    group system wakelock
-#    writepid /dev/cpuset/system-background/tasks
+    writepid /dev/cpuset/system-background/tasks
 
 service ipacm-diag /system/vendor/bin/ipacm-diag
     class main
@@ -637,14 +596,12 @@ service ipacm /system/vendor/bin/ipacm
 service qti /system/vendor/bin/qti
     class main
     user radio
-    group radio net_raw diag oem_2950 usb net_admin
-#    writepid /dev/cpuset/system-background/tasks
+    group radio net_raw diag usb net_admin
 
 service sensors /system/vendor/bin/sensors.qcom
     class core
     user root
     group root
-#    writepid /dev/cpuset/system-background/tasks
 
 # Adjust socket buffer to enlarge TCP receive window for high bandwidth (e.g. DO-RevB)
 # but only if ro.data.large_tcp_window_size property is set.
@@ -670,19 +627,19 @@ service wpa_supplicant /system/vendor/bin/hw/wpa_supplicant \
 service loc_launcher /system/vendor/bin/loc_launcher
     #loc_launcher will start as root and set its uid to gps
     class late_start
-    group gps inet diag oem_2950 wifi
+    group gps inet diag wifi
 
 service qcom-sh /system/bin/sh /init.qcom.sh
     class late_start
     user root
     oneshot
 
-service ril-daemon1 /vendor/bin/hw/rild -c 2
+service ril-daemon2 /system/vendor/bin/hw/rild -c 2
     class main
     socket rild2 stream 660 root radio
     socket rild-debug2 stream 660 radio system
     user radio
-    group radio cache inet misc audio sdcard_r sdcard_rw diag oem_2950 log
+    group radio cache inet misc audio sdcard_r sdcard_rw diag oem_2901 log
     capabilities BLOCK_SUSPEND NET_ADMIN NET_RAW
 
 service usb_uicc_enable /system/bin/sh /system/etc/init.qcom.uicc.sh
@@ -844,6 +801,44 @@ service wcnss-service /system/bin/wcnss_service
     group system wifi radio
     oneshot
 
+#IMS
+service imsqmidaemon /system/vendor/bin/imsqmidaemon
+      class main
+      user system
+      socket ims_qmid stream 0660 system radio
+      group radio log diag
+      writepid /dev/cpuset/system-background/tasks
+
+service imsdatadaemon /system/vendor/bin/imsdatadaemon
+      class main
+      user system
+      socket ims_datad stream 0660 system radio
+      group system wifi radio inet log diag
+      writepid /dev/cpuset/system-background/tasks
+      disabled
+
+on property:vendor.ims.QMI_DAEMON_STATUS=1
+      start imsdatadaemon
+
+service ims_rtp_daemon /system/vendor/bin/ims_rtp_daemon
+     class main
+     user system
+     group radio diag inet log
+     writepid /dev/cpuset/system-background/tasks
+     disabled
+
+service imsrcsservice /system/vendor/bin/imsrcsd
+     class main
+     user system
+     group radio diag inet log
+     writepid /dev/cpuset/system-background/tasks
+     disabled
+
+on property:vendor.ims.DATA_DAEMON_STATUS=1
+   start ims_rtp_daemon
+   start imsrcsservice
+
+#IMS
 service ppd /system/vendor/bin/mm-pp-dpps
     class late_start
     disabled
@@ -888,16 +883,20 @@ service adsprpcd /system/vendor/bin/adsprpcd
     user media
     group media
 
+#Start up peripheral manager
 service per_mgr /system/vendor/bin/pm-service
     class core
     user system
     group system net_raw
+    ioprio rt 4
+    writepid /dev/cpuset/system-background/tasks
 
 service per_proxy /system/vendor/bin/pm-proxy
     class core
     user system
     group system
     disabled
+    writepid /dev/cpuset/system-background/tasks
 
 on property:init.svc.per_mgr=running
     start per_proxy
