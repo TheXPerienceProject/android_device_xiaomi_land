@@ -1,0 +1,2 @@
+allow fps_hal sysfs:dir { read open write };
+allow fps_hal fpc_sysfs:file { write open read  };

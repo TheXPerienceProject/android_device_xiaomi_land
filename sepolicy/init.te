@@ -31,3 +31,4 @@ allow init uio_device:chr_file write;
 allow init vfat:file { getattr open read };
 allow init video_device:chr_file { ioctl write };
 allow init vndbinder_device:chr_file { open read write ioctl };
+allow init wcnss_device:chr_file { open read write };
