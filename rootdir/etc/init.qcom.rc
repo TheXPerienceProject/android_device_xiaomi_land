@@ -65,6 +65,7 @@ on fs
     mount_all /vendor/etc/fstab.qcom
 
     mkdir /persist/data 0700 system system
+    mkdir /persist/bms 0700 root system
     restorecon_recursive /persist
     
     wait /dev/block/bootdevice/by-name/dsp
@@ -139,6 +140,27 @@ on post-fs-data
     mkdir /data/misc/bluetooth 0770 bluetooth bluetooth
     mkdir /data/vendor/bluetooth 0770 bluetooth bluetooth
     mkdir /data/vendor/ramdump/bluetooth 0770 bluetooth bluetooth
+
+#Start up peripheral manager
+service per_mgr /system/vendor/bin/pm-service
+    class core
+    user system
+    group system net_raw
+    ioprio rt 4
+    writepid /dev/cpuset/system-background/tasks
+
+service per_proxy /system/vendor/bin/pm-proxy
+    class core
+    user system
+    group system
+    disabled
+    writepid /dev/cpuset/system-background/tasks
+
+on property:init.svc.per_mgr=running
+    start per_proxy
+
+on property:sys.shutdown.requested=*
+    stop per_proxy
 
     # Create the directories used by the Wireless subsystem
     mkdir /data/vendor/wifi 0770 wifi wifi
@@ -261,11 +283,6 @@ on post-fs-data
     #IOP OReo
     mkdir /data/vendor/iop 0770 root system
 
-    # Mark the copy complete flag to not completed
-    write /data/misc/radio/copy_complete 0
-    chown radio radio /data/misc/radio/copy_complete
-    chmod 0660 /data/misc/radio/copy_complete
-    
     # Mark the copy complete flag to not completed oreo blob needed
     write /data/vendor/radio/copy_complete 0
     chown radio radio /data/vendor/radio/copy_complete
@@ -629,7 +646,7 @@ service loc_launcher /system/vendor/bin/loc_launcher
     class late_start
     group gps inet diag wifi
 
-service qcom-sh /system/bin/sh /init.qcom.sh
+service qcom-sh /system/bin/sh /system/etc/init.qcom.sh
     class late_start
     user root
     oneshot
@@ -882,27 +899,6 @@ service adsprpcd /system/vendor/bin/adsprpcd
     class main
     user media
     group media
-
-#Start up peripheral manager
-service per_mgr /system/vendor/bin/pm-service
-    class core
-    user system
-    group system net_raw
-    ioprio rt 4
-    writepid /dev/cpuset/system-background/tasks
-
-service per_proxy /system/vendor/bin/pm-proxy
-    class core
-    user system
-    group system
-    disabled
-    writepid /dev/cpuset/system-background/tasks
-
-on property:init.svc.per_mgr=running
-    start per_proxy
-
-on property:sys.shutdown.requested=*
-    stop per_proxy
 
 service hvdcp_opti /system/bin/hvdcp_opti
     class main
