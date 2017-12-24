@@ -45,3 +45,13 @@
 /system/etc/init\.qcom\.usb\.sh         u:object_r:qti_init_shell_exec:s0
 
 /sys/kernel/debug/rmt_storage/rmts                              u:object_r:debugfs_rmts:s0
+
+# DPM
+/(vendor|system/vendor)/bin/dpmd      u:object_r:dpmd_exec:s0
+
+# IMS
+/dev/socket/ims_rtpd                  u:object_r:ims_socket:s0
+/(vendor|system/vendor)/bin/imscmservice   u:object_r:imscm_exec:s0
+
+# QFP
+/data/misc/stargate(/.*)?             u:object_r:qfp-daemon_data_file:s0

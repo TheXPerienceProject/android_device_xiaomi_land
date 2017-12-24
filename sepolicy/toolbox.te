@@ -8,7 +8,12 @@ allow toolbox init:netlink_xfrm_socket { read write };
 allow toolbox init:unix_stream_socket connectto;
 allow toolbox netmgrd_data_file:file { read write };
 allow toolbox property_socket:sock_file write;
-allow toolbox self:capability net_admin;
+allow toolbox self:capability { net_admin dac_override };
 allow toolbox self:udp_socket { create ioctl };
 allow toolbox wifi_prop:file { getattr open read };
+allow toolbox vendor_radio_data_file:dir { write create setattr getattr add_name };
+allow toolbox vendor_radio_data_file:file { read open };
+allow toolbox vfat:file { open read };
+allow toolbox system_prop:property_service set;
 
+set_prop(toolbox, ctl_default_prop)

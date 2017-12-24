@@ -1,3 +1,4 @@
+allow init { domain -lmkd -crash_dump }:process noatsecure;
 allow init cameraserver:fd use;
 allow init graphics_device:chr_file write;
 allow init hal_camera_default:fd use;
@@ -29,6 +30,7 @@ allow init system_server:unix_stream_socket { read write };
 allow init tee_device:chr_file { write read open ioctl };
 allow init uio_device:chr_file write;
 allow init vfat:file { getattr open read };
+allow init vfat:dir { open read };
 allow init video_device:chr_file { ioctl write };
 allow init vndbinder_device:chr_file { open read write ioctl };
 allow init wcnss_device:chr_file { open read write };

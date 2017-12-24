@@ -230,6 +230,7 @@ TARGET_RELEASETOOLS_EXTENSIONS := device/qcom/common
 BOARD_SEPOLICY_DIRS += \
     $(DEVICE_PATH)/sepolicy
 include device/qcom/sepolicy/sepolicy.mk
+include device/qcom/sepolicy/legacy-sepolicy.mk
 
 # Time
 BOARD_USES_QC_TIME_SERVICES := true

@@ -611,12 +611,6 @@ service ipacm-diag /system/vendor/bin/ipacm-diag
     group radio diag
     writepid /dev/cpuset/system-background/tasks
 
-service ipacm /system/vendor/bin/ipacm
-    class main
-    user radio
-    group radio inet
-    writepid /dev/cpuset/system-background/tasks
-
 service qti /system/vendor/bin/qti
     class main
     user radio
@@ -658,12 +652,12 @@ service qcom-sh /system/bin/sh /system/etc/init.qcom.sh
     user root
     oneshot
 
-service ril-daemon2 /system/vendor/bin/hw/rild -c 2
+service ril-daemon1 /system/vendor/bin/hw/rild -c 2
     class main
     socket rild2 stream 660 root radio
     socket rild-debug2 stream 660 radio system
     user radio
-    group radio cache inet misc audio sdcard_r sdcard_rw diag oem_2901 log
+    group radio cache inet misc audio sdcard_r sdcard_rw diag oem_2901 log readproc wakelock
     capabilities BLOCK_SUSPEND NET_ADMIN NET_RAW
 
 service usb_uicc_enable /system/bin/sh /system/etc/init.qcom.uicc.sh
@@ -735,16 +729,6 @@ service poweroffhandler /system/bin/poweroffhandler
     group graphics audio
     disabled
     oneshot
-
-service fps_hal /vendor/bin/hw/android.hardware.biometrics.fingerprint@2.0-service-custom
-    # "class hal" causes a race condition on some devices due to files created
-    # in /data. As a workaround, postpone startup until later in boot once
-    # /data is mounted.
-    class late_start
-    socket fpce stream 0666 system system
-    user system
-    group system  sdcard_rw
-    disabled
 
 service gx_fpd /system/bin/gx_fpd
     class core
@@ -891,7 +875,6 @@ on property:init.svc.zygote=restarting
 on charger
     wait /dev/block/bootdevice/by-name/system
     mount ext4 /dev/block/bootdevice/by-name/system /system ro barrier=1
-    load_all_props
     setprop persist.sys.usb.config mass_storage
     setprop persist.sys.usb.config mass_storage
     start hvdcp_opti

@@ -3,3 +3,4 @@ allow zygote self:capability sys_nice;
 allow zygote debugfs_tracing:file { getattr open write };
 allow zygote input_device:dir r_dir_perms;
 allow zygote input_device:chr_file rw_file_perms;
+allow zygote cgroup:file create;
