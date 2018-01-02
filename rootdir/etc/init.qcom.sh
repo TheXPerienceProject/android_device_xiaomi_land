@@ -1,4 +1,4 @@
-#!/system/bin/sh
+#!/vendor/bin/sh
 # Copyright (c) 2009-2016, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
@@ -82,7 +82,7 @@ start_msm_irqbalance_8939()
 {
 	if [ -f /system/vendor/bin/msm_irqbalance ]; then
 		case "$platformid" in
-		    "239" | "293" | "294" | "295" | "304" | "313")
+		    "239" | "293" | "294" | "295" | "304")
 			start vendor.msm_irqbalance;;
 		esac
 	fi
@@ -91,12 +91,7 @@ start_msm_irqbalance_8939()
 start_msm_irqbalance()
 {
 	if [ -f /vendor/bin/msm_irqbalance ]; then
-		case "$platformid" in
-		    "317" | "324" | "325" | "326" | "345" | "346")
-			start vendor.msm_irqbalance;;
-		    "318" | "327")
-			start vendor.msm_irqbl_sdm630;;
-		esac
+		start vendor.msm_irqbalance
 	fi
 }
 
@@ -322,7 +317,6 @@ case "$emmc_boot"
     ;;
 esac
 
-
 #
 # Copy qcril.db if needed for RIL
 #
@@ -350,6 +344,10 @@ if [ ! -f /firmware/verinfo/ver_info.txt -o "$prev_version_info" != "$cur_versio
 fi
 cp /firmware/image/modem_pr/mbn_ota.txt /data/vendor/radio/modem_config
 chown radio.radio /data/vendor/radio/modem_config/mbn_ota.txt
+cp /firmware/image/modem_pr/mbn_oin.txt /data/vendor/radio/modem_config
+chown radio.radio /data/vendor/radio/modem_config/mbn_oin.txt
+cp /firmware/image/modem_pr/mbn_ogl.txt /data/vendor/radio/modem_config
+chown radio.radio /data/vendor/radio/modem_config/mbn_ogl.txt
 echo 1 > /data/vendor/radio/copy_complete
 
 # Create /persist/alarm if necessary
