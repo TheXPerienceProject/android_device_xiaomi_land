@@ -49,6 +49,7 @@ persist.service.btui.use_aptx=1
 persistent.bt.a2dp_offload_cap=sbc-aptx-aptXHD
 
 #Bluetooth
+bluetooth.hfp.client=1
 ro.bluetooth.dun=true 
 ro.bluetooth.hfp.ver=1.7 
 ro.bluetooth.sap=true 
