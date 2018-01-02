@@ -514,9 +514,9 @@ on boot
 on class_start:late_start
     write /proc/sys/net/ipv6/conf/default/accept_ra_defrtr 1
 
-    copy /system/vendor/qcril.db /data/misc/radio/qcril.db
-    chown radio radio /data/misc/radio/qcril.db
-    write /data/misc/radio/db_check_done 1
+	copy /system/vendor/radio/qcril_database/qcril.db /data/vendor/radio/qcril.db
+	chown radio radio /data/vendor/radio/qcril.db
+    write /data/vendor/radio/db_check_done 1
 
 
 service iop /vendor/bin/iop
@@ -674,12 +674,12 @@ service qcom-sh /vendor/bin/init.qcom.sh
     user root
     oneshot
 
-service ril-daemon1 /system/vendor/bin/hw/rild -c 2
+service ril-daemon2 /vendor/bin/hw/rild -c 2
     class main
     socket rild2 stream 660 root radio
     socket rild-debug2 stream 660 radio system
     user radio
-    group radio cache inet misc audio sdcard_r sdcard_rw diag oem_2901 log readproc wakelock
+    group radio cache inet misc audio sdcard_r sdcard_rw diag oem_2901 log
     capabilities BLOCK_SUSPEND NET_ADMIN NET_RAW
 
 service usb_uicc_enable /system/bin/sh /system/etc/init.qcom.uicc.sh

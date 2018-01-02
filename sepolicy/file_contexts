@@ -36,7 +36,6 @@
 /vendor/bin/ims_rtp_daemon         u:object_r:ims_exec:s0
 /vendor/bin/imscmservice           u:object_r:imscm_exec:s0
 /vendor/bin/pm-service             u:object_r:per_mgr_exec:s0
-/vendor/bin/hw/android\.hardware\.drm@1\.0-service\.widevine          u:object_r:hal_drm_widevine_exec:s0
 /vendor/bin/qseecomd        u:object_r:tee_exec:s0
 
 #RIL Bluetooth
