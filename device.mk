@@ -208,11 +208,15 @@ PRODUCT_PACKAGES += \
     android.hardware.gnss@1.0-impl-qti \
     android.hardware.gnss@1.0-service-qti
 
+# GPS
+PRODUCT_BOOT_JARS += \
+    com.qti.location.sdk
+
 PRODUCT_PACKAGES += \
     gps.msm8937 \
-    libcurl \
     libgnss \
-    libgnsspps
+    libgnsspps \
+    libcurl
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/gps/etc/flp.conf:system/vendor/etc/flp.conf \
@@ -413,9 +417,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/wifi/wpa_supplicant_overlay.conf:system/vendor/etc/wifi/wpa_supplicant_overlay.conf
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/wifi/fstman.ini:system/vendor/etc/wifi/fstman.ini \
-    $(LOCAL_PATH)/wifi/WCNSS_cfg.dat:system/etc/firmware/wlan/prima/WCNSS_cfg.dat \
-    $(LOCAL_PATH)/wifi/WCNSS_qcom_cfg.ini:system/vendor/etc/wifi/WCNSS_qcom_cfg.ini
+    $(LOCAL_PATH)/wifi/fstman.ini:system/vendor/etc/wifi/fstman.ini
 
 PRODUCT_PROPERTY_OVERRIDES += \
     wifi.interface=wlan0
