@@ -648,12 +648,12 @@ service qvop-daemon /vendor/bin/qvop-daemon
 on property:ro.data.large_tcp_window_size=true
     write /proc/sys/net/ipv4/tcp_adv_win_scale  2
 
-service wpa_supplicant /vendor/bin/hw/wpa_supplicant \
+service wpa_supplicant /system/vendor/bin/hw/wpa_supplicant \
     -ip2p0 -Dnl80211 -c/data/misc/wifi/p2p_supplicant.conf \
-    -I/vendor/etc/wifi/p2p_supplicant_overlay.conf -N \
+    -I/system/etc/wifi/p2p_supplicant_overlay.conf -N \
     -iwlan0 -Dnl80211 -c/data/misc/wifi/wpa_supplicant.conf \
-    -I/vendor/etc/wifi/wpa_supplicant_overlay.conf \
-    -O/data/misc/wifi/sockets -puse_p2p_group_interface=1 -dd \
+    -I/system/etc/wifi/wpa_supplicant_overlay.conf \
+    -O/data/misc/wifi/sockets -puse_p2p_group_interface=1 \
     -e/data/misc/wifi/entropy.bin -g@android:wpa_wlan0
 #   we will start as root and wpa_supplicant will switch to user wifi
 #   after setting up the capabilities required for WEXT
@@ -915,6 +915,12 @@ service hvdcp_opti /system/vendor/bin/hvdcp_opti
     class main
     user root
     group root
+
+service energy-awareness /system/vendor/bin/energy-awareness
+    class main
+    user root
+    group system
+    oneshot
 
 service mdtpd /system/vendor/bin/mdtpd
     class late_start
