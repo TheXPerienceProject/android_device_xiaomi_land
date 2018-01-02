@@ -29,9 +29,9 @@ vendor/lib/libaptXScheduler.so
 vendor/lib64/libaptX_encoder.so
 vendor/lib64/libaptXHD_encoder.so
 
-# Audio
-etc/drc/drc_cfg_5.1.txt
-etc/drc/drc_cfg_AZ.txt
+# Audio Redmi 3s (land) - OnePlus3T (Op3) - Xiaomi A1 (Tissot)
+vendor/etc/drc/drc_cfg_5.1.txt
+vendor/etc/drc/drc_cfg_AZ.txt
 vendor/etc/mixer_paths_skuk.xml
 vendor/etc/mixer_paths_wcd9306.xml
 vendor/etc/mixer_paths_wcd9326.xml
@@ -49,6 +49,7 @@ vendor/etc/sound_trigger_mixer_paths_wcd9335.xml
 vendor/etc/surround_sound_3mic/surround_sound_rec_AZ.cfg
 vendor/etc/surround_sound_3mic/surround_sound_rec_5.1.cfg
 lib/soundfx/libdirac.so|DE4161F0BB663C2E12EB55BD20676CF037A386DF
+lib/libDiracAPI_SHARED.so
 vendor/etc/audio_output_policy.conf
 vendor/etc/diracmobile.config
 vendor/lib/libacdb-fts.so|1EBCDD5BEE8FBD7E6B31608D3791D91B8F91EC22
@@ -1127,6 +1128,9 @@ vendor/lib64/libtzdrmgenprov.so|28476f814435420885c4b9551e88b016e9705c54
 -etc/qdcm_calib_data_ili9881c_HD720p_video_Tianma.xml
 -etc/qdcm_calib_data_nt35521s_HD720p_video_EBBG.xml
 
+# Energy
+vendor/bin/energy-awareness
+
 # Fingerprint
 bin/gx_fpcmd
 bin/gx_fpd
@@ -1325,7 +1329,7 @@ vendor/lib/hw/sound_trigger.primary.msm8937.so
 vendor/lib/libadpcmdec.so
 vendor/lib/libsmwrapper.so
 
-# Media - from santoni (Redmi 4X)
+# Media - from santoni (Redmi 4X)- xiaomi A1 (Tissot)
 etc/firmware/DE.o.msm8937
 lib/libOmxSwVdec.so|708449a8a7398b3340bd9dad2281060f93cdfff2
 lib/libOmxSwVencMpeg4.so|a5656b290b1a951eac5c29dab9c72593b0131590
@@ -1340,7 +1344,7 @@ vendor/lib/libApeSwDec.so|5185623c3ebc0c814d6339ec646a0757da6a49b4
 vendor/lib/libFlacSwDec.so|89c0b9af3d56cd73e07393f2c88ac657659ebf5c
 vendor/lib/libI420colorconvert.so|87e6014400b4878c4df3eb7ad6f9085010a2be99
 vendor/lib/libmm-color-convertor.so|1bc9d00c211d44f98541f98dd84776a83da7ac2c
-vendor/lib/libmmosal.so|354ac7af33b7ead6856161ac19d8c019c74732dc
+vendor/lib/libmmosal.so
 vendor/lib/libMpeg4SwEncoder.so|197bebfe233f137f1a80bca43a0f79c89f0af19f
 vendor/lib/libomx-dts.so|ad49ef05c67af4ed8b488d77992d7f76b2e66f85
 vendor/lib/libOmxAacDec.so|16ee07b6ef21ed96ca881a7a9648d1fc82a9c14a
@@ -1360,7 +1364,7 @@ vendor/lib64/libApeSwDec.so|edd347bf2e7fa68e4cd08afebf1e7af1372f7c7a
 vendor/lib64/libFlacSwDec.so|3029a270f91accb1ea9acd37cbdec6b30b5b6776
 vendor/lib64/libI420colorconvert.so|61b48cbccc5bf9396893f3ab7c3472a22462a766
 vendor/lib64/libmm-color-convertor.so|1dd6acb1f688dedac801fb1ea0e7a0f8fd8edde4
-vendor/lib64/libmmosal.so|5cea4b1a400385eb8e768d7b8e050feac5b32a91
+vendor/lib64/libmmosal.so
 vendor/lib64/libMpeg4SwEncoder.so|727bbbda760c94aec50ca7f1b0cb2798085dabc6
 vendor/lib64/libOmxAacDec.so|fa9b37f3e51f353a845238c0e58a48efc32e3398
 vendor/lib64/libOmxAlacDec.so|a3d4b7e0f867ab8ef49eae332ffb26f4e08cb944
@@ -1380,41 +1384,54 @@ vendor/lib/libwms.so
 vendor/lib64/libwms.so
 
 # Network
-
 vendor/lib/libconnctrl.so
 vendor/lib/libQtiTether.so
 vendor/lib64/libconnctrl.so
 vendor/lib64/libQtiTether.so
 
-# Perf
+#QMI Perf (TISSOT)
 bin/iop
 bin/msm_irqbalance
-lib64/libqti-iop.so
-lib64/libqti_performance.so
-lib/libqti_performance.so
+lib/vendor.qti.hardware.iop@1.0.so
+lib64/vendor.qti.hardware.iop@1.0.so
+lib/vendor.qti.hardware.perf@1.0.so
+lib64/vendor.qti.hardware.perf@1.0.so
+vendor/bin/hw/vendor.qti.hardware.iop@1.0-service
+vendor/bin/hw/vendor.qti.hardware.perf@1.0-service
 vendor/bin/perfd
 vendor/etc/msm_irqbalance.conf
+vendor/etc/init/vendor.qti.hardware.iop@1.0-service.rc
+vendor/etc/init/vendor.qti.hardware.perf@1.0-service.rc
+vendor/etc/perf/gamedwhitelist.xml
+vendor/etc/perf/perfboostsconfig.xml
+vendor/lib/hw/vendor.qti.hardware.iop@1.0-impl.so
+vendor/lib/libqti-iopd.so
+vendor/lib/libqti-iopd-client.so
 vendor/lib/libqc-opt.so
 vendor/lib/libqti-iop-client.so
 vendor/lib/libqti-perfd-client.so
+vendor/lib/vendor.qti.hardware.iop@1.0_vendor.so
+vendor/lib/vendor.qti.hardware.perf@1.0_vendor.so
+vendor/lib64/hw/vendor.qti.hardware.iop@1.0-impl.so
+vendor/lib64/libqti-iopd.so
+vendor/lib64/libqti-iopd-client.so
 vendor/lib64/libqc-opt.so
 vendor/lib64/libqti-at.so
 vendor/lib64/libqti-gt.so
 vendor/lib64/libqti-iop-client.so
 vendor/lib64/libqti-perfd-client.so
-
-#QMI Perf
+vendor/lib64/vendor.qti.hardware.iop@1.0_vendor.so
+vendor/lib64/vendor.qti.hardware.perf@1.0_vendor.so
 -framework/QPerformance.jar
 etc/permissions/com.qualcomm.qti.Performance.xml
-vendor/lib/libqti_performance.so
 
-# Peripheral manager
+# Peripheral manager Tissot
 vendor/bin/pm-proxy
 vendor/bin/pm-service
 vendor/lib/libperipheral_client.so
 vendor/lib64/libperipheral_client.so
 
-# Postprocessing
+# Postprocessing Tissot
 etc/permissions/com.qti.snapdragon.sdk.display.xml
 framework/com.qti.snapdragon.sdk.display.jar
 -vendor/app/colorservice/colorservice.apk
@@ -1422,8 +1439,7 @@ vendor/bin/mm-pp-dpps
 vendor/lib/libdisp-aba.so
 vendor/lib64/libdisp-aba.so
 
-# QMI
-# QMI
+# QMI OnePlus3T - Xiaomi A1 (Tissot)
 etc/permissions/qti_permissions.xml
 vendor/bin/irsc_util
 vendor/lib/libdiag.so
@@ -1459,7 +1475,7 @@ vendor/lib64/libqmi_encdec.so
 vendor/lib64/libqmiservices.so
 vendor/lib64/libsmemlog.so
 
-# Radio OnePlus3T OREO
+# Radio OnePlus3T OREO - Xiaomi A1 (Tissot)
 -app/SimSettings/SimSettings.apk
 -app/QtiTelephonyService/QtiTelephonyService.apk
 etc/permissions/qcnvitems.xml
@@ -1469,7 +1485,6 @@ etc/permissions/telephonyservice.xml
 -framework/qcnvitems.jar
 -framework/qcrilhook.jar
 -framework/qti-telephony-common.jar
--framework/telephony-ext.jar
 lib64/libparam.so
 -priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
 vendor/bin/hw/rild
@@ -1502,7 +1517,7 @@ vendor/lib64/libril-qc-radioconfig.so
 vendor/lib64/libril-qcril-hook-oem.so
 vendor/lib64/libril.so
 vendor/lib64/librilqmiservices.so
-vendor/lib64/libsettings.so|4609CACCA0A56DAE2596687C8F5F2F9423D4D0D9
+vendor/lib64/libsettings.so
 vendor/lib64/libsystem_health_mon.so
 vendor/lib64/vendor.qti.hardware.radio.am@1.0_vendor.so
 vendor/lib64/vendor.qti.hardware.radio.atcmdfwd@1.0_vendor.so
@@ -1515,7 +1530,7 @@ vendor/lib64/vendor.qti.hardware.radio.uim_remote_client@1.0_vendor.so
 vendor/lib64/vendor.qti.hardware.radio.uim_remote_server@1.0_vendor.so
 vendor/radio/qcril_database/qcril.db
 
-#Radio - IMS from OnePlus3T
+#Radio - IMS from OnePlus3T- Xiaomi A1 (Tissot)
 -app/ims/ims.apk
 -app/imssettings/imssettings.apk
 etc/permissions/qti-vzw-ims-internal.xml
@@ -1529,6 +1544,7 @@ lib/libdiag_system.so
 lib/libimscamera_jni.so
 lib/libimsmedia_jni.so
 lib/libqdMetaData.system.so
+lib/libqmi_cci_system.so
 lib/librcc.so
 lib/vendor.qti.imsrtpservice@1.0.so
 lib64/com.qualcomm.qti.imscmservice@1.0.so
@@ -1541,6 +1557,7 @@ lib64/libdiag_system.so
 lib64/libimscamera_jni.so
 lib64/libimsmedia_jni.so
 lib64/libqdMetaData.system.so
+lib64/libqmi_cci_system.so
 lib64/librcc.so
 lib64/vendor.qti.imsrtpservice@1.0.so
 vendor/bin/ims_rtp_daemon
@@ -1588,25 +1605,36 @@ etc/firmware/modem_config/S88537EC1/row_mcfg_sw.mbn
 lib/hw/consumerir.default.so
 lib64/hw/consumerir.default.so
 
-# Sensors - from op3 (Oneplus 3/3T)
-vendor/bin/sensors.qcom|164c7eb8f17115fec78b067b922b9e34b51282d8
+# Sensors - from op3 (Oneplus 3/3T) - Xiaomi A1 Tissot
+lib/libsensor_reg.so
+lib/libsensor_test.so
+lib/libsensor1.so
+lib64/libsensor_reg.so
+lib64/libsensor_test.so
+lib64/libsensor1.so
+vendor/bin/sensors.qcom
+vendor/framework/vendor.qti.hardware.sensorscalibrate-V1.0-java.jar
 vendor/lib/hw/activity_recognition.msm8953.so:vendor/lib/hw/activity_recognition.msm8937.so|a93ab9aa549c2ce5b9ba5b1b8d62a192a66a6c1a
-vendor/lib/libsensor1.so|d8d2f53a261c045d814e5a70ba1194c2f0075942
-vendor/lib/libsensor_reg.so|586cff9ab58b09be6b3632f422a55a7e264fe520
+vendor/lib/libsensor1.so
+vendor/lib/libsensor_reg.so
 vendor/lib/libsensor_thresh.so|8c64fb39d33fb743600a9aece5d4f8b5fa8358c9
-vendor/lib/libsensor_user_cal.so|0f274211bf092fbcfd68b0b65a5225c3371f410a
-vendor/lib/sensors.ssc.so|08f3823f5cf90ff4adc7a471509c5c0875ee061d
+vendor/lib/libsensor_user_cal.so
+vendor/lib/sensor_calibrate.so
+vendor/lib/sensors.ssc.so
+vendor/lib/vendor.qti.hardware.sensorscalibrate@1.0.so
 vendor/lib64/hw/activity_recognition.msm8953.so:vendor/lib64/hw/activity_recognition.msm8937.so|747cfeefc8e957d75f7b7e80f7842f8723413431
-vendor/lib64/libsensor1.so|4ecd556a15acefd3e7b17daa0af35ef071b29919
-vendor/lib64/libsensor_reg.so|f351d9d86c928a56c787e566aa5daf581fbc356d
+vendor/lib64/libsensor1.so
+vendor/lib64/libsensor_reg.so
 vendor/lib64/libsensor_thresh.so|33b33d000bc8d577463277a13c443b499b342980
-vendor/lib64/libsensor_user_cal.so|fe6fb4ae9388bf7b3cc6e98dd2b1c6426be1bb07
-vendor/lib64/sensors.ssc.so|f1cb1ce05b6a20f2346f75b4c671eb92e731624e
+vendor/lib64/libsensor_user_cal.so
+vendor/lib64/sensors.ssc.so
+vendor/lib64/sensor_calibrate.so
+vendor/lib64/vendor.qti.hardware.sensorscalibrate@1.0.so
 
 # Subsystem restart
 bin/ssr_diag
 
-# Thermal
+# Thermal Tissot
 vendor/bin/thermal-engine
 vendor/lib/libthermalclient.so
 vendor/lib64/libthermalclient.so
@@ -1637,6 +1665,8 @@ vendor/lib/libwvhidl.so|88276cfc0fcb8033ef69d61e6838ce915bfcf697
 bin/cnss-daemon
 bin/cnss_diag
 bin/wcnss_service
+vendor/bin/wcnss_filter
+vendor/bin/wcnss_service
 etc/firmware/wlan/prima/WCNSS_cfg.dat
 etc/hostapd/hostapd.accept
 etc/hostapd/hostapd_default.conf
@@ -1645,3 +1675,9 @@ etc/wifi/WCNSS_qcom_cfg.ini
 etc/wifi/fstman.ini
 etc/wifi/p2p_supplicant_overlay.conf
 etc/wifi/wpa_supplicant_overlay.conf
+
+#what?
+vendor/lib/libperfgluelayer.so
+vendor/lib/libqtigef.so
+vendor/lib64/libperfgluelayer.so
+vendor/lib64/libqtigef.so
