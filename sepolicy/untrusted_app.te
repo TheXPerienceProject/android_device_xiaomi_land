@@ -15,3 +15,6 @@ allow untrusted_app uicc_prop:file r_file_perms;
 allow untrusted_app vendor_rild_libpath_prop:file r_file_perms;
 allow untrusted_app wififtmd_prop:file r_file_perms;
 allow untrusted_app sysfs:file r_file_perms;
+
+#Google Cam
+allow untrusted_app camera_prop:file { getattr open };
