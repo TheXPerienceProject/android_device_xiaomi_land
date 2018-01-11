@@ -29,7 +29,10 @@ LOCAL_SRC_FILES := \
     src/mm_lib2d.c
 
 LOCAL_MODULE           := libmmlib2d_interface
+<<<<<<< HEAD
 LOCAL_PROPRIETARY_MODULE := true
+=======
+>>>>>>> parent of 2dd2cd2... Qamera2: Setting LOCAL_PROPRIETARY_MODULE to set output path of modules.
 LOCAL_PRELINK_MODULE   := false
 LOCAL_SHARED_LIBRARIES := libdl libcutils liblog
 LOCAL_MODULE_TAGS := optional
