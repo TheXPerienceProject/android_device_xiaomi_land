@@ -82,7 +82,6 @@ on fs
 
 on post-fs
     start qseecomd
-    swapon_all /vendor/etc/fstab.qcom
     write /proc/sys/vm/page-cluster 0
     write /proc/sys/vm/swappiness 100
     start qseecomd
@@ -540,6 +539,7 @@ service qcomsysd /system/bin/qcom-system-daemon
     group root oem_2950
 
 on property:sys.boot_completed=1
+    swapon_all /vendor/etc/fstab.qcom
     write /dev/kmsg "Boot completed "
     #WDSP FW boot sysfs node used by STHAL
     chown media audio /sys/kernel/wdsp0/boot
