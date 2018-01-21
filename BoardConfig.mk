@@ -241,6 +241,9 @@ BOARD_SEPOLICY_DIRS += \
 include device/qcom/sepolicy/sepolicy.mk
 include device/qcom/sepolicy/legacy-sepolicy.mk
 
+# Split selinux policy
+PRODUCT_FULL_TREBLE_OVERRIDE := true
+
 # Time
 BOARD_USES_QC_TIME_SERVICES := true
 
