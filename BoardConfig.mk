@@ -235,17 +235,23 @@ TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/recovery/fstab.qcom
 #TARGET_RECOVERY_UPDATER_LIBS := librecovery_updater_msm
 TARGET_RELEASETOOLS_EXTENSIONS := device/qcom/common
 
+# Root
+BOARD_ROOT_EXTRA_FOLDERS := dsp firmware persist
+
 # SELinux
 BOARD_SEPOLICY_DIRS += \
     $(DEVICE_PATH)/sepolicy
 include device/qcom/sepolicy/sepolicy.mk
 include device/qcom/sepolicy/legacy-sepolicy.mk
 
-# Split selinux policy
-PRODUCT_FULL_TREBLE_OVERRIDE := true
-
 # Time
 BOARD_USES_QC_TIME_SERVICES := true
+
+# Treble
+PRODUCT_FULL_TREBLE_OVERRIDE := true
+PRODUCT_COMPATIBILITY_MATRIX_LEVEL_OVERRIDE := 27
+DEVICE_MANIFEST_FILE := device/xiaomi/land/manifest.xml
+DEVICE_MATRIX_FILE := device/xiaomi/land/compatibility_matrix.xml
 
 # Wi-Fi
 BOARD_HAS_QCOM_WLAN := true
@@ -258,10 +264,6 @@ WIFI_DRIVER_FW_PATH_AP := "ap"
 WIFI_DRIVER_FW_PATH_STA := "sta"
 WIFI_DRIVER_FW_PATH_P2P := "p2p"
 WPA_SUPPLICANT_VERSION := VER_0_8_X
-
-#Device manifest
-DEVICE_MANIFEST_FILE := device/xiaomi/land/manifest.xml
-DEVICE_MATRIX_FILE := device/xiaomi/land/compatibility_matrix.xml
 
 # Inherit the proprietary files
 -include vendor/xiaomi/land/BoardConfigVendor.mk
