@@ -1,4 +1,7 @@
 allow vold proc_touchpanel:dir r_dir_perms;
 allow vold persist_file:dir r_dir_perms;
+allow vold block_device:blk_file getattr;
+allow vold cache_block_device:blk_file getattr;
+allow vold system_block_device:blk_file getattr;
 
 r_dir_file(vold, firmware_file)

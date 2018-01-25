@@ -1,5 +1,6 @@
 #============= radio ==============
 allow radio qmuxd_socket:sock_file write;
 allow radio qcom_ims_prop:property_service set;
+allow radio qcom_ims_prop:file { read open getattr };
 
 qmux_socket(radio)

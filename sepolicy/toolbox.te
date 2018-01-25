@@ -15,5 +15,6 @@ allow toolbox vendor_radio_data_file:dir { write create setattr getattr add_name
 allow toolbox vendor_radio_data_file:file { read open };
 allow toolbox vfat:file { open read };
 allow toolbox system_prop:property_service set;
+allow toolbox rmnet_mux_prop:file { open read getattr };
 
 set_prop(toolbox, ctl_default_prop)
