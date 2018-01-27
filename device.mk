@@ -162,6 +162,7 @@ PRODUCT_PACKAGES += \
     hwcomposer.msm8937 \
     libtinyxml \
     libgenlock \
+	libqdMetaData.system \
     memtrack.msm8937
 
 #Display HIDL
@@ -364,8 +365,9 @@ PRODUCT_COPY_FILES += \
 
 # Telephony packages
 PRODUCT_PACKAGES += \
-    telephony-ext
-#    ims-ext-common \
+    telephony-ext \
+    ims-ext-common \
+
 PRODUCT_BOOT_JARS += \
     telephony-ext
 
