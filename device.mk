@@ -119,7 +119,8 @@ PRODUCT_COPY_FILES += \
 # Dummy hidl + hidl manager
 PRODUCT_PACKAGES += \
     android.hidl.base@1.0 \
-	android.hidl.manager-V1.0-java
+    android.hidl.manager@1.0 \
+    android.hidl.manager-V1.0-java
 
 # Bluetooth HIDL
 PRODUCT_PACKAGES += \
@@ -160,9 +161,10 @@ PRODUCT_PACKAGES += \
     copybit.msm8937 \
     gralloc.msm8937 \
     hwcomposer.msm8937 \
+    libdisplayconfig \
     libtinyxml \
     libgenlock \
-	libqdMetaData.system \
+    libqdMetaData.system \
     memtrack.msm8937
 
 #Display HIDL
