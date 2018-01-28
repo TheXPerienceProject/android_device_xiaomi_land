@@ -446,9 +446,6 @@
     <!-- Operating volatage for bluetooth controller. 0 by default-->
     <integer translatable="false" name="config_bluetooth_operating_voltage_mv">3700</integer>
 
-    <!-- Flag indicating which package name can access the persistent data partition -->
-    <string name="config_persistentDataPackageName" translatable="false">com.google.android.gms</string>
-
     <!-- Flag specifying whether WFC over IMS is available on device -->
     <bool name="config_device_wfc_ims_available">true</bool>
 
@@ -476,9 +473,6 @@
         <item>"/system/framework/arm64/boot-core-libart.oat"</item>
         <item>"/system/framework/arm64/boot-core-libart.vdex"</item>
    </string-array>
-
-    <!-- True if camera app should be pinned via Pinner Service -->
-    <bool name="config_pinnerCameraApp">true</bool>
 
     <!-- Boolean indicating whether the HWC setColorTransform function can be performed efficiently
          in hardware. -->
