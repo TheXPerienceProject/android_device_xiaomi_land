@@ -44,7 +44,7 @@ on early-init
 
 on init
 
-    export LD_SHIM_LIBS /system/vendor/lib/libmmcamera2_imglib_modules.so|libshim_atomic.so:system/bin/mm-qcamera-daemon|libshims_camera.so
+    export LD_SHIM_LIBS /system/vendor/lib/libmmcamera2_imglib_modules.so|libshim_atomic.so:system/bin/mm-qcamera-daemon|libshim_qcamera.so:system/bin/mm-qcamera-daemon|libshim_camera.so
 
     # Set permissions for persist partition
     mkdir /persist 0771 root system
