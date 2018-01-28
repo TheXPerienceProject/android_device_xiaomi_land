@@ -7,6 +7,16 @@ void timespec_from_ms(timespec& ts, const int ms) {
   ts.tv_nsec = (ms % 1000) * 1000000;
 }
 
+void absolute_timespec_from_timespec(timespec& abs_ts, const timespec& ts, clockid_t clock) {
+  clock_gettime(clock, &abs_ts);
+  abs_ts.tv_sec += ts.tv_sec;
+  abs_ts.tv_nsec += ts.tv_nsec;
+  if (abs_ts.tv_nsec >= NS_PER_S) {
+    abs_ts.tv_nsec -= NS_PER_S;
+    abs_ts.tv_sec++;
+  }
+}
+
 bool timespec_from_absolute_timespec(timespec& ts, const timespec& abs_ts, clockid_t clock) {
   clock_gettime(clock, &ts);
   ts.tv_sec = abs_ts.tv_sec - ts.tv_sec;

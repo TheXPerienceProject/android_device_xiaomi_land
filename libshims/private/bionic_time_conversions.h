@@ -1,14 +1,6 @@
-#ifndef _BIONIC_TIME_CONVERSIONS_H
-#define _BIONIC_TIME_CONVERSIONS_H
-
 #include <time.h>
-#include <sys/cdefs.h>
 
-__BEGIN_DECLS
+void absolute_timespec_from_timespec(timespec& abs_ts, const timespec& ts,
+                                                     clockid_t clock);
 
-__LIBC_HIDDEN__ void timespec_from_ms(timespec& ts, const int ms);
-__LIBC_HIDDEN__ bool timespec_from_absolute_timespec(timespec& ts, const timespec& abs_ts, clockid_t clock);
-
-__END_DECLS
-
-#endif
+bool timespec_from_absolute_timespec(timespec& ts, const timespec& abs_ts, clockid_t clock);
