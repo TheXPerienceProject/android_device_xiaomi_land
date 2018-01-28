@@ -134,6 +134,7 @@ PRODUCT_PACKAGES += \
 	libmmcamera_interface \
     libmm-qcamera \
     libmmjpeg_interface \
+	libshims_camera \
     Snap
 
 # Camera HIDL HAL
