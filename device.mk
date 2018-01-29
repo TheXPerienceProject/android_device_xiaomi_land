@@ -347,11 +347,19 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.power@1.0-impl
 
+# RCS
+PRODUCT_PACKAGES += \
+    rcs_service_aidl \
+    rcs_service_aidl.xml \
+    rcs_service_api \
+    rcs_service_api.xml
+
 # RIL
 PRODUCT_PACKAGES += \
     libcnefeatureconfig \
     librmnetctl \
     libprotobuf-cpp-full \
+    libqdMetaData.system \
     libxml2
 
 # Seccomp policy
@@ -369,7 +377,7 @@ PRODUCT_COPY_FILES += \
 # Telephony packages
 PRODUCT_PACKAGES += \
     telephony-ext \
-    ims-ext-common \
+    ims-ext-common
 
 PRODUCT_BOOT_JARS += \
     telephony-ext
