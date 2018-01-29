@@ -131,11 +131,11 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     mm-qcamera-app \
     camera.msm8937 \
-	libmmcamera_interface \
+    libmmcamera_interface \
     libmm-qcamera \
     libmmjpeg_interface \
-	libshim_qcamera \
-	libshim_sensors \
+    libshim_qcamera \
+    libshim_sensors \
     Snap
 
 # Camera HIDL HAL
