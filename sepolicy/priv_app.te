@@ -6,3 +6,4 @@ allow priv_app proc_interrupts:file { read open };
 allow priv_app rfs_system_file:dir getattr;
 allow priv_app adsprpcd_file:filesystem getattr;
 allow priv_app system_app_data_file:dir getattr;
+allow priv_app camera_prop:file { read open getattr};
