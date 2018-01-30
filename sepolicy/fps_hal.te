@@ -5,7 +5,13 @@ allow fps_hal tee_device:chr_file { read write open ioctl };
 allow fps_hal vfat:file { read open getattr };
 allow fps_hal fingerprintd_data_file:dir { write add_name remove_name};
 allow fps_hal fingerprintd_data_file:file { rename unlink getattr};
+#allow fps_hal fingerprintd_service:service_manager add; we need to fix this issue with the custom biometrics this cause to not boot with enforced
+#E SELinux : avc:  denied  { add } for service=android.hardware.fingerprint.IFingerprintDaemon pid=608 uid=1000 scontext=u:r:fps_hal:s0 tcontext=u:object_r:fingerprintd_service:s0 tclass=service_manager permissive=0
+#E ServiceManager: add_service('android.hardware.fingerprint.IFingerprintDaemon',5) uid=1000 - PERMISSION DENIED
+#E biometrics.fingerprint@2.0-service-custom: Couldn't register biometrics.fingerprint@2.0-service-custom binder service!
+#E biometrics.fingerprint@2.0-service-custom: Start fingerprintd
 allow fps_hal hwservicemanager_prop:file { read open getattr };
+allow fps_hal hwservicemanager:binder { call transfer };
 allow fps_hal ion_device:chr_file { read open write ioctl };
 allow fps_hal uhid_device:chr_file { read open write ioctl };
 allow fps_hal storage_file:dir search;
@@ -16,3 +22,4 @@ allow fps_hal mnt_user_file:lnk_file read;
 allow fps_hal sdcardfs:dir search;
 allow fps_hal sdcardfs:file getattr;
 allow fps_hal media_rw_data_file:file getattr;
+allow fps_hal servicemanager:binder { call transfer };

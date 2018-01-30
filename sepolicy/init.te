@@ -1,4 +1,5 @@
 allow init { domain -lmkd -crash_dump }:process noatsecure;
+allow init adsprpcd_file:filesystem { relabelto relabelfrom associate };
 allow init cameraserver:fd use;
 allow init graphics_device:chr_file write;
 allow init hal_camera_default:fd use;

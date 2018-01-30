@@ -4,3 +4,4 @@ allow hwservicemanager init:file { read open };
 allow hwservicemanager fps_hal:dir { search read open };
 allow hwservicemanager fps_hal:file { read open };
 allow hwservicemanager fps_hal:process getattr;
+allow hwservicemanager fps_hal:binder { call transfer };
