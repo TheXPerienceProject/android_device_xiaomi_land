@@ -101,6 +101,8 @@ persist.camera.video.ubwc=0
 # DRM
 drm.service.enabled=true
 
+ro.sys.sdcardfs=0
+
 # Fingerprint
 persist.qfp=false
 
