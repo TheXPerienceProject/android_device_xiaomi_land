@@ -257,6 +257,10 @@ PRODUCT_PACKAGES += \
     android.hardware.health@1.0-convert \
     android.hardware.health@1.0-service
 
+# Healthd
+PRODUCT_PACKAGES += \
+    chargeonlymode
+
 # IMS
 PRODUCT_PACKAGES += \
     com.android.ims.rcsmanager
