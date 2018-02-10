@@ -12,6 +12,7 @@ allow init modem_efs_partition_device:blk_file write;
 allow init netd:unix_stream_socket connectto;
 allow init netd_socket:sock_file write;
 allow init property_socket:sock_file write;
+allow init persist_file:filesystem { associate mount relabelfrom relabelto unmount };
 allow init servicemanager:binder call;
 allow init self:capability { net_bind_service sys_module };
 allow init self:capability2 block_suspend;
