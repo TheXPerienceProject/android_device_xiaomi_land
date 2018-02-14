@@ -1191,7 +1191,7 @@ vendor/lib64/libxtwifi_ulp_adaptor.so
 vendor/lib64/vendor.qti.gnss@1.0_vendor.so
 
 # Graphics - from santoni (Redmi 4X) - OnePlus3T - Moto X4 (Payton)
-lib64/vendor.display.color@1.0.so|31D03C1A3EE66554D334AC16D4796D730DED72ED
+-lib64/vendor.display.color@1.0.so|31D03C1A3EE66554D334AC16D4796D730DED72ED
 lib64/vendor.display.postproc@1.0.so|863190E800E47B13797634679EECE852E8FD8C6C
 vendor/etc/init/vendor.display.color@1.0-service.rc|863190E800E47B13797634679EECE852E8FD8C6C
 vendor/lib/egl/eglSubDriverAndroid.so|0CAD0FD3219DC9516CFBFB02DECB9B2657B83E47
@@ -1393,8 +1393,8 @@ vendor/lib64/libQtiTether.so
 #QMI Perf (TISSOT)
 bin/iop
 bin/msm_irqbalance
-lib/vendor.qti.hardware.iop@1.0.so
-lib64/vendor.qti.hardware.iop@1.0.so
+-lib/vendor.qti.hardware.iop@1.0.so
+-lib64/vendor.qti.hardware.iop@1.0.so
 lib/vendor.qti.hardware.perf@1.0.so
 lib64/vendor.qti.hardware.perf@1.0.so
 vendor/bin/hw/vendor.qti.hardware.iop@1.0-service
