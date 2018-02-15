@@ -44,7 +44,7 @@ on early-init
 
 on init
 
-    export LD_SHIM_LIBS /vendor/lib/libmmcamera2_imglib_modules.so|libshim_atomic.so:system/bin/mm-qcamera-daemon|libshim_qcamera.so:system/bin/mm-qcamera-daemon|libshim_camera.so
+    export LD_SHIM_LIBS /vendor/lib/libmmcamera2_imglib_modules.so|libshim_atomic.so:vendor/bin/mm-qcamera-daemon|libshim_qcamera.so:vendor/bin/mm-qcamera-daemon|libshim_camera.so
 
     # Set permissions for persist partition
     mkdir /persist 0771 root system
@@ -767,7 +767,7 @@ on property:persist.sys.fp.onstart=1
    start fps_hal
 
 # Start camera server as daemon
-service qcamerasvr /system/bin/mm-qcamera-daemon
+service qcamerasvr /vendor/bin/mm-qcamera-daemon
     class late_start
     user camera
     group camera system inet input graphics
