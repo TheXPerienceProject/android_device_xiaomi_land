@@ -1,5 +1,3 @@
-# Camera
-/(vendor|system/vendor)/bin/mm-qcamera-daemon                   u:object_r:mm-qcamerad_exec:s0
 
 # Fpc Fingerprint
 /dev/socket/fpce                                         u:object_r:fpc_socket:s0
@@ -31,10 +29,6 @@
 
 # Data files
 /data/misc/netmgr/log\.txt			u:object_r:netmgrd_data_file:s0
-
-#Vendor
-/(vendor|system/vendor)/bin/pm-service             u:object_r:per_mgr_exec:s0
-/(vendor|system/vendor)/bin/qseecomd        u:object_r:tee_exec:s0
 
 #RIL Bluetooth
 /system/etc/init\.qcom\.sh           u:object_r:qti_init_shell_exec:s0
