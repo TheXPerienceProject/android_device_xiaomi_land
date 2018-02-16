@@ -50,6 +50,18 @@ group: AID_RADIO
 mode: 0755
 caps: NET_BIND_SERVICE
 
+[vendor/bin/imsrcsd]
+mode: 0755
+user: AID_SYSTEM
+group: AID_RADIO
+caps: WAKE_ALARM
+
+[system/vendor/bin/imsrcsd]
+mode: 0755
+user: AID_SYSTEM
+group: AID_RADIO
+caps: WAKE_ALARM
+
 [system/bin/pm-service]
 user: AID_SYSTEM
 group: AID_SYSTEM
@@ -68,11 +80,29 @@ group: AID_SYSTEM
 mode: 0755
 caps: NET_BIND_SERVICE
 
-[system/bin/wcnss_filter]
+[vendor/bin/wcnss_filter]
 user: AID_BLUETOOTH
 group: AID_BLUETOOTH
 mode: 0755
 caps: BLOCK_SUSPEND
+
+[system/vendor/bin/wcnss_filter]
+mode: 0755
+user: AID_BLUETOOTH
+group: AID_BLUETOOTH
+caps: BLOCK_SUSPEND
+
+[vendor/bin/hw/android.hardware.bluetooth@1.0-service-qti]
+mode: 0755
+user: AID_BLUETOOTH
+group: AID_BLUETOOTH
+caps: BLOCK_SUSPEND NET_ADMIN
+
+[system/vendor/bin/hw/android.hardware.bluetooth@1.0-service-qti]
+mode: 0755
+user: AID_SYSTEM
+group: AID_SYSTEM
+caps: BLOCK_SUSPEND NET_ADMIN
 
 [system/vendor/bin/qvrservice]
 user: AID_SYSTEM
