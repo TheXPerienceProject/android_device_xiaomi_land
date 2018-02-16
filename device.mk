@@ -93,7 +93,7 @@ PRODUCT_PACKAGES += \
     android.hardware.broadcastradio@1.0-impl \
 	android.hardware.broadcastradio@1.0-service \
     android.hardware.soundtrigger@2.0-impl \
-	android.hardware.soundtrigger@2.0-service \
+	android.hardware.soundtrigger@2.0-service
 
 #Audio mixer
 PRODUCT_COPY_FILES += \
@@ -290,7 +290,8 @@ PRODUCT_PACKAGES += \
 
 #Light HIDL
 PRODUCT_PACKAGES += \
-    android.hardware.light@2.0-impl
+    android.hardware.light@2.0-impl \
+	android.hardware.light@2.0-service
 
 # Media
 PRODUCT_PACKAGES += \
