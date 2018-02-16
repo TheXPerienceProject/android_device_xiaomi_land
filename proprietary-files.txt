@@ -1338,10 +1338,14 @@ vendor/lib64/libQtiTether.so
 
 #QMI Perf (TISSOT)
 bin/msm_irqbalance:vendor/bin/msm_irqbalance
+lib/libqti-at.so
+lib/libqti-perfd-client_system.so
 -lib/vendor.qti.hardware.iop@1.0.so
 -lib64/vendor.qti.hardware.iop@1.0.so
 lib/vendor.qti.hardware.perf@1.0.so
 lib64/vendor.qti.hardware.perf@1.0.so
+lib64/libqti-at.so
+lib64/libqti-perfd-client_system.so
 vendor/bin/hw/vendor.qti.hardware.iop@1.0-service
 vendor/bin/hw/vendor.qti.hardware.perf@1.0-service
 vendor/bin/perfd
@@ -1351,6 +1355,7 @@ vendor/etc/init/vendor.qti.hardware.perf@1.0-service.rc
 vendor/etc/perf/gamedwhitelist.xml
 vendor/etc/perf/perfboostsconfig.xml
 vendor/lib/hw/vendor.qti.hardware.iop@1.0-impl.so
+vendor/lib/libfeedbackhandler.so
 vendor/lib/libqti-iopd.so
 vendor/lib/libqti-iopd-client.so
 vendor/lib/libqc-opt.so
@@ -1359,6 +1364,7 @@ vendor/lib/libqti-perfd-client.so
 vendor/lib/vendor.qti.hardware.iop@1.0_vendor.so
 vendor/lib/vendor.qti.hardware.perf@1.0_vendor.so
 vendor/lib64/hw/vendor.qti.hardware.iop@1.0-impl.so
+vendor/lib64/libfeedbackhandler.so
 vendor/lib64/libqti-iopd.so
 vendor/lib64/libqti-iopd-client.so
 vendor/lib64/libqc-opt.so
