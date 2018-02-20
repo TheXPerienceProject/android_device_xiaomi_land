@@ -1,4 +1,3 @@
-
 # Fpc Fingerprint
 /dev/socket/fpce                                         u:object_r:fpc_socket:s0
 /data/fpc(/.*)?                                          u:object_r:fpc_data_file:s0
@@ -30,11 +29,9 @@
 # Data files
 /data/misc/netmgr/log\.txt			u:object_r:netmgrd_data_file:s0
 
-#RIL Bluetooth
-/system/etc/init\.qcom\.sh           u:object_r:qti_init_shell_exec:s0
-/system/etc/init\.qcom\.usb\.sh         u:object_r:qti_init_shell_exec:s0
-
+# RMT Storage
 /sys/kernel/debug/rmt_storage/rmts                              u:object_r:debugfs_rmts:s0
+/sys/kernel/debug/rmt_storage(/.*)?                  u:object_r:qti_debugfs:s0
 
 # DPM
 /(vendor|system/vendor)/bin/dpmd      u:object_r:dpmd_exec:s0
