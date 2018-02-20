@@ -1,5 +1,9 @@
 #System prop for Redmi 3s By TeamMEX
 
+# Vulkan
+# b/68017541
+ro.qcom.adreno.qgl.ShaderStorageImageExtendedFormats=0
+
 # Art
 dalvik.vm.dex2oat-flags=--no-watch-dog
 
