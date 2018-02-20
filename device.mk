@@ -128,9 +128,7 @@ PRODUCT_PACKAGES += \
 
 # Bluetooth HIDL
 PRODUCT_PACKAGES += \
-    libbt-vendor \
-    android.hardware.bluetooth@1.0-impl \
-    android.hardware.bluetooth@1.0-service
+    libbt-vendor
 
 # Camera
 PRODUCT_PACKAGES += \
@@ -255,7 +253,6 @@ PRODUCT_PACKAGES += \
 
 # Init scripts ramdisk
 PRODUCT_PACKAGES += \
-    init.qcom.bt.sh \
     init.qcom.power.rc \
     init.qcom.usb.rc \
     init.qcom.usb.sh
