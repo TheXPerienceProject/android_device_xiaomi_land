@@ -1018,17 +1018,17 @@ vendor/lib/libchromatix_s5k3m2xx_zsl_preview_ad5816g.so
 vendor/lib/libchromatix_s5k3m2xx_zsl_video_ad5816g.so
 
 # Camera firmware
-etc/firmware/cpp_firmware_v1_1_1.fw:vendor/etc/firmware/cpp_firmware_v1_1_1.fw
-etc/firmware/cpp_firmware_v1_1_6.fw:vendor/etc/firmware/cpp_firmware_v1_1_6.fw
-etc/firmware/cpp_firmware_v1_10_0.fw:vendor/etc/firmware/cpp_firmware_v1_10_0.fw
-etc/firmware/cpp_firmware_v1_12_0.fw:vendor/etc/firmware/cpp_firmware_v1_12_0.fw
-etc/firmware/cpp_firmware_v1_2_0.fw:vendor/etc/firmware/cpp_firmware_v1_2_0.fw
-etc/firmware/cpp_firmware_v1_4_0.fw:vendor/etc/firmware/cpp_firmware_v1_4_0.fw
-etc/firmware/cpp_firmware_v1_5_0.fw:vendor/etc/firmware/cpp_firmware_v1_5_0.fw
-etc/firmware/cpp_firmware_v1_5_1.fw:vendor/etc/firmware/cpp_firmware_v1_5_1.fw
-etc/firmware/cpp_firmware_v1_5_2.fw:vendor/etc/firmware/cpp_firmware_v1_5_2.fw
-etc/firmware/cpp_firmware_v1_6_0.fw:vendor/etc/firmware/cpp_firmware_v1_6_0.fw
-etc/firmware/cpp_firmware_v1_8_0.fw:vendor/etc/firmware/cpp_firmware_v1_8_0.fw
+etc/firmware/cpp_firmware_v1_1_1.fw
+etc/firmware/cpp_firmware_v1_1_6.fw
+etc/firmware/cpp_firmware_v1_10_0.fw
+etc/firmware/cpp_firmware_v1_12_0.fw
+etc/firmware/cpp_firmware_v1_2_0.fw
+etc/firmware/cpp_firmware_v1_4_0.fw
+etc/firmware/cpp_firmware_v1_5_0.fw
+etc/firmware/cpp_firmware_v1_5_1.fw
+etc/firmware/cpp_firmware_v1_5_2.fw
+etc/firmware/cpp_firmware_v1_6_0.fw
+etc/firmware/cpp_firmware_v1_8_0.fw
 
 # Camera sensors
 vendor/lib/libmmcamera_isp_wb40.so
@@ -1294,15 +1294,16 @@ vendor/lib64/libmm-qdcm-diag.so|017085dcb44e25f7e7ae76dca03b830d74103264
 vendor/lib64/libsc-a3xx.so|a19f5458656c9ba1d8c461ed492b8d13627ae7f7
 vendor/lib64/libuiblur.so|4b3fabf5ded7c4af531abde681676fc5e9248494
 
-# Graphics firmware
-etc/firmware/a530_gpmu.fw2:vendor/etc/firmware/a530_gpmu.fw2
-etc/firmware/a530_pfp.fw:vendor/etc/firmware/a530_pfp.fw
-etc/firmware/a530_pm4.fw:vendor/etc/firmware/a530_pm4.fw
-etc/firmware/a530v1_pfp.fw:vendor/etc/firmware/a530v1_pfp
-etc/firmware/a530v1_pm4.fw:vendor/etc/firmware/a530v1_pm4.fw
-etc/firmware/a530v2_seq.fw2:vendor/etc/firmware/a530v2_seq.fw2
-etc/firmware/a530v3_gpmu.fw2:vendor/etc/firmware/a530v3_gpmu.fw2
-etc/firmware/a530v3_seq.fw2:vendor/etc/firmware/a530v3_seq.fw2
+# Graphics firmware - from TA-1003 (Nokia 5)
+etc/firmware/a530_gpmu.fw2
+etc/firmware/a530_pfp.fw
+etc/firmware/a530_pm4.fw
+etc/firmware/a530v1_pfp.fw
+etc/firmware/a530v1_pm4.fw
+etc/firmware/a530v2_seq.fw2
+etc/firmware/a530v3_gpmu.fw2
+etc/firmware/a530v3_seq.fw2
+etc/firmware/a540_gpmu.fw2
 
 #hbtp
 etc/firmware/hbtp/hbtpcfg_8917.dat
