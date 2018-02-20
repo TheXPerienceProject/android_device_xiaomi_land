@@ -43,6 +43,12 @@ TARGET_USES_64_BIT_BINDER := true
 TARGET_BOOTLOADER_BOARD_NAME := msm8937
 TARGET_NO_BOOTLOADER := true
 
+# Shims
+TARGET_LD_SHIM_LIBS := \
+    /vendor/lib/libmmcamera2_imglib_modules.so|libshim_atomic.so \
+    /vendor/bin/mm-qcamera-daemon|libshim_qcamera.so \
+    /vendor/bin/mm-qcamera-daemon|libshim_camera.so
+
 # kernel
 BOARD_KERNEL_BASE := 0x80000000
 BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom msm_rtb.filter=0x237 ehci-hcd.park=3 lpm_levels.sleep_disabled=1 androidboot.bootdevice=7824900.sdhci earlycon=msm_hsl_uart,0x78B0000
