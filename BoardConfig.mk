@@ -248,7 +248,7 @@ include device/qcom/sepolicy/legacy-sepolicy.mk
 BOARD_USES_QC_TIME_SERVICES := true
 
 # Treble
-PRODUCT_FULL_TREBLE_OVERRIDE := true
+#PRODUCT_FULL_TREBLE_OVERRIDE := true
 PRODUCT_COMPATIBILITY_MATRIX_LEVEL_OVERRIDE := 27
 DEVICE_MANIFEST_FILE := device/xiaomi/land/manifest.xml
 DEVICE_MATRIX_FILE := device/xiaomi/land/compatibility_matrix.xml
