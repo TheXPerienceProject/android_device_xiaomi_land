@@ -21,13 +21,19 @@
 /persist/data/gxfp                          u:object_r:gx_fpd_data_file:s0
 #sys/devices/soc/soc:goodix_fp/goodix_fp 
 
+# Custom services
 /(vendor|system/vendor)/bin/hw/android\.hardware\.biometrics\.fingerprint@2\.0-service-custom                 u:object_r:fps_hal_exec:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.dumpstate@1\.0-service.land      u:object_r:hal_dumpstate_impl_exec:s0
 
 # Block devices
 /dev/block/bootdevice/by-name/persist		u:object_r:persist_block_device:s0
 
 # Data files
 /data/misc/netmgr/log\.txt			u:object_r:netmgrd_data_file:s0
+
+/tombstones             u:object_r:rootfs:s0
+/dsp                    u:object_r:rootfs:s0
+/firmware(/.*)?         u:object_r:firmware_file:s0
 
 # RMT Storage
 /sys/kernel/debug/rmt_storage/rmts                              u:object_r:debugfs_rmts:s0
