@@ -32,7 +32,6 @@
 
 #RIL Bluetooth
 /system/etc/init\.qcom\.sh           u:object_r:qti_init_shell_exec:s0
-/system/etc/init\.qcom\.bt\.sh          u:object_r:qti_init_shell_exec:s0
 /system/etc/init\.qcom\.usb\.sh         u:object_r:qti_init_shell_exec:s0
 
 /sys/kernel/debug/rmt_storage/rmts                              u:object_r:debugfs_rmts:s0
