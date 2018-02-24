@@ -14,7 +14,7 @@
 <manifest version="1.0" type="device">
     <hal format="hidl">
         <name>android.hardware.audio</name>
-        <transport arch="32+64">passthrough</transport>
+        <transport>hwbinder</transport>
         <version>2.0</version>
         <interface>
             <name>IDevicesFactory</name>
@@ -23,7 +23,7 @@
     </hal>
     <hal format="hidl">
         <name>android.hardware.audio.effect</name>
-        <transport arch="32+64">passthrough</transport>
+        <transport>hwbinder</transport>
         <version>2.0</version>
         <interface>
             <name>IEffectsFactory</name>
@@ -93,6 +93,15 @@
             <name>IDrmFactory</name>
             <instance>default</instance>
             <instance>widevine</instance>
+        </interface>
+    </hal>
+    <hal format="hidl">
+        <name>android.hardware.dumpstate</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>IDumpstateDevice</name>
+            <instance>default</instance>
         </interface>
     </hal>
     <hal format="hidl">
@@ -170,7 +179,7 @@
     </hal>
     <hal format="hidl">
         <name>android.hardware.light</name>
-        <transport arch="32+64">passthrough</transport>
+        <transport>hwbinder</transport>
         <version>2.0</version>
         <interface>
             <name>ILight</name>
@@ -179,7 +188,7 @@
     </hal>
     <hal format="hidl">
         <name>android.hardware.memtrack</name>
-        <transport arch="32+64">passthrough</transport>
+        <transport>hwbinder</transport>
         <version>1.0</version>
         <interface>
             <name>IMemtrack</name>
@@ -236,7 +245,7 @@
     </hal>
     <hal format="hidl">
         <name>android.hardware.soundtrigger</name>
-        <transport arch="32">passthrough</transport>
+        <transport>hwbinder</transport>
         <version>2.0</version>
         <interface>
             <name>ISoundTriggerHw</name>
@@ -453,7 +462,4 @@
             <instance>imsrtpservice</instance>
         </interface>
     </hal>
-<!--    <sepolicy>
-        <version>0.0</version>
-    </sepolicy>-->
 </manifest>
