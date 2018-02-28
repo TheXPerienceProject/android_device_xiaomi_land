@@ -462,4 +462,17 @@
             <instance>imsrtpservice</instance>
         </interface>
     </hal>
+   <hal format="hidl">
+        <name>android.hardware.media.omx</name>
+        <transport arch="32+64">passthrough</transport>
+        <version>1.0</version>
+        <interface>
+            <name>IOmx</name>
+            <instance>default</instance>
+        </interface>
+        <interface>
+            <name>IOmxStore</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
 </manifest>

@@ -47,7 +47,7 @@ TARGET_NO_BOOTLOADER := true
 TARGET_LD_SHIM_LIBS := \
     /vendor/lib/libmmcamera2_imglib_modules.so|libshim_atomic.so \
     /vendor/bin/mm-qcamera-daemon|libshim_qcamera.so \
-    /vendor/bin/mm-qcamera-daemon|libshim_camera.so
+    /vendor/bin/mm-qcamera-daemon|libshim_sensors.so
 
 # kernel
 BOARD_KERNEL_BASE := 0x80000000
@@ -233,8 +233,6 @@ TARGET_VENDOR_PROP += $(DEVICE_PATH)/vendor.prop
 PROTOBUF_SUPPORTED := true
 TARGET_RIL_VARIANT := caf
 
-QCOM_DISPLAY_VARIANT := msm8937
-
 # Recovery
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/recovery/fstab.qcom
 #TARGET_RECOVERY_UI_LIB := librecovery_ui_msm
@@ -245,17 +243,17 @@ TARGET_RELEASETOOLS_EXTENSIONS := device/qcom/common
 BOARD_ROOT_EXTRA_FOLDERS := dsp firmware persist
 
 # SELinux
-BOARD_SEPOLICY_DIRS += \
-    $(DEVICE_PATH)/sepolicy
+#BOARD_SEPOLICY_DIRS += \
+#    $(DEVICE_PATH)/sepolicy
 include device/qcom/sepolicy/sepolicy.mk
-include device/qcom/sepolicy/legacy-sepolicy.mk
+#include device/qcom/sepolicy/legacy-sepolicy.mk
 
 # Time
 BOARD_USES_QC_TIME_SERVICES := true
 
 # Treble
 #PRODUCT_FULL_TREBLE_OVERRIDE := true
-PRODUCT_COMPATIBILITY_MATRIX_LEVEL_OVERRIDE := 27
+#PRODUCT_COMPATIBILITY_MATRIX_LEVEL_OVERRIDE := 27
 DEVICE_MANIFEST_FILE := device/xiaomi/land/manifest.xml
 DEVICE_MATRIX_FILE := device/xiaomi/land/compatibility_matrix.xml
 
