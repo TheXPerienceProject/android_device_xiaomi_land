@@ -194,7 +194,8 @@ on enable-low-power
     write /sys/block/dm-0/queue/read_ahead_kb 128
 
     rm /data/system/perfd/default_values
-    start perfd
+    # Tell perfd that we're ready to go
+    setprop sys.post_boot.parsed 1
 
 on class_start:late_start
     trigger enable-low-power
