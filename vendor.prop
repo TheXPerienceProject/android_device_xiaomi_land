@@ -188,6 +188,7 @@ persist.radio.calls.on.ims=0
 persist.radio.jbims=0
 persist.radio.schd.cache=3500
 persist.radio.videopause.mode=1
+persist.vendor.qti.telephony.vt_cam_interface=1
 
 #RIL
 DEVICE_PROVISIONED=1
