@@ -16,6 +16,13 @@
 # limitations under the License.
 #
 
+PRODUCT_ENFORCE_RRO_TARGETS := \
+   Bluetooth \
+   Settings \
+   SettingsProvider \
+   SystemUI \
+   framework-res \
+
 # Overlay
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay
