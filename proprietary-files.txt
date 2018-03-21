@@ -1020,17 +1020,17 @@ vendor/lib/libchromatix_s5k3m2xx_zsl_preview_ad5816g.so
 vendor/lib/libchromatix_s5k3m2xx_zsl_video_ad5816g.so
 
 # Camera firmware
-etc/firmware/cpp_firmware_v1_1_1.fw
-etc/firmware/cpp_firmware_v1_1_6.fw
-etc/firmware/cpp_firmware_v1_10_0.fw
-etc/firmware/cpp_firmware_v1_12_0.fw
-etc/firmware/cpp_firmware_v1_2_0.fw
-etc/firmware/cpp_firmware_v1_4_0.fw
-etc/firmware/cpp_firmware_v1_5_0.fw
-etc/firmware/cpp_firmware_v1_5_1.fw
-etc/firmware/cpp_firmware_v1_5_2.fw
-etc/firmware/cpp_firmware_v1_6_0.fw
-etc/firmware/cpp_firmware_v1_8_0.fw
+etc/firmware/cpp_firmware_v1_1_1.fw:vendor/firmware/cpp_firmware_v1_1_1.fw
+etc/firmware/cpp_firmware_v1_1_6.fw:vendor/firmware/cpp_firmware_v1_1_6.fw
+etc/firmware/cpp_firmware_v1_10_0.fw:vendor/firmware/cpp_firmware_v1_10_0.fw
+etc/firmware/cpp_firmware_v1_12_0.fw:vendor/firmware/cpp_firmware_v1_12_0.fw
+etc/firmware/cpp_firmware_v1_2_0.fw:vendor/firmware/cpp_firmware_v1_2_0.fw
+etc/firmware/cpp_firmware_v1_4_0.fw:vendor/firmware/cpp_firmware_v1_4_0.fw
+etc/firmware/cpp_firmware_v1_5_0.fw:vendor/firmware/cpp_firmware_v1_5_0.fw
+etc/firmware/cpp_firmware_v1_5_1.fw:vendor/firmware/cpp_firmware_v1_5_1.fw
+etc/firmware/cpp_firmware_v1_5_2.fw:vendor/firmware/cpp_firmware_v1_5_2.fw
+etc/firmware/cpp_firmware_v1_6_0.fw:vendor/firmware/cpp_firmware_v1_6_0.fw
+etc/firmware/cpp_firmware_v1_8_0.fw:vendor/firmware/cpp_firmware_v1_8_0.fw
 
 # Camera sensors
 vendor/lib/libmmcamera_isp_wb40.so
@@ -1069,7 +1069,7 @@ vendor/lib/libmmcamera_isp_color_xform_encoder40.so
 vendor/lib/libmmcamera_isp_color_xform_viewfinder40.so
 
 # Charger
-bin/hvdcp_opti
+bin/hvdcp_opti:vendor/bin/hvdcp_opti
 
 # DPM
 bin/dpmd
@@ -1124,16 +1124,16 @@ vendor/lib64/libssd.so|
 vendor/lib64/libtzdrmgenprov.so|28476f814435420885c4b9551e88b016e9705c54
 
 # Display calibration
--etc/qdcm_calib_data_hx8394F_HD720p_video_BOE.xml
--etc/qdcm_calib_data_ili9881c_HD720p_video_Tianma.xml
--etc/qdcm_calib_data_nt35521s_HD720p_video_EBBG.xml
+etc/qdcm_calib_data_hx8394F_HD720p_video_BOE.xml:vendor/etc/qdcm_calib_data_hx8394F_HD720p_video_BOE.xml
+etc/qdcm_calib_data_ili9881c_HD720p_video_Tianma.xml:vendor/etc/qdcm_calib_data_ili9881c_HD720p_video_Tianma.xml
+etc/qdcm_calib_data_nt35521s_HD720p_video_EBBG.xml:vendor/etc/qdcm_calib_data_nt35521s_HD720p_video_EBBG.xml
 
 # Energy
 vendor/bin/energy-awareness
 
 # Fingerprint
-bin/gx_fpcmd
-bin/gx_fpd
+bin/gx_fpcmd:vendor/bin/gx_fpcmd
+bin/gx_fpd:vendor/bin/gx_fpd
 lib/hw/fingerprint.default.so:lib/hw/fingerprint.msm8937.so
 lib/libcom_fingerprints_service.so
 lib64/hw/fingerprint.default.so:lib64/hw/fingerprint.msm8937.so
@@ -1191,6 +1191,7 @@ vendor/lib64/libxtwifi_ulp_adaptor.so
 vendor/lib64/vendor.qti.gnss@1.0_vendor.so
 
 # Graphics - from santoni (Redmi 4X) - OnePlus3T - Moto X4 (Payton)
+-lib/vendor.display.color@1.0.so
 -lib64/vendor.display.color@1.0.so|31D03C1A3EE66554D334AC16D4796D730DED72ED
 lib64/vendor.display.postproc@1.0.so|863190E800E47B13797634679EECE852E8FD8C6C
 vendor/etc/init/vendor.display.color@1.0-service.rc|863190E800E47B13797634679EECE852E8FD8C6C
@@ -1297,22 +1298,22 @@ vendor/lib64/libsc-a3xx.so|a19f5458656c9ba1d8c461ed492b8d13627ae7f7
 vendor/lib64/libuiblur.so|4b3fabf5ded7c4af531abde681676fc5e9248494
 
 # Graphics firmware - from TA-1003 (Nokia 5)
-etc/firmware/a530_gpmu.fw2
-etc/firmware/a530_pfp.fw
-etc/firmware/a530_pm4.fw
-etc/firmware/a530v1_pfp.fw
-etc/firmware/a530v1_pm4.fw
-etc/firmware/a530v2_seq.fw2
-etc/firmware/a530v3_gpmu.fw2
-etc/firmware/a530v3_seq.fw2
-etc/firmware/a540_gpmu.fw2
+etc/firmware/a530_gpmu.fw2:vendor/firmware/a530_gpmu.fw2
+etc/firmware/a530_pfp.fw:vendor/firmware/a530_pfp.fw
+etc/firmware/a530_pm4.fw:vendor/firmware/a530_pm4.fw
+etc/firmware/a530v1_pfp.fw:vendor/firmware/a530v1_pfp.fw
+etc/firmware/a530v1_pm4.fw:vendor/firmware/a530v1_pm4.fw
+etc/firmware/a530v2_seq.fw2:vendor/firmware/a530v2_seq.fw2
+etc/firmware/a530v3_gpmu.fw2:vendor/firmware/a530v3_gpmu.fw2
+etc/firmware/a530v3_seq.fw2:vendor/firmware/a530v3_seq.fw2
+etc/firmware/a540_gpmu.fw2:vendor/firmware/a540_gpmu.fw2
 
 #hbtp
-etc/firmware/hbtp/hbtpcfg_8917.dat
-etc/firmware/hbtp/hbtpcfg.dat
-etc/firmware/hbtp/qtc800s_dsp.bin
-etc/firmware/qtc800s.bin
-etc/firmware/qtc800s.cfg
+etc/firmware/hbtp/hbtpcfg_8917.dat:vendor/firmware/hbtp/hbtpcfg_8917.dat
+etc/firmware/hbtp/hbtpcfg.dat:vendor/firmware/hbtp/hbtpcfg.dat
+etc/firmware/hbtp/qtc800s_dsp.bin:vendor/firmware/hbtp/qtc800s_dsp.bin
+etc/firmware/qtc800s.bin:vendor/firmware/qtc800s.bin
+etc/firmware/qtc800s.cfg:vendor/firmware/qtc800s.cfg
 
 # Keylayout
 usr/keylayout/ft5x06_ts.kl
@@ -1331,7 +1332,7 @@ vendor/lib/libadpcmdec.so
 vendor/lib/libsmwrapper.so
 
 # Media - from santoni (Redmi 4X)- xiaomi A1 (Tissot)
-etc/firmware/DE.o.msm8937
+etc/firmware/DE.o.msm8937:vendor/firmware/DE.o.msm8937
 lib/libOmxSwVdec.so|708449a8a7398b3340bd9dad2281060f93cdfff2
 lib/libOmxSwVencMpeg4.so|a5656b290b1a951eac5c29dab9c72593b0131590
 lib/libOmxVpp.so|2ff6daa35af6e06bc8d8cf13ef90c7fb6e928532
@@ -1609,20 +1610,20 @@ vendor/lib64/vendor.qti.imsrtpservice@1.0-service-Impl.so
 vendor/lib64/vendor.qti.imsrtpservice@1.0_vendor.so
 
 # Radio - MBN
-etc/firmware/modem_config/S88537AA1/cmcc_mcfg_sw.mbn
-etc/firmware/modem_config/S88537AA1/ct_mcfg_sw.mbn
-etc/firmware/modem_config/S88537AA1/cu_mcfg_sw.mbn
-etc/firmware/modem_config/S88537AA1/row_mcfg_sw.mbn
-etc/firmware/modem_config/S88537AB1/cmcc_mcfg_sw.mbn
-etc/firmware/modem_config/S88537AB1/ct_mcfg_sw.mbn
-etc/firmware/modem_config/S88537AB1/cu_mcfg_sw.mbn
-etc/firmware/modem_config/S88537AB1/row_mcfg_sw.mbn
-etc/firmware/modem_config/S88537BA1/row_mcfg_sw.mbn
-etc/firmware/modem_config/S88537BA1/ytl_mcfg_sw.mbn
-etc/firmware/modem_config/S88537CA1/reliance_mcfg_sw.mbn
-etc/firmware/modem_config/S88537CA1/row_mcfg_sw.mbn
-etc/firmware/modem_config/S88537EC1/reliance_mcfg_sw.mbn
-etc/firmware/modem_config/S88537EC1/row_mcfg_sw.mbn
+etc/firmware/modem_config/S88537AA1/cmcc_mcfg_sw.mbn:vendor/firmware/modem_config/S88537AA1/cmcc_mcfg_sw.mbn
+etc/firmware/modem_config/S88537AA1/ct_mcfg_sw.mbn:vendor/firmware/modem_config/S88537AA1/ct_mcfg_sw.mbn
+etc/firmware/modem_config/S88537AA1/cu_mcfg_sw.mbn:vendor/firmware/modem_config/S88537AA1/cu_mcfg_sw.mbn
+etc/firmware/modem_config/S88537AA1/row_mcfg_sw.mbn:vendor/firmware/modem_config/S88537AA1/row_mcfg_sw.mbn
+etc/firmware/modem_config/S88537AB1/cmcc_mcfg_sw.mbn:vendor/firmware/modem_config/S88537AB1/cmcc_mcfg_sw.mbn
+etc/firmware/modem_config/S88537AB1/ct_mcfg_sw.mbn:vendor/firmware/modem_config/S88537AB1/ct_mcfg_sw.mbn
+etc/firmware/modem_config/S88537AB1/cu_mcfg_sw.mbn:vendor/firmware/modem_config/S88537AB1/cu_mcfg_sw.mbn
+etc/firmware/modem_config/S88537AB1/row_mcfg_sw.mbn:vendor/firmware/modem_config/S88537AB1/row_mcfg_sw.mbn
+etc/firmware/modem_config/S88537BA1/row_mcfg_sw.mbn:vendor/firmware/modem_config/S88537BA1/row_mcfg_sw.mbn
+etc/firmware/modem_config/S88537BA1/ytl_mcfg_sw.mbn:vendor/firmware/modem_config/S88537BA1/ytl_mcfg_sw.mbn
+etc/firmware/modem_config/S88537CA1/reliance_mcfg_sw.mbn:vendor/firmware/modem_config/S88537CA1/reliance_mcfg_sw.mbn
+etc/firmware/modem_config/S88537CA1/row_mcfg_sw.mbn:vendor/firmware/modem_config/S88537CA1/row_mcfg_sw.mbn
+etc/firmware/modem_config/S88537EC1/reliance_mcfg_sw.mbn:vendor/firmware/modem_config/S88537EC1/reliance_mcfg_sw.mbn
+etc/firmware/modem_config/S88537EC1/row_mcfg_sw.mbn:vendor/firmware/modem_config/S88537EC1/row_mcfg_sw.mbn
 
 #IR
 lib/hw/consumerir.default.so
@@ -1672,9 +1673,9 @@ vendor/lib/libTimeService.so
 vendor/lib64/libTimeService.so
 
 # Touchscreen
-etc/ft5336_biel_720p.ini
-etc/ft5336_lens_720p.ini
-etc/ft5336_oufei_720p.ini
+etc/ft5336_biel_720p.ini:vendor/etc/ft5336_biel_720p.ini
+etc/ft5336_lens_720p.ini:vendor/etc/ft5336_lens_720p.ini
+etc/ft5336_oufei_720p.ini:vendor/etc/ft5336_oufei_720p.ini
 
 # TUI
 lib/vendor.qti.hardware.tui_comm@1.0.so
@@ -1685,7 +1686,7 @@ vendor/lib/vendor.qti.hardware.tui_comm@1.0_vendor.so
 vendor/lib64/vendor.qti.hardware.tui_comm@1.0_vendor.so
 
 # USB
-etc/firmware/ice40.bin
+etc/firmware/ice40.bin:vendor/firmware/ice40.bin
 
 # Widevine DRM - from marlin - OPR3.170623.013
 vendor/bin/hw/android.hardware.drm@1.0-service.widevine|832d07eedf669c4b59f9863685926e9856139130
@@ -1698,14 +1699,14 @@ bin/cnss_diag
 bin/wcnss_service
 vendor/bin/wcnss_filter
 vendor/bin/wcnss_service
-etc/firmware/wlan/prima/WCNSS_cfg.dat
+etc/firmware/wlan/prima/WCNSS_cfg.dat:vendor/firmware/wlan/prima/WCNSS_cfg.dat
 etc/hostapd/hostapd.accept
 etc/hostapd/hostapd_default.conf
 etc/hostapd/hostapd.deny
-etc/wifi/WCNSS_qcom_cfg.ini
-etc/wifi/fstman.ini
-etc/wifi/p2p_supplicant_overlay.conf
-etc/wifi/wpa_supplicant_overlay.conf
+etc/wifi/WCNSS_qcom_cfg.ini:vendor/etc/wifi/WCNSS_qcom_cfg.ini
+etc/wifi/fstman.ini:vendor/etc/wifi/fstman.ini
+etc/wifi/p2p_supplicant_overlay.conf:vendor/etc/wifi/p2p_supplicant_overlay.conf
+etc/wifi/wpa_supplicant_overlay.conf:vendor/etc/wifi/wpa_supplicant_overlay.conf
 
 #what?
 vendor/lib/libperfgluelayer.so
