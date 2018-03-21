@@ -13,8 +13,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-#define LOG_TAG "android.hardware.biometrics.fingerprint@2.0-service"
-#define LOG_VERBOSE "android.hardware.biometrics.fingerprint@2.0-service"
+#define LOG_TAG "android.hardware.biometrics.fingerprint@2.0-service.land"
+#define LOG_VERBOSE "android.hardware.biometrics.fingerprint@2.0-service.land"
 
 #include <hardware/hw_auth_token.h>
 #include <hardware/hardware.h>
@@ -35,7 +35,6 @@ namespace V2_1 {
 namespace implementation {
 
 // Supported fingerprint HAL version
-static const uint16_t kVersion = HARDWARE_MODULE_API_VERSION(2, 0);
 static bool is_goodix = false;
 
 using RequestStatus =
@@ -51,7 +50,7 @@ BiometricsFingerprint::BiometricsFingerprint() : mClientCallback(nullptr), mDevi
     if (!strcmp(vend, "fpc")) {
         is_goodix = false;
         mDevice = openHal();
-    } else {
+    } else if (!strcmp(vend, "goodix")) {
         is_goodix = true;
         mDevice = getWrapperService(BiometricsFingerprint::notify);
     }
@@ -182,7 +181,7 @@ Return<RequestStatus> BiometricsFingerprint::postEnroll() {
 }
 
 Return<uint64_t> BiometricsFingerprint::getAuthenticatorId() {
-    usleep(200000);
+	usleep(200000);
     return mDevice->get_authenticator_id(mDevice);
 }
 
@@ -278,12 +277,6 @@ fingerprint_device_t* BiometricsFingerprint::openHal() {
 
     if (0 != (err = module->common.methods->open(hw_mdl, nullptr, &device))) {
         ALOGE("Can't open fingerprint methods, error: %d", err);
-        return nullptr;
-    }
-
-    if (kVersion != device->version) {
-        // enforce version on new devices because of HIDL@2.1 translation layer
-        ALOGE("Wrong fp version. Expected %d, got %d", kVersion, device->version);
         return nullptr;
     }
 

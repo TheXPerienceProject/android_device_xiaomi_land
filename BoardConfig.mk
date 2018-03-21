@@ -56,7 +56,7 @@ BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
 BOARD_KERNEL_PAGESIZE :=  2048
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x01000000 --second_offset 0x00f00000 --tags_offset 0x00000100
-TARGET_KERNEL_CLANG_COMPILE := true
+#TARGET_KERNEL_CLANG_COMPILE := true
 TARGET_KERNEL_CONFIG := land_defconfig
 TARGET_KERNEL_SOURCE := kernel/xiaomi/msm8937
 INSTALLED_KERNEL_HEADERS := true
@@ -243,10 +243,10 @@ TARGET_RELEASETOOLS_EXTENSIONS := device/qcom/common
 BOARD_ROOT_EXTRA_FOLDERS := dsp firmware persist
 
 # SELinux
-BOARD_SEPOLICY_DIRS += \
+#BOARD_SEPOLICY_DIRS += \
     $(DEVICE_PATH)/sepolicy
 include device/qcom/sepolicy/sepolicy.mk
-include device/qcom/sepolicy/legacy-sepolicy.mk
+#include device/qcom/sepolicy/legacy-sepolicy.mk
 
 # Treble
 BOARD_PROPERTY_OVERRIDES_SPLIT_ENABLED := true

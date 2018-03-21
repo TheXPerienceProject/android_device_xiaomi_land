@@ -80,7 +80,6 @@ PRODUCT_PACKAGES += \
 
 #Audio
 PRODUCT_PACKAGES += \
-    audiod \
     audio.a2dp.default \
     audio.primary.msm8937 \
     audio.r_submix.default \
@@ -97,8 +96,6 @@ PRODUCT_PACKAGES += \
 	android.hardware.audio@2.0-service \
     android.hardware.audio.effect@2.0-impl \
 	android.hardware.audio.effect@2.0-service \
-    android.hardware.broadcastradio@1.0-impl \
-	android.hardware.broadcastradio@1.0-service \
     android.hardware.soundtrigger@2.0-impl \
 	android.hardware.soundtrigger@2.0-service
 
@@ -166,11 +163,7 @@ PRODUCT_PACKAGES += \
 
 # Consumerir
 PRODUCT_PACKAGES += \
-    consumerir.msm8937
-
-# Consumerir HIDL
-PRODUCT_PACKAGES += \
-    android.hardware.ir@1.0-impl \
+    android.hardware.ir@1.0-service.xiaomi_mido
 
 # Display
 PRODUCT_PACKAGES += \
@@ -180,6 +173,7 @@ PRODUCT_PACKAGES += \
     libdisplayconfig \
     libtinyxml \
     libgenlock \
+    liboverlay \
     libqdMetaData.system \
     memtrack.msm8937
 
@@ -192,7 +186,9 @@ PRODUCT_PACKAGES += \
     android.hardware.graphics.allocator@2.0-service \
     android.hardware.memtrack@1.0-impl \
 	android.hardware.memtrack@1.0-service \
-    android.hardware.renderscript@1.0-impl
+    android.hardware.renderscript@1.0-impl \
+    vendor.display.config@1.0 \
+    vendor.display.config@1.0_vendor
 
 # Display calibration
 PRODUCT_PACKAGES += \
@@ -217,7 +213,7 @@ PRODUCT_PACKAGES += \
 
 # Fingerprint
 PRODUCT_PACKAGES += \
-    android.hardware.biometrics.fingerprint@2.0-service-custom
+    android.hardware.biometrics.fingerprint@2.0-service.land
 
 TARGET_FS_CONFIG_GEN += \
     device/xiaomi/land/fs_config/file_caps.fs
@@ -376,6 +372,8 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.power@1.0-impl
 
+-include device/xiaomi/land/prop.mk
+
 # RCS
 PRODUCT_PACKAGES += \
     rcs_service_aidl \
@@ -397,7 +395,8 @@ PRODUCT_COPY_FILES += \
 
 # Sensors
 PRODUCT_PACKAGES += \
-    android.hardware.sensors@1.0-impl
+    android.hardware.sensors@1.0-impl \
+    android.hardware.sensors@1.0-service
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/sensors/hals.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/hals.conf \
