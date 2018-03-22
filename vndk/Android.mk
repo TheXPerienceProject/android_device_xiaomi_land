@@ -28,6 +28,7 @@ VNDK_SP_LIBRARIES := \
     libz
 
 EXTRA_VENDOR_LIBRARIES := \
+    libsqlite \
     android.hidl.base@1.0 \
     android.hidl.manager@1.0 \
     android.hardware.sensors@1.0 \
