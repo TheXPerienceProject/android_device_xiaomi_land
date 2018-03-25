@@ -16,6 +16,8 @@
 # limitations under the License.
 #
 
+$(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_m.mk)
+
 PRODUCT_ENFORCE_RRO_TARGETS := \
    Bluetooth \
    Settings \
