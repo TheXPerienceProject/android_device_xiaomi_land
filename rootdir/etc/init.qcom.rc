@@ -50,7 +50,7 @@ on init
     # Support legacy paths
     symlink /sdcard /storage/sdcard0
 
-    write /sys/module/qpnp_rtc/parameters/poweron_alarm 1
+    #write /sys/module/qpnp_rtc/parameters/poweron_alarm 1
 
     # Create directory used for display
     mkdir /persist/display 0770 system graphics
@@ -278,9 +278,6 @@ on property:sys.shutdown.requested=*
     mkdir /data/misc/fm 0770 system system
     chmod 0770 /data/misc/fm
 
-    #Create PERFD deamon related dirs "maintain legacy until get updated"
-    mkdir /data/system/perfd 0770 root system
-    chmod 2770 /data/system/perfd
     #Create PERFD deamon related dirs
     mkdir /data/vendor/perfd 0770 root system
     chmod 2770 /data/vendor/perfd
@@ -557,18 +554,12 @@ on property:vold.decrypt=trigger_restart_framework
 
 on property:persist.env.fastdorm.enabled=true
     setprop persist.radio.data_no_toggle 1
-
-service dpmd /system/bin/dpmd
-    class late_start
-    socket dpmd stream 660 root system
-    socket tcm stream 660 root inet
-    socket dpmwrapper stream 660 root inet
-    group system readproc inet
-    
+ 
 service dpmQmiMgr /vendor/bin/dpmQmiMgr
     class main
     user system
     group system
+    writepid /dev/cpuset/system-background/tasks
 
 service irsc_util /vendor/bin/irsc_util "/vendor/etc/sec_config"
     class core
@@ -706,15 +697,6 @@ service vendor.msm_irqbalance /vendor/bin/msm_irqbalance -f /vendor/etc/msm_irqb
     group root
     disabled
 
-service wfdservice /system/bin/wfdservice
-    class main
-    user system
-    group audio camera inet bluetooth drmrpc media_rw media input net_admin
-    #removed these because of limit of 12 groups
-    #graphics net_bt net_bt_admin bluetooth
-    disabled
-    oneshot
-
 service cnd /vendor/bin/cnd
     class main
     user system
@@ -803,6 +785,7 @@ service time_daemon /vendor/bin/time_daemon
     class main
     user root
     group root
+    writepid /dev/cpuset/system-background/tasks
 
 service wcnss-service /system/bin/wcnss_service
     class main

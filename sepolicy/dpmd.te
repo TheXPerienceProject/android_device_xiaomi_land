@@ -1,6 +1,0 @@
-allow dpmd self:capability dac_override;
-allow dpmd dpmd:capability { chown fsetid };
-allow dpmd socket_device:sock_file { setattr create };
-allow dpmd socket_device:dir  { write add_name };
-
-get_prop(dpmd, diag_prop);

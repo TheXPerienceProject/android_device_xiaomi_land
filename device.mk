@@ -49,7 +49,7 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.consumerir.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.consumerir.xml \
     frameworks/native/data/etc/android.hardware.vulkan.level-1.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.vulkan.level.xml \
     frameworks/native/data/etc/android.hardware.vulkan.version-1_0_3.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.vulkan.version.xml \
-	frameworks/native/data/etc/android.hardware.vulkan.compute-0.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.vulkan.compute-0.xml \
+    frameworks/native/data/etc/android.hardware.vulkan.compute-0.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.vulkan.compute-0.xml \
     frameworks/native/data/etc/android.hardware.opengles.aep.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.opengles.aep.xml \
     frameworks/native/data/etc/android.hardware.fingerprint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.fingerprint.xml \
     frameworks/native/data/etc/android.hardware.location.gps.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.location.gps.xml \
@@ -93,11 +93,11 @@ PRODUCT_PACKAGES += \
 #Audio HIDL
 PRODUCT_PACKAGES += \
     android.hardware.audio@2.0-impl \
-	android.hardware.audio@2.0-service \
+    android.hardware.audio@2.0-service \
     android.hardware.audio.effect@2.0-impl \
-	android.hardware.audio.effect@2.0-service \
+    android.hardware.audio.effect@2.0-service \
     android.hardware.soundtrigger@2.0-impl \
-	android.hardware.soundtrigger@2.0-service
+    android.hardware.soundtrigger@2.0-service
 
 #Audio mixer
 PRODUCT_COPY_FILES += \
@@ -111,7 +111,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio/audio_policy.conf:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy.conf \
     $(LOCAL_PATH)/audio/mixer_paths.xml:$(TARGET_COPY_OUT_VENDOR)/etc/mixer_paths_qrd_sku1.xml \
     $(LOCAL_PATH)/audio/sound_trigger_mixer_paths.xml:system/etc/sound_trigger_mixer_paths.xml \
-	$(LOCAL_PATH)/audio/sound_trigger_mixer_paths.xml:$(TARGET_COPY_OUT_VENDOR)/etc/sound_trigger_mixer_paths.xml \
+    $(LOCAL_PATH)/audio/sound_trigger_mixer_paths.xml:$(TARGET_COPY_OUT_VENDOR)/etc/sound_trigger_mixer_paths.xml \
     $(LOCAL_PATH)/audio/sound_trigger_platform_info.xml:$(TARGET_COPY_OUT_VENDOR)/etc/sound_trigger_platform_info.xml
 
 # XML Audio configuration files
@@ -127,7 +127,7 @@ PRODUCT_COPY_FILES += \
 # Dummy hidl + hidl manager
 PRODUCT_PACKAGES += \
     android.hidl.base@1.0 \
-	android.hidl.base@1.0_vendor \
+    android.hidl.base@1.0_vendor \
     android.hidl.manager@1.0 \
     android.hidl.manager-V1.0-java
 
@@ -153,7 +153,7 @@ PRODUCT_PACKAGES += \
     camera.device@1.0-impl \
     camera.device@3.2-impl \
     android.hardware.camera.provider@2.4-impl \
-	android.hardware.camera.provider@2.4-service \
+    android.hardware.camera.provider@2.4-service \
     vendor.qti.hardware.camera.device@1.0 \
     vendor.qti.hardware.camera.device@1.0_vendor
 
@@ -163,7 +163,7 @@ PRODUCT_PACKAGES += \
 
 # Consumerir
 PRODUCT_PACKAGES += \
-    android.hardware.ir@1.0-service.xiaomi_mido
+    android.hardware.ir@1.0-service.land
 
 # Display
 PRODUCT_PACKAGES += \
@@ -185,7 +185,7 @@ PRODUCT_PACKAGES += \
     android.hardware.graphics.composer@2.1-service \
     android.hardware.graphics.allocator@2.0-service \
     android.hardware.memtrack@1.0-impl \
-	android.hardware.memtrack@1.0-service \
+    android.hardware.memtrack@1.0-service \
     android.hardware.renderscript@1.0-impl \
     vendor.display.config@1.0 \
     vendor.display.config@1.0_vendor
@@ -306,7 +306,7 @@ PRODUCT_PACKAGES += \
 #Light HIDL
 PRODUCT_PACKAGES += \
     android.hardware.light@2.0-impl \
-	android.hardware.light@2.0-service
+    android.hardware.light@2.0-service
 
 # Media
 PRODUCT_PACKAGES += \
@@ -325,7 +325,7 @@ PRODUCT_PACKAGES += \
 #media OMX
 PRODUCT_PACKAGES += \
     android.hardware.media.omx@1.0-impl \
-	android.hardware.media.omx@1.0-service
+    android.hardware.media.omx@1.0-service
 
 # Media
 PRODUCT_COPY_FILES += \

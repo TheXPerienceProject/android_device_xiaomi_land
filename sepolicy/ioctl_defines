@@ -1,2 +1,0 @@
-# socket ioctls
-define(`RMNET_IOCTL_EXTENDED', `0x000089FD')
