@@ -226,8 +226,8 @@ TARGET_POWERHAL_VARIANT := qcom
 TARGET_USES_INTERACTION_BOOST := true
 
 # Properties
-#BOARD_PROPERTY_OVERRIDES_SPLIT_ENABLED := true
-#TARGET_VENDOR_PROP += $(DEVICE_PATH)/vendor.prop
+BOARD_PROPERTY_OVERRIDES_SPLIT_ENABLED := true
+TARGET_VENDOR_PROP += $(DEVICE_PATH)/vendor.prop
 
 # RIL
 #PROTOBUF_SUPPORTED := true
@@ -243,17 +243,17 @@ TARGET_RELEASETOOLS_EXTENSIONS := device/qcom/common
 BOARD_ROOT_EXTRA_FOLDERS := dsp firmware persist
 
 # SELinux
-BOARD_SEPOLICY_DIRS += \
+#BOARD_SEPOLICY_DIRS += \
     $(DEVICE_PATH)/sepolicy
--include device/qcom/sepolicy/sepolicy.mk
+include device/qcom/sepolicy/sepolicy.mk
 #include device/qcom/sepolicy/legacy-sepolicy.mk
 
 # Treble
 #BOARD_PROPERTY_OVERRIDES_SPLIT_ENABLED := true
-#PRODUCT_COMPATIBILITY_MATRIX_LEVEL_OVERRIDE := 27
+PRODUCT_COMPATIBILITY_MATRIX_LEVEL_OVERRIDE := 27
 PRODUCT_FULL_TREBLE_OVERRIDE := true
-#PRODUCT_SHIPPING_API_LEVEL := 23 # Shipped with M
-#PRODUCT_VENDOR_MOVE_ENABLED := true
+PRODUCT_SHIPPING_API_LEVEL := 23 # Shipped with M
+PRODUCT_VENDOR_MOVE_ENABLED := true
 DEVICE_MANIFEST_FILE := device/xiaomi/land/manifest.xml
 DEVICE_MATRIX_FILE := device/xiaomi/land/compatibility_matrix.xml
 

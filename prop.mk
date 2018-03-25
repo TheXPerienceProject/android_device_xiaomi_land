@@ -64,7 +64,7 @@ persistent.bt.a2dp_offload_cap=sbc-aptx-aptXHD
 PRODUCT_PROPERTY_OVERRIDES += \
 bluetooth.hfp.client=1 \
 ro.bluetooth.dun=true  \
-ro.bluetooth.hfp.ver=1.7 \ 
+ro.bluetooth.hfp.ver=1.7 \
 ro.bluetooth.sap=true  \
 ro.qualcomm.bluetooth.ftp=true \
 ro.qualcomm.bluetooth.hfp=true \
@@ -118,9 +118,6 @@ persist.camera.video.ubwc=0
 PRODUCT_PROPERTY_OVERRIDES += \
 drm.service.enabled=true
 
-
-#ro.sys.sdcardfs=0
-
 # Fingerprint
 PRODUCT_PROPERTY_OVERRIDES += \
 persist.qfp=false
@@ -140,8 +137,8 @@ persist.loc.nlp_name=com.qualcomm.location \
 ro.gps.agps_provider=1
 
 # GSI always generate dex pre-opt in system image
-#PRODUCT_PROPERTY_OVERRIDES += \
-#ro.cp_system_other_odex=0
+PRODUCT_PROPERTY_OVERRIDES += \
+ro.cp_system_other_odex=0
 
 # GSI always disables adb authentication
 PRODUCT_PROPERTY_OVERRIDES += \

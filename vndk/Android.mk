@@ -33,6 +33,8 @@ EXTRA_VENDOR_LIBRARIES := \
     android.hidl.manager@1.0 \
     android.hardware.sensors@1.0 \
     android.hardware.power@1.0 \
+    android.hardware.thermal@1.0 \
+    android.hardware.thermal@1.1 \
     android.hardware.ir@1.0 \
     vendor.display.color@1.0 \
     vendor.display.config@1.0 \

@@ -22,9 +22,10 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, vendor/xperience/config/common_full_phone.mk)
 
 # Inherit from land device
-$(call inherit-product, $(LOCAL_PATH)/device.mk)
+$(call inherit-product, device/xiaomi/land/device.mk)
 
 PRODUCT_BRAND := Xiaomi
+BOARD_VENDOR := Xiaomi
 PRODUCT_DEVICE := land
 PRODUCT_MANUFACTURER := Xiaomi
 PRODUCT_NAME := xpe_land
@@ -36,8 +37,8 @@ TARGET_VENDOR_PRODUCT_NAME := land
 PRODUCT_BUILD_PROP_OVERRIDES += \
     PRIVATE_BUILD_DESC="land-user 6.0.1 MMB29M V9.5.1.0.MALMIFA release-keys"
 
-PRODUCT_SYSTEM_PROPERTY_BLACKLIST += \
+#PRODUCT_SYSTEM_PROPERTY_BLACKLIST += \
     ro.product.model
 
 # Set BUILD_FINGERPRINT variable to be picked up by both system and vendor build.prop
-BUILD_FINGERPRINT =: "Xiaomi/land/land:6.0.1/MMB29M/V9.5.1.0.MALMIFA:user/release-keys"
+BUILD_FINGERPRINT := "Xiaomi/land/land:6.0.1/MMB29M/V9.5.1.0.MALMIFA:user/release-keys"
