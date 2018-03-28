@@ -37,6 +37,7 @@
 /dev/ion                  0664   system     system
 /dev/rtc0                 0660   system     system
 /dev/smd0                 0660   system     system
+/dev/smd3                 0660   system     system
 /dev/smd4                 0660   system     system
 /dev/smd_cxm_qmi          0640   radio      radio
 /dev/smd5                 0660   system     system
@@ -285,3 +286,7 @@
 /sys/devices/soc/soc:fpc1020      	wakeup_enable	        	0660   system     system
 /sys/devices/soc/soc:fpc1020      	compatible_all	        	0660   system     system
 /sys/devices/soc/soc:fpc1020            fingerdown_wait                 0660   system     system
+
+# lirc
+/dev/lirc0                0660   system     system
+

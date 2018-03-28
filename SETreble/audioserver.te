@@ -1,0 +1,8 @@
+#============= audioserver ==============
+allow audioserver debugfs_tracing:file { open write };
+allow audioserver sysfs:dir { open read };
+allow audioserver sysfs:file { getattr open read };
+allow audioserver unlabeled:dir { read open search getattr };
+allow audioserver unlabeled:file { read open getattr };
+
+allow audioserver hal_perf_default:binder call;

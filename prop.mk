@@ -225,7 +225,6 @@ persist.vendor.radio.sib16_support=1 \
 persist.vendor.radio.custom_ecc=1 \
 ril.subscription.types=NV,RUIM \
 rild.libpath=/vendor/lib64/libril-qc-qmi-1.so \
-rild.libargs=-d /dev/smd0 \
 ril.ecclist=000,08,100,101,102,110,112,118,119,120,122,911,999 \
 ril.ecclist1=000,08,100,101,102,110,112,118,119,120,122,911,999 \
 ro.ril.disable.power.collapse=0 \

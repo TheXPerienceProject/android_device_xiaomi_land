@@ -1,0 +1,3 @@
+allow qseeproxy unlabeled:file rw_file_perms;
+
+allow qseeproxy servicemanager:binder { call transfer };

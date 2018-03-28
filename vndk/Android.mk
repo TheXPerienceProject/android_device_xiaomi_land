@@ -29,9 +29,8 @@ VNDK_SP_LIBRARIES := \
 
 EXTRA_VENDOR_LIBRARIES := \
     libsqlite \
-    libshim_qcamera \
-    libshim_sensors \
-    libshim_atomic \
+    libicuuc \
+    libicui18n \
     android.hidl.base@1.0 \
     android.hidl.manager@1.0 \
     android.hardware.sensors@1.0 \

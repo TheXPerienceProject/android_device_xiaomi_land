@@ -1,0 +1,46 @@
+# Fpc Fingerprint
+/dev/socket/fpce                                         u:object_r:fpce_socket:s0
+/data/fpc(/.*)?                                          u:object_r:fpc_data_file:s0
+/data/fpcd(/.*)?                                         u:object_r:fpc_data_file:s0
+/sys/devices/soc0/fpc_fpc1020.*/hw_reset                 u:object_r:fpc_sysfs:s0
+/sys/devices/soc0/fpc_fpc1020.*/irq                      u:object_r:fpc_sysfs:s0
+/sys/devices/soc0/fpc_fpc1020.*/wakeup_enable            u:object_r:fpc_sysfs:s0
+/sys/devices/soc/soc:fpc1020/hw_reset                    u:object_r:fpc_sysfs:s0
+/sys/devices/soc/soc:fpc1020/irq                         u:object_r:fpc_sysfs:s0
+/sys/devices/soc/soc:fpc1020/wakeup_enable               u:object_r:fpc_sysfs:s0
+/sys/devices/soc/soc:fpc1020/spi_prepare                 u:object_r:fpc_sysfs:s0
+
+# Goodix Fingerprint
+/dev/gf66xx-spi                             u:object_r:gx_fpd_device:s0
+/dev/ttyACM[0-9]*                           u:object_r:gx_fpd_device:s0
+/dev/goodix_fp*                             u:object_r:gx_fpd_device:s0
+/data/goodix/*                              u:object_r:gx_fpd_data_file:s0
+/system/bin/gx_fpd                          u:object_r:gx_fpd_exec:s0
+/data/system/fingerprint(/.*)?              u:object_r:gx_fpd_data_file:s0
+/persist/data/gxfp(/.*)?                    u:object_r:gx_fpd_data_file:s0
+/persist/data/gxfp                          u:object_r:gx_fpd_data_file:s0
+#sys/devices/soc/soc:goodix_fp/goodix_fp 
+
+# Custom services
+/(vendor|system/vendor)/bin/hw/android\.hardware\.biometrics\.fingerprint@2.\0-service.land                 u:object_r:fps_hal_exec:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.dumpstate@1\.0-service.land      u:object_r:hal_dumpstate_impl_exec:s0
+
+# Block devices
+/dev/block/bootdevice/by-name/persist		u:object_r:persist_block_device:s0
+
+# Data files
+/data/misc/netmgr/log\.txt			u:object_r:netmgrd_data_file:s0
+
+/tombstones             u:object_r:rootfs:s0
+/dsp                    u:object_r:rootfs:s0
+/firmware(/.*)?         u:object_r:firmware_file:s0
+
+# RMT Storage
+/sys/kernel/debug/rmt_storage/rmts                              u:object_r:debugfs_rmts:s0
+/sys/kernel/debug/rmt_storage(/.*)?                  u:object_r:qti_debugfs:s0
+
+# DPM
+#/(vendor|system/vendor)/bin/dpmd      u:object_r:dpmd_exec:s0
+
+# QFP
+/data/misc/stargate(/.*)?             u:object_r:qfp-daemon_data_file:s0

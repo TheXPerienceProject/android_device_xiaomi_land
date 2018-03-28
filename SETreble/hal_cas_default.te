@@ -1,0 +1,4 @@
+# Allow CAS HAL to use vendor-binder service
+
+allow hal_cas_default vndbinder_device:chr_file rw_file_perms;
+vndbinder_use(hal_cas_default)
