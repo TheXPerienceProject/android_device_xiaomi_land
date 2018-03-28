@@ -2,3 +2,4 @@ allow mm-qcamerad sysfs_graphics:file { read open };
 #allow mm-qcamerad camera_data_file:sock_file { create unlink };
 allow mm-qcamerad system_server:unix_stream_socket { read write };
 allow mm-qcamerad mm-qcamerad:process getattr;
+allow mm-qcamerad sensorservice_service:service_manager find;

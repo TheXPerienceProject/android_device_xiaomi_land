@@ -44,3 +44,10 @@
 
 # QFP
 /data/misc/stargate(/.*)?             u:object_r:qfp-daemon_data_file:s0
+
+#Bluetooth
+/dev/smd3                                                     u:object_r:hci_attach_dev:s0
+
+#Lights
+/sys/devices/soc/78b6000\.i2c/i2c-2/2-0045/leds/red/brightness    u:object_r:sysfs_leds:s0
+/sys/devices/soc/78b6000\.i2c/i2c-2/2-[0-9a-f]+/leds(/.*)?    u:object_r:sysfs_leds:s0
