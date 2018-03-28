@@ -146,8 +146,6 @@ PRODUCT_PACKAGES += \
     libmmcamera_interface \
     libmm-qcamera \
     libmmjpeg_interface \
-    libshim_qcamera \
-    libshim_sensors \
     Snap
 
 # Camera HIDL HAL
@@ -296,10 +294,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.keymaster@3.0-impl \
     android.hardware.keymaster@3.0-service
-
-# Libshims
-PRODUCT_PACKAGES += \
-    libshim_atomic
 
 # Lights
 PRODUCT_PACKAGES += \

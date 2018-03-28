@@ -1079,34 +1079,34 @@ vendor/lib/com.qualcomm.qti.dpm.api@1.0_vendor.so
 vendor/lib/libdpmqmihal.so
 
 # DRM - from santoni (Redmi 4X) - HTC U11- OnePlus3T
-vendor/bin/qseecomd|
+vendor/bin/qseecomd
 vendor/bin/mdtpd|4287f9496af4642c63114f4ded06ee5566f99560
 vendor/bin/qseeproxydaemon|3bcecc1b1e8c384d92f6f4fbceea9269f55e1c68
-vendor/lib/libcppf.so|
-vendor/lib/libqisl.so|
-vendor/lib/librpmb.so|
-vendor/lib/libspl.so|
-vendor/lib/libssd.so|
-vendor/lib/libStDrvInt.so|
+vendor/lib/libcppf.so
+vendor/lib/libqisl.so
+vendor/lib/librpmb.so
+vendor/lib/libspl.so
+vendor/lib/libssd.so
+vendor/lib/libStDrvInt.so
 vendor/lib/liboemcrypto.so|95f5ead8c12ca55fd5af080de4ba70129a548620
-vendor/lib/libQSEEComAPI.so|
-vendor/lib64/lib-sec-disp.so|
-vendor/lib64/libGPreqcancel.so|
-vendor/lib64/libGPreqcancel_svc.so|
+vendor/lib/libQSEEComAPI.so
+vendor/lib64/lib-sec-disp.so
+vendor/lib64/libGPreqcancel.so
+vendor/lib64/libGPreqcancel_svc.so
 vendor/lib64/libGPTEE.so|358528521b139414830e0546a6489747ec984648
 vendor/lib64/libmdtp.so|ea5a8dbb66e9500298ad70d424506be64f99ce1e
 vendor/lib64/libmdtp_crypto.so|8c07c4c720716e53217d8176fb5ebcc2f4cfd77f
-vendor/lib64/libQSEEComAPI.so|
-vendor/lib64/libSecureUILib.so|
-vendor/lib64/libStDrvInt.so|
-vendor/lib64/libdrmfs.so|
-vendor/lib64/libdrmtime.so|
-vendor/lib64/libqisl.so|
+vendor/lib64/libQSEEComAPI.so
+vendor/lib64/libSecureUILib.so
+vendor/lib64/libStDrvInt.so
+vendor/lib64/libdrmfs.so
+vendor/lib64/libdrmtime.so
+vendor/lib64/libqisl.so
 vendor/lib64/librpmb.so|aa4a8a24fcd64902d3553220f3f281ce6b5899a4
-vendor/lib64/libspl.so|
-vendor/lib64/libsecureui.so|
-vendor/lib64/libsecureui_svcsock.so|
-vendor/lib64/libssd.so|
+vendor/lib64/libspl.so
+vendor/lib64/libsecureui.so
+vendor/lib64/libsecureui_svcsock.so
+vendor/lib64/libssd.so
 vendor/lib64/libtzdrmgenprov.so|28476f814435420885c4b9551e88b016e9705c54
 
 # Display calibration
@@ -1606,7 +1606,7 @@ vendor/lib64/sensor_calibrate.so
 vendor/lib64/vendor.qti.hardware.sensorscalibrate@1.0.so
 
 # Subsystem restart
-bin/ssr_diag
+bin/ssr_diag:vendor/bin/ssr_diag
 
 # Thermal Tissot
 vendor/bin/thermal-engine
@@ -1642,15 +1642,15 @@ vendor/etc/init/android.hardware.drm@1.0-service.widevine.rc|51a3168a0dbc064d78e
 vendor/lib/libwvhidl.so|88276cfc0fcb8033ef69d61e6838ce915bfcf697
 
 # Wi-Fi
-bin/cnss-daemon
-bin/cnss_diag
+bin/cnss-daemon:vendor/bin/cnss-daemon
+bin/cnss_diag:vendor/bin/cnss_diag
 #bin/wcnss_service:bin/wcnss_service
 vendor/bin/wcnss_filter
 vendor/bin/wcnss_service
 etc/firmware/wlan/prima/WCNSS_cfg.dat:vendor/firmware/wlan/prima/WCNSS_cfg.dat
-etc/hostapd/hostapd.accept
-etc/hostapd/hostapd_default.conf
-etc/hostapd/hostapd.deny
+etc/hostapd/hostapd.accept:vendor/etc/hostapd/hostapd.accept
+etc/hostapd/hostapd_default.conf:vendor/etc/hostapd/hostapd_default.conf
+etc/hostapd/hostapd.deny:vendor/etc/hostapd/hostapd.deny
 etc/wifi/WCNSS_qcom_cfg.ini:vendor/etc/wifi/WCNSS_qcom_cfg.ini
 etc/wifi/fstman.ini:vendor/etc/wifi/fstman.ini
 etc/wifi/p2p_supplicant_overlay.conf:vendor/etc/wifi/p2p_supplicant_overlay.conf
