@@ -175,6 +175,9 @@ SF_VSYNC_EVENT_PHASE_OFFSET_NS   := 6000000
 # Encryption
 TARGET_HW_DISK_ENCRYPTION := true
 
+# Extended filesystem support
+TARGET_EXFAT_DRIVER := sdfat
+
 # FM
 AUDIO_FEATURE_ENABLED_FM_POWER_OPT := true
 BOARD_HAVE_QCOM_FM := true
