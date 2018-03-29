@@ -1644,17 +1644,8 @@ vendor/lib/libwvhidl.so|88276cfc0fcb8033ef69d61e6838ce915bfcf697
 # Wi-Fi
 bin/cnss-daemon:vendor/bin/cnss-daemon
 bin/cnss_diag:vendor/bin/cnss_diag
-#bin/wcnss_service:bin/wcnss_service
 vendor/bin/wcnss_filter
 vendor/bin/wcnss_service
-etc/firmware/wlan/prima/WCNSS_cfg.dat:vendor/firmware/wlan/prima/WCNSS_cfg.dat
-etc/hostapd/hostapd.accept:vendor/etc/hostapd/hostapd.accept
-etc/hostapd/hostapd_default.conf:vendor/etc/hostapd/hostapd_default.conf
-etc/hostapd/hostapd.deny:vendor/etc/hostapd/hostapd.deny
-etc/wifi/WCNSS_qcom_cfg.ini:vendor/etc/wifi/WCNSS_qcom_cfg.ini
-etc/wifi/fstman.ini:vendor/etc/wifi/fstman.ini
-etc/wifi/p2p_supplicant_overlay.conf:vendor/etc/wifi/p2p_supplicant_overlay.conf
-etc/wifi/wpa_supplicant_overlay.conf:vendor/etc/wifi/wpa_supplicant_overlay.conf
 
 #what?
 vendor/lib/libperfgluelayer.so
