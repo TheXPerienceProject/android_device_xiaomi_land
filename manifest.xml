@@ -1,7 +1,7 @@
-<!--
-    This is a skeleton device manifest. Notes:
+<!-- 
+    This is a skeleton device manifest. Notes: 
     1. android.hidl.*, android.frameworks.*, android.system.* are not included.
-    2. If a HAL is supported in both hwbinder and passthrough transport,
+    2. If a HAL is supported in both hwbinder and passthrough transport, 
        only hwbinder is shown.
     3. It is likely that HALs in passthrough transport does not have
        <interface> declared; users will have to write them by hand.
@@ -47,11 +47,6 @@
             <name>IBluetoothHci</name>
             <instance>default</instance>
         </interface>
-    </hal>
-    <hal format="hidl">
-        <name>android.hardware.broadcastradio</name>
-        <transport arch="32+64">passthrough</transport>
-        <version>1.0</version>
     </hal>
     <hal format="hidl">
         <name>android.hardware.camera.provider</name>
@@ -161,7 +156,7 @@
     </hal>
     <hal format="hidl">
         <name>android.hardware.ir</name>
-        <transport arch="32+64">passthrough</transport>
+        <transport>hwbinder</transport>
         <version>1.0</version>
         <interface>
             <name>IConsumerIr</name>
@@ -289,12 +284,12 @@
         </interface>
     </hal>
     <hal format="hidl">
-        <name>android.hardware.wifi.supplicant</name>
+        <name>com.qualcomm.qti.dpm.api</name>
         <transport>hwbinder</transport>
         <version>1.0</version>
         <interface>
-            <name>ISupplicant</name>
-            <instance>default</instance>
+            <name>IdpmQmi</name>
+            <instance>dpmQmiService</instance>
         </interface>
     </hal>
     <hal format="hidl">
@@ -334,11 +329,29 @@
         </interface>
     </hal>
     <hal format="hidl">
-        <name>vendor.display.config</name>
+        <name>vendor.display.color</name>
         <transport>hwbinder</transport>
         <version>1.0</version>
         <interface>
+            <name>IDisplayColor</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl">
+        <name>vendor.display.config</name>
+        <transport>hwbinder</transport>
+        <version>1.1</version>
+        <interface>
             <name>IDisplayConfig</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl">
+        <name>vendor.display.postproc</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>IDisplayPostproc</name>
             <instance>default</instance>
         </interface>
     </hal>
@@ -371,6 +384,15 @@
         <version>1.0</version>
         <interface>
             <name>IPerf</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl">
+        <name>vendor.qti.hardware.qdutils_disp</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>IQdutilsDisp</name>
             <instance>default</instance>
         </interface>
     </hal>

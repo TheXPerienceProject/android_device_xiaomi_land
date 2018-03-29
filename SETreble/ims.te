@@ -1,0 +1,5 @@
+allow ims self:capability net_raw;
+allow ims diag_prop:property_service set;
+allow ims ims:capability2 wake_alarm;
+allow ims hal_rcsservice_exec:file { entrypoint };
+get_prop(ims, diag_prop);

@@ -1,12 +1,13 @@
 allow init { domain -lmkd -crash_dump }:process noatsecure;
 allow init adsprpcd_file:filesystem { relabelto relabelfrom associate mount getattr };
 allow init cameraserver:fd use;
+allow init debugfs:file write;
 allow init graphics_device:chr_file write;
 allow init hal_camera_default:fd use;
 allow init hal_graphics_allocator_default:fd { use };
 allow init hal_dumpstate_impl_exec:file { execute };
 allow init hidl_base_hwservice:hwservice_manager add;
-allow init ion_device:chr_file { ioctl write };
+allow init ion_device:chr_file { read open ioctl write };
 allow init init:udp_socket ioctl;
 allow init logd:dir getattr;
 allow init modem_efs_partition_device:blk_file write;

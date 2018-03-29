@@ -1,0 +1,7 @@
+allow qti_init_shell kmsg_device:chr_file { write open };
+allow qti_init_shell diag_prop:property_service set;
+allow qti_init_shell self:socket create_socket_perms_no_ioctl;
+allow qti_init_shell vfat:file { getattr open read};
+allow qti_init_shell sysfs:file write;
+
+set_prop(qti_init_shell, ctl_default_prop)

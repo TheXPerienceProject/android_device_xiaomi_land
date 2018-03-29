@@ -228,7 +228,6 @@ on property:sys.shutdown.requested=*
     # We chown/chmod /persist again so because mount is run as root + defaults
     chown root system /persist
     chmod 0771 /persist
-    chown system system /persist/WCNSS_qcom_wlan_nv.bin
     chmod 0664 /sys/devices/platform/msm_sdcc.1/polling
     chmod 0664 /sys/devices/platform/msm_sdcc.2/polling
     chmod 0664 /sys/devices/platform/msm_sdcc.3/polling
@@ -634,7 +633,7 @@ service wpa_supplicant /vendor/bin/hw/wpa_supplicant \
     -I/vendor/etc/wifi/p2p_supplicant_overlay.conf -N \
     -iwlan0 -Dnl80211 -c/data/misc/wifi/wpa_supplicant.conf \
     -I/vendor/etc/wifi/wpa_supplicant_overlay.conf \
-    -O/data/misc/wifi/sockets -puse_p2p_group_interface=1 -dd \
+    -O/data/misc/wifi/sockets -puse_p2p_group_interface=1 \
     -e/data/misc/wifi/entropy.bin -g@android:wpa_wlan0
 #   we will start as root and wpa_supplicant will switch to user wifi
 #   after setting up the capabilities required for WEXT
@@ -655,7 +654,7 @@ service qcom-sh /vendor/bin/sh /vendor/bin/init.qcom.sh
     class late_start
     user root
     oneshot
-    seclabel u:r:qti_init_shell:s0
+    seclabel u:r:qti_init_shell_exec:s0
 
 service ril-daemon2 /vendor/bin/hw/rild -c 2
     class main
@@ -683,7 +682,7 @@ service hcidump /vendor/bin/sh /system/etc/hcidump.sh
     group bluetooth system net_bt_admin net_admin
     disabled
     oneshot
-    seclabel u:r:qti_init_shell:s0
+    seclabel u:r:qti_init_shell_exec:s0
 
 service charger /sbin/chargeonlymode
     class charger
@@ -729,7 +728,7 @@ service poweroffhandler /system/bin/poweroffhandler
     disabled
     oneshot
 
-service gx_fpd /system/bin/gx_fpd
+service gx_fpd /vendor/bin/gx_fpd
     class core
     user root
     group system system
@@ -912,8 +911,5 @@ service mdtpd /vendor/bin/mdtpd
     class late_start
     user root
     group system radio drmrpc
-
-service mtservice /system/bin/mtd
-    class late_start
 
 
