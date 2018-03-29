@@ -158,6 +158,7 @@ service per_mgr /vendor/bin/pm-service
     group system net_raw
     ioprio rt 4
     writepid /dev/cpuset/system-background/tasks
+    seclabel u:r:per_mgr:s0
 
 service per_proxy /vendor/bin/pm-proxy
     class core
@@ -165,6 +166,7 @@ service per_proxy /vendor/bin/pm-proxy
     group system
     disabled
     writepid /dev/cpuset/system-background/tasks
+    seclabel u:r:per_mgr:s0
 
 on property:init.svc.per_mgr=running
     start per_proxy
@@ -574,10 +576,12 @@ service rmt_storage /vendor/bin/rmt_storage
     shutdown critical
     ioprio rt 0
     group wakelock
+    seclabel u:r:rmt_storage:s0
 
 service tftp_server /vendor/bin/tftp_server
    class core
    user root
+   seclabel u:r:rfs_access:s0
 
 on property:wc_transport.start_hci=true
     start start_hci_filter
@@ -589,7 +593,7 @@ service start_hci_filter /vendor/bin/wcnss_filter
     class late_start
     user bluetooth
     group bluetooth diag system wakelock
-    seclabel u:r:bluetooth:s0
+    seclabel u:r:wcnss_filter:s0
     disabled
 
 #FM
@@ -602,6 +606,7 @@ on property:hw.fm.init=1
 service netmgrd /vendor/bin/netmgrd
     class main
     writepid /dev/cpuset/system-background/tasks
+    seclabel u:r:netmgrd:s0
 
 service qti /vendor/bin/qti
     class main
@@ -612,6 +617,7 @@ service sensors /vendor/bin/sensors.qcom
     class core
     user root
     group root
+    seclabel u:r:sensors:s0
 
 service qvop-daemon /vendor/bin/qvop-daemon
     class late_start
@@ -643,11 +649,13 @@ service loc_launcher /vendor/bin/loc_launcher
     #loc_launcher will start as root and set its uid to gps
     class late_start
     group gps inet diag wifi
+    seclabel u:r:location:s0
 
 service qcom-sh /vendor/bin/init.qcom.sh
     class late_start
     user root
     oneshot
+    seclabel u:r:qti_init_shell:s0
 
 service ril-daemon2 /vendor/bin/hw/rild -c 2
     class main
@@ -662,6 +670,7 @@ service usb_uicc_enable /system/bin/sh /system/etc/init.qcom.uicc.sh
     user root
     disabled
     oneshot
+    seclabel u:r:qti_init_shell:s0
 
 on property:sys.usb_uicc.enabled=1
     start usb_uicc_enable
@@ -674,6 +683,7 @@ service hcidump /system/bin/sh /system/etc/hcidump.sh
     group bluetooth system net_bt_admin net_admin
     disabled
     oneshot
+    seclabel u:r:qti_init_shell:s0
 
 service charger /sbin/chargeonlymode
     class charger
@@ -703,11 +713,13 @@ service cnd /vendor/bin/cnd
     class main
     user system
     group system wifi inet radio wakelock net_admin
+    seclabel u:r:cnd:s0
 
 service qseeproxydaemon /vendor/bin/qseeproxydaemon
     class late_start
     user system
     group system
+    seclabel u:r:qseeproxy:s0
 
 # Add poweroffhandler
 service poweroffhandler /system/bin/poweroffhandler
@@ -765,6 +777,7 @@ service qseecomd /vendor/bin/qseecomd
     class core
     user root
     group root
+    seclabel u:r:tee:s0
 
 service perfd /vendor/bin/perfd
     class main
@@ -788,12 +801,14 @@ service time_daemon /vendor/bin/time_daemon
     user root
     group root
     writepid /dev/cpuset/system-background/tasks
+    seclabel u:r:time_daemon:s0
 
 service wcnss-service /vendor/bin/wcnss_service
     class main
     user system
     group system wifi radio
     oneshot
+    seclabel u:r:wcnss_service:s0
 
 #IMS
 service imsqmidaemon /vendor/bin/imsqmidaemon
@@ -802,6 +817,7 @@ service imsqmidaemon /vendor/bin/imsqmidaemon
       socket ims_qmid stream 0660 system radio
       group radio log diag
       writepid /dev/cpuset/system-background/tasks
+      seclabel u:r:ims:s0
 
 service imsdatadaemon /vendor/bin/imsdatadaemon
       class main
@@ -810,6 +826,7 @@ service imsdatadaemon /vendor/bin/imsdatadaemon
       group system wifi radio inet log diag
       writepid /dev/cpuset/system-background/tasks
       disabled
+      seclabel u:r:ims:s0
 
 on property:vendor.ims.QMI_DAEMON_STATUS=1
       start imsdatadaemon
@@ -820,6 +837,7 @@ service ims_rtp_daemon /vendor/bin/ims_rtp_daemon
      group radio diag inet log
      writepid /dev/cpuset/system-background/tasks
      disabled
+     seclabel u:r:hal_imsrtp:s0
 
 service imsrcsservice /vendor/bin/imsrcsd
      class main
@@ -827,6 +845,7 @@ service imsrcsservice /vendor/bin/imsrcsd
      group radio diag inet log
      writepid /dev/cpuset/system-background/tasks
      disabled
+     seclabel u:r:ims:s0
 
 on property:vendor.ims.DATA_DAEMON_STATUS=1
    start ims_rtp_daemon
@@ -839,6 +858,7 @@ service ppd /vendor/bin/mm-pp-dpps
     user system
     socket pps stream 0660 system system
     group system graphics
+    seclabel u:r:mm-pp-daemon:s0
 
 on property:init.svc.surfaceflinger=stopped
     stop ppd
@@ -874,11 +894,13 @@ service adsprpcd /vendor/bin/adsprpcd
     class main
     user media
     group media
+    seclabel u:r:adsprpcd:s0
 
 service hvdcp_opti /vendor/bin/hvdcp_opti
     class main
     user root
     group system wakelock
+    seclabel u:r:hvdcp:s0
 
 service energy-awareness /vendor/bin/energy-awareness
     class main
