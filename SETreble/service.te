@@ -1,5 +1,5 @@
-type gx_fpd_service, service_manager_type;
-type fp_service, service_manager_type;
+type gx_fpd_service, service_manager_type, vendor_file_type;
+type fp_service, service_manager_type, vendor_file_type;
 type imscm_service,               service_manager_type;
 
 type fingerprintd_custom_service, service_manager_type, vendor_file_type;

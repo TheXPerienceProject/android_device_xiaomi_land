@@ -22,7 +22,7 @@
 #sys/devices/soc/soc:goodix_fp/goodix_fp 
 
 # Custom services
-/(vendor|system/vendor)/bin/hw/android\.hardware\.biometrics\.fingerprint@2.\0-service.land                 u:object_r:fps_hal_exec:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.biometrics\.fingerprint@2.\0-service.land                 u:object_r:hal_fingerprint_default_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.dumpstate@1\.0-service.land      u:object_r:hal_dumpstate_impl_exec:s0
 
 # Block devices
@@ -55,15 +55,4 @@
 #kek
 /system/bin/sysinit                                            u:object_r:sysinit_exec:s0
 /(vendor|system/vendor)/lib64/libQSEEComAPI.so u:object_r:tee_exec:s0
-/(vendor|system/vendor)/bin/qseecomd                                                  u:object_r:tee_exec:s0
 /(vendor|system/vendor)/bin/wcnss_service                                             u:object_r:wcnss_service_exec:s0
-/(vendor|system/vendor)/bin/adsprpcd                                                  u:object_r:adsprpcd_exec:s0
-/(vendor|system/vendor)/bin/hvdcp_opti                                                u:object_r:hvdcp_exec:s0
-/(vendor|system/vendor)/bin/sensors.qcom                                              u:object_r:sensors_exec:s0
-/(vendor|system/vendor)/bin/cnd                                                       u:object_r:cnd_exec:s0
-/(vendor|system/vendor)/bin/irsc_util                                                 u:object_r:irsc_util_exec:s0
-/(vendor|system/vendor)/bin/rmt_storage                                               u:object_r:rmt_storage_exec:s0
-/(vendor|system/vendor)/bin/tftp_server                                               u:object_r:rfs_access_exec:s0
-/(vendor|system/vendor)/bin/wcnss_filter                                              u:object_r:wcnss_filter_exec:s0
-/(vendor|system/vendor)/bin/time_daemon                                               u:object_r:time_daemon_exec:s0
-

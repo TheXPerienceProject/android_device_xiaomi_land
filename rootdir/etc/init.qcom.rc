@@ -651,7 +651,7 @@ service loc_launcher /vendor/bin/loc_launcher
     group gps inet diag wifi
     seclabel u:r:location:s0
 
-service qcom-sh /vendor/bin/init.qcom.sh
+service qcom-sh /vendor/bin/sh /vendor/bin/init.qcom.sh
     class late_start
     user root
     oneshot
@@ -665,7 +665,7 @@ service ril-daemon2 /vendor/bin/hw/rild -c 2
     group radio cache inet misc audio sdcard_r sdcard_rw diag oem_2901 log
     capabilities BLOCK_SUSPEND NET_ADMIN NET_RAW
 
-service usb_uicc_enable /system/bin/sh /system/etc/init.qcom.uicc.sh
+service usb_uicc_enable /vendor/bin/sh /system/etc/init.qcom.uicc.sh
     class late_start
     user root
     disabled
@@ -678,7 +678,7 @@ on property:sys.usb_uicc.enabled=1
 on property:sys.usb_uicc.enabled=0
     start usb_uicc_enable
 
-service hcidump /system/bin/sh /system/etc/hcidump.sh
+service hcidump /vendor/bin/sh /system/etc/hcidump.sh
     user bluetooth
     group bluetooth system net_bt_admin net_admin
     disabled
