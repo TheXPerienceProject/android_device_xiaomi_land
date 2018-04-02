@@ -57,3 +57,4 @@
 /system/bin/sysinit                                            u:object_r:sysinit_exec:s0
 /(vendor|system/vendor)/lib64/libQSEEComAPI.so u:object_r:tee_exec:s0
 /(vendor|system/vendor)/bin/wcnss_service                                             u:object_r:wcnss_service_exec:s0
+/(vendor|system/vendor)/bin/gx_fpd               u:object_r:hal_fingerprint_default_exec:s0
