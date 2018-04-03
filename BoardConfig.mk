@@ -251,7 +251,7 @@ BOARD_ROOT_EXTRA_FOLDERS := dsp firmware persist
 
 # SELinux
 #ifeq ($(PRODUCT_FULL_TREBLE_OVERRIDE), true)
-BOARD_SEPOLICY_DIRS += \
+#BOARD_SEPOLICY_DIRS += \
     $(DEVICE_PATH)/SETreble
 #endif
 #ifeq ($(PRODUCT_FULL_TREBLE_OVERRIDE), false)
@@ -259,13 +259,13 @@ BOARD_SEPOLICY_DIRS += \
 #        $(DEVICE_PATH)/sepolicy
 #endif
 
-include device/qcom/sepolicy/sepolicy.mk
+#include device/qcom/sepolicy/sepolicy.mk
 #include device/qcom/sepolicy/legacy-sepolicy.mk
 
 # Treble
-#BOARD_PROPERTY_OVERRIDES_SPLIT_ENABLED := true
-#PRODUCT_COMPATIBILITY_MATRIX_LEVEL_OVERRIDE := 27
-#PRODUCT_FULL_TREBLE_OVERRIDE := true
+BOARD_PROPERTY_OVERRIDES_SPLIT_ENABLED := true
+PRODUCT_COMPATIBILITY_MATRIX_LEVEL_OVERRIDE := 27
+PRODUCT_FULL_TREBLE_OVERRIDE := true
 PRODUCT_SHIPPING_API_LEVEL := 23 # Shipped with M
 PRODUCT_VENDOR_MOVE_ENABLED := true
 DEVICE_MANIFEST_FILE := device/xiaomi/land/manifest.xml
