@@ -18,6 +18,13 @@
 
 $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_m.mk)
 
+PRODUCT_ENFORCE_RRO_TARGETS := \
+   Bluetooth \
+   Settings \
+   SettingsProvider \
+   SystemUI \
+   framework-res \
+
 # Overlay
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay
