@@ -456,6 +456,7 @@ PRODUCT_PACKAGES += \
     wificond \
     wifilogd \
     libwpa_client \
+	libwcnss_qmi \
     wpa_supplicant \
     wpa_supplicant.conf
 
@@ -471,6 +472,7 @@ PRODUCT_COPY_FILES += \
 	$(LOCAL_PATH)/wifi/WCNSS_qcom_wlan_nv.bin:$(TARGET_OUT_VENDOR)/firmware/wlan/prima/WCNSS_qcom_wlan_nv.bin \
 	$(LOCAL_PATH)/wifi/WCNSS_wlan_dictionary.dat:system/etc/firmware/wlan/prima/WCNSS_wlan_dictionary.dat \
 	$(LOCAL_PATH)/wifi/WCNSS_wlan_dictionary.dat:$(TARGET_OUT_VENDOR)/firmware/wlan/prima/WCNSS_wlan_dictionary.dat
+
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/wifi/fstman.ini:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/fstman.ini
