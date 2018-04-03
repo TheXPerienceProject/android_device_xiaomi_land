@@ -11,7 +11,6 @@ allow fps_hal fingerprintd_data_file:file { rename unlink getattr};
 #E biometrics.fingerprint@2.0-service-custom: Couldn't register biometrics.fingerprint@2.0-service-custom binder service!
 #E biometrics.fingerprint@2.0-service-custom: Start fingerprintd
 allow fps_hal hwservicemanager_prop:file { read open getattr };
-allow fps_hal hwservicemanager:binder { call transfer };
 allow fps_hal ion_device:chr_file { read open write ioctl };
 allow fps_hal uhid_device:chr_file { read open write ioctl };
 allow fps_hal storage_file:dir search;
@@ -22,4 +21,3 @@ allow fps_hal mnt_user_file:lnk_file read;
 allow fps_hal sdcardfs:dir search;
 allow fps_hal sdcardfs:file getattr;
 allow fps_hal media_rw_data_file:file getattr;
-allow fps_hal servicemanager:binder { call transfer };

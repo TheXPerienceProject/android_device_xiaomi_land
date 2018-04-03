@@ -251,7 +251,7 @@ BOARD_ROOT_EXTRA_FOLDERS := dsp firmware persist
 
 # SELinux
 #ifeq ($(PRODUCT_FULL_TREBLE_OVERRIDE), true)
-#BOARD_SEPOLICY_DIRS += \
+BOARD_SEPOLICY_DIRS += \
     $(DEVICE_PATH)/SETreble
 #endif
 #ifeq ($(PRODUCT_FULL_TREBLE_OVERRIDE), false)
@@ -259,7 +259,7 @@ BOARD_ROOT_EXTRA_FOLDERS := dsp firmware persist
 #        $(DEVICE_PATH)/sepolicy
 #endif
 
-#include device/qcom/sepolicy/sepolicy.mk
+include device/qcom/sepolicy/sepolicy.mk
 #include device/qcom/sepolicy/legacy-sepolicy.mk
 
 # Treble
