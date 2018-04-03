@@ -39,18 +39,12 @@ LOCAL_MODULE_SUFFIX := -timestamp
 
 include $(BUILD_SYSTEM)/base_rules.mk
 
-$(LOCAL_BUILT_MODULE): ACTUAL_INI_FILE := /data/misc/wifi/WCNSS_qcom_cfg.ini
-$(LOCAL_BUILT_MODULE): WCNSS_INI_SYMLINK := $(TARGET_OUT_VENDOR)/firmware/wlan/prima/WCNSS_qcom_cfg.ini
+WCNSS_CFG_SYMLINK := $(TARGET_OUT_VENDOR)/firmware/wlan/prima/WCNSS_qcom_cfg.ini
+$(WCNSS_CFG_SYMLINK): $(LOCAL_INSTALLED_MODULE)
+	@mkdir -p $(dir $@)
+	$(hide) ln -sf /data/misc/wifi/$(notdir $@) $@
 
-$(LOCAL_BUILT_MODULE): $(LOCAL_PATH)/Android.mk
-$(LOCAL_BUILT_MODULE):
-	$(hide) echo "Making symlinks for wifi"
-	$(hide) mkdir -p $(dir $@)
-	$(hide) mkdir -p $(dir $(WCNSS_INI_SYMLINK))
-	$(hide) rm -rf $@
-	$(hide) rm -rf $(WCNSS_INI_SYMLINK)
-	$(hide) ln -sf $(ACTUAL_INI_FILE) $(WCNSS_INI_SYMLINK)
-	$(hide) touch $@
+ALL_DEFAULT_INSTALLED_MODULES += $(WCNSS_CFG_SYMLINK)
 
 include $(call all-makefiles-under,$(LOCAL_PATH))
 
@@ -71,7 +65,7 @@ ADSP_IMAGES := \
     adsp.b08 adsp.b08 adsp.b10 adsp.b11 \
     adsp.b12 adsp.b13 adsp.mdt
 
-ADSP_SYMLINKS := $(addprefix $(TARGET_OUT_VENDOR_ETC)/firmware/,$(notdir $(ADSP_IMAGES)))
+ADSP_SYMLINKS := $(addprefix $(TARGET_OUT_VENDOR)/firmware/,$(notdir $(ADSP_IMAGES)))
 $(ADSP_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
 	@echo "adsp firmware link: $@"
 	@mkdir -p $(dir $@)
@@ -84,7 +78,7 @@ GOODIX_IMAGES := \
     goodixfp.b00 goodixfp.b01 goodixfp.b02 goodixfp.b03 \
     goodixfp.b04 goodixfp.b05 goodixfp.b06 goodixfp.mdt
 
-GOODIX_SYMLINKS := $(addprefix $(TARGET_OUT_VENDOR_ETC)/firmware/,$(notdir $(GOODIX_IMAGES)))
+GOODIX_SYMLINKS := $(addprefix $(TARGET_OUT_VENDOR)/firmware/,$(notdir $(GOODIX_IMAGES)))
 $(GOODIX_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
 	@echo "Goodix firmware link: $@"
 	@mkdir -p $(dir $@)
@@ -97,7 +91,7 @@ FPC_IMAGES := \
     fpcta.b00 fpcta.b01 fpcta.b02 fpcta.b03 \
     fpcta.b04 fpcta.b05 fpcta.b06 fpcta.mdt
 
-FPC_SYMLINKS := $(addprefix $(TARGET_OUT_VENDOR_ETC)/firmware/,$(notdir $(FPC_IMAGES)))
+FPC_SYMLINKS := $(addprefix $(TARGET_OUT_VENDOR)/firmware/,$(notdir $(FPC_IMAGES)))
 $(FPC_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
 	@echo "Fpc firmware link: $@"
 	@mkdir -p $(dir $@)
@@ -110,7 +104,7 @@ FING_IMAGES := \
     fingerpr.b00 fingerpr.b01 fingerpr.b02 fingerpr.b03 \
     fingerpr.b04 fingerpr.b05 fingerpr.b06 fingerpr.mdt
 
-FING_SYMLINKS := $(addprefix $(TARGET_OUT_VENDOR_ETC)/firmware/,$(notdir $(FING_IMAGES)))
+FING_SYMLINKS := $(addprefix $(TARGET_OUT_VENDOR)/firmware/,$(notdir $(FING_IMAGES)))
 $(FING_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
 	@echo "Fingerpr firmware link: $@"
 	@mkdir -p $(dir $@)
@@ -123,7 +117,7 @@ CPPF_IMAGES := \
    cppf.b00 cppf.b01 cppf.b02 cppf.b03 \
    cppf.b04 cppf.b05 cppf.b06 cppf.mdt
 
-CPPF_SYMLINKS := $(addprefix $(TARGET_OUT_VENDOR_ETC)/firmware/,$(notdir $(CPPF_IMAGES)))
+CPPF_SYMLINKS := $(addprefix $(TARGET_OUT_VENDOR)/firmware/,$(notdir $(CPPF_IMAGES)))
 $(CPPF_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
 	@echo "cppf firmware link: $@"
 	@mkdir -p $(dir $@)
@@ -136,7 +130,7 @@ VENUS_IMAGES := \
    venus.b00 venus.b01 venus.b02 venus.b03 \
    venus.b04 venus.mdt
 
-VENUS_SYMLINKS := $(addprefix $(TARGET_OUT_VENDOR_ETC)/firmware/,$(notdir $(VENUS_IMAGES)))
+VENUS_SYMLINKS := $(addprefix $(TARGET_OUT_VENDOR)/firmware/,$(notdir $(VENUS_IMAGES)))
 $(VENUS_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
 	@echo "venus firmware link: $@"
 	@mkdir -p $(dir $@)
@@ -149,7 +143,7 @@ WIDEVINE_IMAGES := \
    widevine.b00 widevine.b01 widevine.b02 widevine.b03 \
    widevine.b04 widevine.b05 widevine.b06 widevine.mdt
 
-WIDEVINE_SYMLINKS := $(addprefix $(TARGET_OUT_VENDOR_ETC)/firmware/,$(notdir $(WIDEVINE_IMAGES)))
+WIDEVINE_SYMLINKS := $(addprefix $(TARGET_OUT_VENDOR)/firmware/,$(notdir $(WIDEVINE_IMAGES)))
 $(WIDEVINE_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
 	@echo "widevine firmware link: $@"
 	@mkdir -p $(dir $@)
