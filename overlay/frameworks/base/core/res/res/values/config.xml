@@ -327,6 +327,9 @@
     <!-- Flag specifying whether VT is available on device -->
     <bool name="config_device_vt_available">true</bool>
 
+    <!-- Flag specifying whether VoLTE TTY is supported -->
+    <bool name="config_carrier_volte_tty_supported">true</bool>
+
     <!-- Config determines whether to update phone object when voice registration
          state changes. Voice radio tech change will always trigger an update of
          phone object irrespective of this config -->
@@ -474,6 +477,11 @@
     <!-- Flag specifying whether WFC over IMS is available on device -->
     <bool name="config_device_wfc_ims_available">true</bool>
 
+    <!-- Flag specifying whether WFC over IMS should be available for carrier: independent of
+         carrier provisioning. If false: hard disabled. If true: then depends on carrier
+         provisioning, availability etc -->
+    <bool name="config_carrier_wfc_ims_available">true</bool>
+
     <!-- ImsService package name to bind to by default, if config_dynamic_bind_ims is true -->
     <string name="config_ims_package">org.codeaurora.ims</string>
 
@@ -502,5 +510,25 @@
     <!-- Boolean indicating whether the HWC setColorTransform function can be performed efficiently
          in hardware. -->
     <bool name="config_setColorTransformAccelerated">true</bool>
+
+    <!-- If this is true, the screen will fade off. -->
+    <bool name="config_animateScreenLights">true</bool>
+
+    <!-- True if camera app should be pinned via Pinner Service -->
+    <bool name="config_pinnerCameraApp">true</bool>
+
+    <!-- Whether WiFi display is supported by this device.
+         There are many prerequisites for this feature to work correctly.
+         Here are a few of them:
+         * The WiFi radio must support WiFi P2P.
+         * The WiFi radio must support concurrent connections to the WiFi display and
+           to an access point.
+         * The Audio Flinger audio_policy.conf file must specify a rule for the "r_submix"
+           remote submix module.  This module is used to record and stream system
+           audio output to the WiFi display encoder in the media server.
+         * The remote submix module "audio.r_submix.default" must be installed on the device.
+         * The device must be provisioned with HDCP keys (for protected content).
+    -->
+    <bool name="config_enableWifiDisplay">true</bool>
 
 </resources>
