@@ -24,13 +24,14 @@
 # Custom services
 /(vendor|system/vendor)/bin/hw/android\.hardware\.biometrics\.fingerprint@2.\0-service.land                 u:object_r:hal_fingerprint_default_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.dumpstate@1\.0-service.land      u:object_r:hal_dumpstate_impl_exec:s0
-/(vendor|system/vendor)/bin/hw/android\.hardware\.ir@1\.0-service.land      u:object_r:hal_ir_default_exec:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.ir@1\.0-service.land             u:object_r:hal_ir_default_exec:s0
 
 # Block devices
 /dev/block/bootdevice/by-name/persist		u:object_r:persist_block_device:s0
 
 # Data files
-/data/misc/netmgr/log\.txt			u:object_r:netmgrd_data_file:s0
+/data/misc/netmgr/log\.txt			                          u:object_r:netmgrd_data_file:s0
+/data/misc/netmgr(/.*)?                                       u:object_r:netmgr_data_file:s0
 
 /tombstones             u:object_r:rootfs:s0
 /dsp                    u:object_r:rootfs:s0
@@ -38,7 +39,7 @@
 
 # RMT Storage
 /sys/kernel/debug/rmt_storage/rmts                              u:object_r:debugfs_rmts:s0
-/sys/kernel/debug/rmt_storage(/.*)?                  u:object_r:qti_debugfs:s0
+/sys/kernel/debug/rmt_storage(/.*)?                  u:object_r:debugfs_rmts:s0
 
 # DPM
 #/(vendor|system/vendor)/bin/dpmd      u:object_r:dpmd_exec:s0
@@ -57,3 +58,9 @@
 /system/bin/sysinit                                            u:object_r:sysinit_exec:s0
 /(vendor|system/vendor)/lib64/libQSEEComAPI.so u:object_r:tee_exec:s0
 /(vendor|system/vendor)/bin/wcnss_service                                             u:object_r:wcnss_service_exec:s0
+
+#Vendor keylayout
+/vendor/usr/keylayout/uinput-fpc.kl                           u:object_r:vendor_keylayout_file:s0
+/vendor/usr/keylayout/uinput-gdx.kl                           u:object_r:vendor_keylayout_file:s0
+/vendor/usr/keylayout/msm8952-sku1-snd-card_Button_Jack.kl                          u:object_r:vendor_keylayout_file:s0
+/vendor/usr/keylayout/ist30xx_ts_input.kl                          u:object_r:vendor_keylayout_file:s0
