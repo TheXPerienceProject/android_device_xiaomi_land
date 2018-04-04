@@ -18,13 +18,6 @@
 
 $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_m.mk)
 
-PRODUCT_ENFORCE_RRO_TARGETS := \
-   Bluetooth \
-   Settings \
-   SettingsProvider \
-   SystemUI \
-   framework-res \
-
 # Overlay
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay
@@ -449,6 +442,7 @@ PRODUCT_PACKAGES += \
 
 # Wi-Fi
 PRODUCT_PACKAGES += \
+    libcld80211 \
     hostapd \
     dhcpcd.conf \
     libqsap_sdk \
@@ -457,6 +451,7 @@ PRODUCT_PACKAGES += \
     wifilogd \
     libwpa_client \
 	libwcnss_qmi \
+    wcnss_service \
     wpa_supplicant \
     wpa_supplicant.conf
 
@@ -465,6 +460,9 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/wifi/wpa_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wpa_supplicant_overlay.conf
 
 PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/wifi/hostapd.accept:$(TARGET_COPY_OUT_VENDOR)/etc/hostapd/hostapd.accept \
+    $(LOCAL_PATH)/wifi/hostapd_default.conf:$(TARGET_COPY_OUT_VENDOR)/etc/hostapd/hostapd_default.conf \
+    $(LOCAL_PATH)/wifi/hostapd.deny:$(TARGET_COPY_OUT_VENDOR)/etc/hostapd/hostapd.deny \
 	$(LOCAL_PATH)/wifi/WCNSS_cfg.dat:$(TARGET_COPY_OUT_VENDOR)/firmware/wlan/prima/WCNSS_cfg.dat \
 	$(LOCAL_PATH)/wifi/WCNSS_qcom_cfg.ini:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/WCNSS_qcom_cfg.ini \
 	$(LOCAL_PATH)/wifi/WCNSS_qcom_cfg.ini:vendor/firmware/wlan/prima/WCNSS_qcom_cfg.ini \
