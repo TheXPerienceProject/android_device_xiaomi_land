@@ -1,2 +1,4 @@
 #============= mediacodec ==============
 allow mediacodec sysfs:file { getattr open read };
+allow mediacodec binder_device:chr_file { ioctl open read write };
+allow mediacodec servicemanager:binder { call transfer };

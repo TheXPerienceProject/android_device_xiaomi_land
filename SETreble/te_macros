@@ -1,0 +1,5 @@
+#####################################
+# Recovery only
+# SELinux rules which apply only to boot mode
+#
+define(`boot_only', ifelse(target_boot, `true', $1, ))

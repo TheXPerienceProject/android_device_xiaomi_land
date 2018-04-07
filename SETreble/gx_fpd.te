@@ -1,6 +1,8 @@
 type gx_fpd, domain;
 type gx_fpd_exec, exec_type, vendor_file_type, file_type, coredomain;
 
+allow gx_fpd binder_device:chr_file { ioctl open read write };
+
 # gx_fpd
 init_daemon_domain(gx_fpd)
 #binder_use(gx_fpd)

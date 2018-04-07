@@ -1,1 +1,2 @@
 allow qseeproxy unlabeled:file rw_file_perms;
+allow qseeproxy binder_device:chr_file { open read write };

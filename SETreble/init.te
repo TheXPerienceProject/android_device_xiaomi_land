@@ -38,6 +38,7 @@ allow init vfat:file { getattr open read };
 allow init vfat:dir { open read };
 allow init video_device:chr_file { ioctl write };
 allow init wcnss_device:chr_file { open read write };
+allow init vendor_file:file { execute };
 
 # Requied to load shim libs
 allow init cameraserver:process { noatsecure };

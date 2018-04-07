@@ -1,1 +1,2 @@
-allow fsck block_device:blk_file { ioctl };
+allow fsck block_device:blk_file { ioctl open write };
+allow fsck media_rw_data_file:dir getattr;
