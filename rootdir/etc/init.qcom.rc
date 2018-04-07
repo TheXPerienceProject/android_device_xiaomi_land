@@ -52,9 +52,6 @@ on init
 
     #write /sys/module/qpnp_rtc/parameters/poweron_alarm 1
 
-    # Create directory used for display
-    mkdir /persist/display 0770 system graphics
-
     # Create vpp directory
     mkdir /persist/vpp 0770 media media
 
@@ -90,6 +87,7 @@ on post-fs
 
 # msm specific files that need to be created on /data
 on post-fs-data
+
     mkdir /data/vendor/misc 01771 system system
     mkdir /data/tombstones 0771 system system
     mkdir /tombstones/modem 0771 system system
@@ -337,6 +335,7 @@ on early-boot
     write /sys/kernel/boot_slpi/boot 1
     chown root audio /sys/kernel/boot_adsp/boot
 
+on boot
     # Graphics
     chown system graphics /sys/class/graphics/fb1/hpd
     chmod 0664 /sys/class/graphics/fb1/hpd
@@ -354,19 +353,16 @@ on early-boot
     chmod 0600 /sys/class/graphics/fb1/cec/wr_msg
 
     chown system graphics /sys/class/graphics/fb0/idle_time
-    chmod 0664 /sys/class/graphics/fb0/idle_time
-    chown system graphics /sys/class/graphics/fb0/dynamic_fps
-    chmod 0664 /sys/class/graphics/fb0/dynamic_fps
     chown system graphics /sys/class/graphics/fb0/dyn_pu
-    chmod 0664 /sys/class/graphics/fb0/dyn_pu
     chown system graphics /sys/class/graphics/fb0/modes
-    chmod 0664 /sys/class/graphics/fb0/modes
     chown system graphics /sys/class/graphics/fb0/mode
-    chmod 0664 /sys/class/graphics/fb0/mode
     chown system graphics /sys/class/graphics/fb0/msm_cmd_autorefresh_en
+    chmod 0664 /sys/class/graphics/fb0/idle_time
+    chmod 0664 /sys/class/graphics/fb0/dyn_pu
+    chmod 0664 /sys/class/graphics/fb0/modes
+    chmod 0664 /sys/class/graphics/fb0/mode
     chmod 0664 /sys/class/graphics/fb0/msm_cmd_autorefresh_en
 
-on boot
     chown bluetooth bluetooth /sys/module/bluetooth_power/parameters/power
     chown bluetooth net_bt /sys/class/rfkill/rfkill0/type
     chown bluetooth net_bt /sys/class/rfkill/rfkill0/state
@@ -908,5 +904,4 @@ service mdtpd /vendor/bin/mdtpd
     class late_start
     user root
     group system radio drmrpc
-
 
