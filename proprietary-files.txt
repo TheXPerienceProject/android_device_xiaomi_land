@@ -1645,7 +1645,7 @@ vendor/lib/libwvhidl.so|88276cfc0fcb8033ef69d61e6838ce915bfcf697
 bin/cnss-daemon:vendor/bin/cnss-daemon
 bin/cnss_diag:vendor/bin/cnss_diag
 vendor/bin/wcnss_filter
-vendor/bin/wcnss_service
+#vendor/bin/wcnss_service
 
 #what?
 vendor/lib/libperfgluelayer.so
