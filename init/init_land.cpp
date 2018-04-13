@@ -111,52 +111,52 @@ static void init_alarm_boot_properties()
      * 8 -> KPDPWR_N pin toggled (power key pressed)
      */
      if (boot_reason == 3) {
-        property_set("ro.alarm_boot", "true");
+        property_override("ro.alarm_boot", "true");
      } else {
-        property_set("ro.alarm_boot", "false");
+        property_override("ro.alarm_boot", "false");
      }
 }
 
 void read_ramconfig()
 {
     if (is3GB()) {
-        property_set("dalvik.vm.heapstartsize", "8m");
-        property_set("dalvik.vm.heapgrowthlimit", "288m");
-        property_set("dalvik.vm.heapsize", "768m");
-        property_set("dalvik.vm.heaptargetutilization", "0.75");
-        property_set("dalvik.vm.heapminfree", "512k");
-        property_set("dalvik.vm.heapmaxfree", "8m");
+        property_override("dalvik.vm.heapstartsize", "8m");
+        property_override("dalvik.vm.heapgrowthlimit", "288m");
+        property_override("dalvik.vm.heapsize", "768m");
+        property_override("dalvik.vm.heaptargetutilization", "0.75");
+        property_override("dalvik.vm.heapminfree", "512k");
+        property_override("dalvik.vm.heapmaxfree", "8m");
         //HWUI
-        property_set("ro.hwui.texture_cache_size", "72");
-        property_set("ro.hwui.layer_cache_size", "48");
-        property_set("ro.hwui.r_buffer_cache_size", "8");
-        property_set("ro.hwui.path_cache_size", "32");
-        property_set("ro.hwui.gradient_cache_size", "1");
-        property_set("ro.hwui.drop_shadow_cache_size", "6");
-        property_set("ro.hwui.texture_cache_flushrate", "0.4");
-        property_set("ro.hwui.text_small_cache_width", "1024");
-        property_set("ro.hwui.text_small_cache_height", "1024");
-        property_set("ro.hwui.text_large_cache_width", "2048");
-        property_set("ro.hwui.text_large_cache_height", "1024");
+        property_override("ro.hwui.texture_cache_size", "72");
+        property_override("ro.hwui.layer_cache_size", "48");
+        property_override("ro.hwui.r_buffer_cache_size", "8");
+        property_override("ro.hwui.path_cache_size", "32");
+        property_override("ro.hwui.gradient_cache_size", "1");
+        property_override("ro.hwui.drop_shadow_cache_size", "6");
+        property_override("ro.hwui.texture_cache_flushrate", "0.4");
+        property_override("ro.hwui.text_small_cache_width", "1024");
+        property_override("ro.hwui.text_small_cache_height", "1024");
+        property_override("ro.hwui.text_large_cache_width", "2048");
+        property_override("ro.hwui.text_large_cache_height", "1024");
     } else {
-        property_set("dalvik.vm.heapstartsize", "8m");
-        property_set("dalvik.vm.heapgrowthlimit", "192m");
-        property_set("dalvik.vm.heapsize", "512m");
-        property_set("dalvik.vm.heaptargetutilization", "0.75");
-        property_set("dalvik.vm.heapminfree", "2m");
-        property_set("dalvik.vm.heapmaxfree", "8m");
+        property_override("dalvik.vm.heapstartsize", "8m");
+        property_override("dalvik.vm.heapgrowthlimit", "192m");
+        property_override("dalvik.vm.heapsize", "512m");
+        property_override("dalvik.vm.heaptargetutilization", "0.75");
+        property_override("dalvik.vm.heapminfree", "2m");
+        property_override("dalvik.vm.heapmaxfree", "8m");
         //HWUI
-        property_set("ro.hwui.texture_cache_size", "72");
-        property_set("ro.hwui.layer_cache_size", "48");
-        property_set("ro.hwui.r_buffer_cache_size", "8");
-        property_set("ro.hwui.path_cache_size", "32");
-        property_set("ro.hwui.gradient_cache_size", "1");
-        property_set("ro.hwui.drop_shadow_cache_size", "6");
-        property_set("ro.hwui.texture_cache_flushrate", "0.4");
-        property_set("ro.hwui.text_small_cache_width", "1024");
-        property_set("ro.hwui.text_small_cache_height", "1024");
-        property_set("ro.hwui.text_large_cache_width", "2048");
-        property_set("ro.hwui.text_large_cache_height", "2048");
+        property_override("ro.hwui.texture_cache_size", "72");
+        property_override("ro.hwui.layer_cache_size", "48");
+        property_override("ro.hwui.r_buffer_cache_size", "8");
+        property_override("ro.hwui.path_cache_size", "32");
+        property_override("ro.hwui.gradient_cache_size", "1");
+        property_override("ro.hwui.drop_shadow_cache_size", "6");
+        property_override("ro.hwui.texture_cache_flushrate", "0.4");
+        property_override("ro.hwui.text_small_cache_width", "1024");
+        property_override("ro.hwui.text_small_cache_height", "1024");
+        property_override("ro.hwui.text_large_cache_width", "2048");
+        property_override("ro.hwui.text_large_cache_height", "2048");
     }
 }
 
@@ -168,60 +168,60 @@ void variant_properties()
     import_kernel_cmdline1(0, import_cmdline);
     
     //set board
-    property_set("ro.product.wt.boardid", board_id.c_str());
+    property_override("ro.product.wt.boardid", board_id.c_str());
 
 
     //Variants
     if (board_id == "S88537AA1") {
-        property_set("ro.miui.support_fingerprint", "true");
-        property_set("ro.build.display.wtid", "SW_S88537AA1_V090_M20_MP_XM");
-        property_set("persist.sys.fp.goodix", "0");
-        property_set("persist.sys.fp.onstart", "1");
-        property_set("persist.sys.fp.vendor", "searchf");
-        property_set("ro.boot.fpsensor", "fpc");
+        property_override("ro.miui.support_fingerprint", "true");
+        property_override("ro.build.display.wtid", "SW_S88537AA1_V090_M20_MP_XM");
+        property_override("persist.sys.fp.goodix", "0");
+        property_override("persist.sys.fp.onstart", "1");
+        property_override("persist.sys.fp.vendor", "searchf");
+        property_override("ro.boot.fpsensor", "fpc");
     } else if (board_id == "S88537AB1") {
-        property_set("ro.miui.support_fingerprint", "true");
-        property_set("ro.build.display.wtid", "SW_S88537AB1_V090_M20_MP_XM");
-        property_set("persist.sys.fp.goodix", "0");
-        property_set("persist.sys.fp.onstart", "1");
-        property_set("persist.sys.fp.vendor", "searchf");
-        property_set("ro.boot.fpsensor", "fpc");     
+        property_override("ro.miui.support_fingerprint", "true");
+        property_override("ro.build.display.wtid", "SW_S88537AB1_V090_M20_MP_XM");
+        property_override("persist.sys.fp.goodix", "0");
+        property_override("persist.sys.fp.onstart", "1");
+        property_override("persist.sys.fp.vendor", "searchf");
+        property_override("ro.boot.fpsensor", "fpc");
     } else if (board_id == "S88537AC1") {
-        property_set("ro.build.display.wtid", "SW_S88537AC1_V090_M20_MP_XM");
-        property_set("ro.miui.support_fingerprint", "false");
-        property_set("persist.sys.fp.goodix", "1");
-        property_set("persist.sys.fp.onstart", "0");
-        property_set("persist.sys.fp.vendor", "goodix");
-        property_set("ro.boot.fpsensor", "gdx");
-        property_set("ro.hardware.fingerprint", "goodix");
+        property_override("ro.build.display.wtid", "SW_S88537AC1_V090_M20_MP_XM");
+        property_override("ro.miui.support_fingerprint", "false");
+        property_override("persist.sys.fp.goodix", "1");
+        property_override("persist.sys.fp.onstart", "0");
+        property_override("persist.sys.fp.vendor", "goodix");
+        property_override("ro.boot.fpsensor", "gdx");
+        property_override("ro.hardware.fingerprint", "goodix");
     } else if (board_id == "S88537BA1") {
-        property_set("ro.miui.support_fingerprint", "true");
-        property_set("ro.build.display.wtid", "SW_S88537BA1_V090_M20_MP_XM");
-        property_set("persist.sys.fp.goodix", "0");
-        property_set("persist.sys.fp.onstart", "1");
-        property_set("persist.sys.fp.vendor", "searchf");
-        property_set("ro.boot.fpsensor", "fpc");
-        property_set("mm.enable.qcom_parser", "196495");
+        property_override("ro.miui.support_fingerprint", "true");
+        property_override("ro.build.display.wtid", "SW_S88537BA1_V090_M20_MP_XM");
+        property_override("persist.sys.fp.goodix", "0");
+        property_override("persist.sys.fp.onstart", "1");
+        property_override("persist.sys.fp.vendor", "searchf");
+        property_override("ro.boot.fpsensor", "fpc");
+        property_override("mm.enable.qcom_parser", "196495");
     } else if (board_id == "S88537CA1") {
-        property_set("ro.miui.support_fingerprint", "true");
-        property_set("ro.build.display.wtid", "SW_S88537CA1_V090_M20_MP_XM");
-        property_set("persist.sys.fp.goodix", "0");
-        property_set("persist.sys.fp.onstart", "1");
-        property_set("persist.sys.fp.vendor", "searchf");
-        property_set("ro.boot.fpsensor", "fpc");
-        property_set("mm.enable.qcom_parser", "196495");
+        property_override("ro.miui.support_fingerprint", "true");
+        property_override("ro.build.display.wtid", "SW_S88537CA1_V090_M20_MP_XM");
+        property_override("persist.sys.fp.goodix", "0");
+        property_override("persist.sys.fp.onstart", "1");
+        property_override("persist.sys.fp.vendor", "searchf");
+        property_override("ro.boot.fpsensor", "fpc");
+        property_override("mm.enable.qcom_parser", "196495");
     } else if (board_id == "S88537EC1") {
-        property_set("ro.build.display.wtid", "SW_S88537EC1_V090_M20_MP_XM");
-        property_set("ro.miui.support_fingerprint", "false");
-        property_set("mm.enable.qcom_parser", "196495");
+        property_override("ro.build.display.wtid", "SW_S88537EC1_V090_M20_MP_XM");
+        property_override("ro.miui.support_fingerprint", "false");
+        property_override("mm.enable.qcom_parser", "196495");
     }
 
     if (board_id == "S88537AB1"){
-        property_set("ro.product.model", "Redmi 3X");
-        property_set("ro.vendor.product.device", "Redmi 3X");
+        property_override("ro.product.model", "Redmi 3X");
+        property_override("ro.vendor.product.device", "Redmi 3X");
     } else {
-        property_set("ro.product.model", "Redmi 3S");
-        property_set("ro.vendor.product.device", "Redmi 3S");
+        property_override("ro.product.model", "Redmi 3S");
+        property_override("ro.vendor.product.device", "Redmi 3S");
     }
 
 }
