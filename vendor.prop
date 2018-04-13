@@ -71,6 +71,10 @@ ro.qualcomm.bt.hci_transport=smd
 qcom.bluetooth.soc=smd
 
 #Camera
+#this fix the front camera issues with these apps
+persist.camera.expose.aux=1
+vendor.camera.aux.packagelist=com.skype.raider,com.google.android.talk,com.whatsapp,com.google.android.GoogleCamera
+#Camera props
 camera.hal1.packagelist=com.skype.raider,com.google.android.talk,com.whatsapp
 camera.display.umax=1920x1080
 camera.display.lmax=1280x720
@@ -148,7 +152,6 @@ vendor.vidc.disable.split.mode=1
 vendor.vidc.debug.perf.mode=2
 vendor.vidc.enc.disable.pq=true
 vidc.enc.dcvs.extra-buff-count=2
-persist.media.treble_omx=false
 
 #netmgrd
 persist.data.netmgrd.qos.enable=true
