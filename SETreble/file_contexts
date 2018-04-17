@@ -53,6 +53,8 @@
 #Lights
 /sys/devices/soc/78b6000\.i2c/i2c-2/2-0045/leds/red/brightness    u:object_r:sysfs_leds:s0
 /sys/devices/soc/78b6000\.i2c/i2c-2/2-[0-9a-f]+/leds(/.*)?    u:object_r:sysfs_leds:s0
+/sys/class/leds/infrared/brightness                               u:object_r:sysfs_leds:s0
+/sys/devices/soc/soc:gpio-leds/leds/infrared/brightness    u:object_r:sysfs_leds:s0
 
 #kek
 /system/bin/sysinit                                            u:object_r:sysinit_exec:s0

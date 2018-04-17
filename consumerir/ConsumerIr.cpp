@@ -30,7 +30,7 @@ namespace ir {
 namespace V1_0 {
 namespace implementation {
 
-#define LIRC_DEV_PATH "/dev/lirc0"
+#define LIRC_DEV_PATH "/sys/class/leds/infrared/transmit"
 
 static const int dutyCycle = 33;
 

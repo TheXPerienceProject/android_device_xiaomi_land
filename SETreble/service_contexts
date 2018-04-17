@@ -1,5 +1,6 @@
 # Goodix Fingerprint
 goodix.fp                        u:object_r:gx_fpd_service:s0
 persist.sys.fp.sensor            u:object_r:fp_service:s0
-android.hardware.fingerprint.IFingerprintCustomDaemon       u:object_r:fingerprintd_custom_service:s0
++android.hardware.fingerprint.IFingerprintCustomDaemon       u:object_r:fingerprintd_service:s0
++android.hardware.fingerprint.IFingerprintDaemon u:object_r:fingerprintd_service:s0
 android.hardware.dumpstate@1.0-service.land               u:object_r:dumpstate_service:s0
