@@ -64,3 +64,6 @@
 /vendor/usr/keylayout/uinput-gdx.kl                           u:object_r:vendor_keylayout_file:s0
 /vendor/usr/keylayout/msm8952-sku1-snd-card_Button_Jack.kl                          u:object_r:vendor_keylayout_file:s0
 /vendor/usr/keylayout/ist30xx_ts_input.kl                          u:object_r:vendor_keylayout_file:s0
+
+# Ir
+/dev/lirc[0-9]*					u:object_r:lirc_device:s0
