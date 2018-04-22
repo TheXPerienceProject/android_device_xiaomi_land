@@ -1123,12 +1123,12 @@ bin/gx_fpd:vendor/bin/gx_fpd
 lib/hw/fingerprint.default.so:lib/hw/fingerprint.msm8937.so
 lib/libcom_fingerprints_service.so
 lib64/hw/fingerprint.default.so:lib64/hw/fingerprint.msm8937.so
-lib64/hw/fingerprint.goodix.so
-lib64/hw/gxfingerprint.default.so
-lib64/libcom_fingerprints_service.so
-lib64/libfp_client.so
-lib64/libfpnav.so
-lib64/libfpservice.so
+lib64/hw/fingerprint.goodix.so:vendor/lib64/hw/fingerprint.goodix.so
+lib64/hw/gxfingerprint.default.so:vendor/lib64/hw/gxfingerprint.default.so
+lib64/libcom_fingerprints_service.so:vendor/lib64/libcom_fingerprints_service.so
+lib64/libfp_client.so:vendor/lib64/libfp_client.so
+lib64/libfpnav.so:vendor/lib64/libfpnav.so
+lib64/libfpservice.so:vendor/lib64/libfpservice.so
 
 # FM Radio - from oneplus3 - OPR6.170623.013 system dump
 -lib/vendor.qti.hardware.fm@1.0.so|a32ae5e1a604cc0fa0f1e0704616b5af4f0188a9
@@ -1450,17 +1450,17 @@ vendor/lib64/libqmiservices.so
 vendor/lib64/libsmemlog.so
 
 # Radio - from tissot (Mi A1)
--app/datastatusnotification/datastatusnotification.apk
--app/SimSettings/SimSettings.apk
--app/QtiTelephonyService/QtiTelephonyService.apk
--app/radioconfig/radioconfig.apk
-etc/permissions/qcrilhook.xml
-etc/permissions/radioconfig.xml
-etc/permissions/telephonyservice.xml
--framework/QtiTelephonyServicelibrary.jar
--framework/qcrilhook.jar
--framework/qti-telephony-common.jar
--priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
+-app/datastatusnotification/datastatusnotification.apk:vendor/app/datastatusnotification/datastatusnotification.apk
+-app/SimSettings/SimSettings.apk:vendor/app/SimSettings/SimSettings.apk
+-app/QtiTelephonyService/QtiTelephonyService.apk:vendor/app/QtiTelephonyService/QtiTelephonyService.apk
+-app/radioconfig/radioconfig.apk:vendor/app/radioconfig/radioconfig.apk
+etc/permissions/qcrilhook.xml:vendor/etc/permissions/qcrilhook.xml
+etc/permissions/radioconfig.xml:vendor/etc/permissions/radioconfig.xml
+etc/permissions/telephonyservice.xml:vendor/etc/permissions/telephonyservice.xml
+-framework/QtiTelephonyServicelibrary.jar:vendor/framework/QtiTelephonyServicelibrary.jar
+-framework/qcrilhook.jar:-vendor/framework/qcrilhook.jar
+-framework/qti-telephony-common.jar:vendor/framework/qti-telephony-common.jar
+-priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk:vendor/priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
 vendor/bin/ipacm-diag
 vendor/bin/netmgrd
 vendor/bin/port-bridge
