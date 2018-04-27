@@ -1458,7 +1458,7 @@ etc/permissions/qcrilhook.xml:vendor/etc/permissions/qcrilhook.xml
 etc/permissions/radioconfig.xml:vendor/etc/permissions/radioconfig.xml
 etc/permissions/telephonyservice.xml:vendor/etc/permissions/telephonyservice.xml
 -framework/QtiTelephonyServicelibrary.jar:vendor/framework/QtiTelephonyServicelibrary.jar
--framework/qcrilhook.jar:-vendor/framework/qcrilhook.jar
+-framework/qcrilhook.jar:vendor/framework/qcrilhook.jar
 -framework/qti-telephony-common.jar:vendor/framework/qti-telephony-common.jar
 -priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk:vendor/priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
 vendor/bin/ipacm-diag
