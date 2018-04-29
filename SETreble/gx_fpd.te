@@ -34,6 +34,8 @@ allow gx_fpd sysfs_fp:file rw_file_perms;
 #allow read/write property
 set_prop(gx_fpd, system_prop)
 
+allow gx_fpd unlabeled:file { read open getattr };
+
 allow gx_fpd fuse:dir search;
 allow gx_fpd fuse:file { getattr open append };
 allow gx_fpd self:capability dac_override;
