@@ -59,6 +59,7 @@
 /sys/devices/soc/soc:gpio-leds/leds/infrared/transmit    u:object_r:sysfs_leds:s0
 
 #kek
+/system/bin/sysinit                                            u:object_r:sysinit_exec:s0
 /(vendor|system/vendor)/lib64/libQSEEComAPI.so u:object_r:tee_exec:s0
 /(vendor|system/vendor)/bin/wcnss_service                                             u:object_r:wcnss_service_exec:s0
 /(vendor|system/vendor)/lib(64)?/android.hidl.manager@1.0.so           u:object_r:same_process_hal_file:s0
