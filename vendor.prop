@@ -218,3 +218,6 @@ service.qti.ims.enabled=1
 telephony.lteOnCdmaDevice=1
 ro.ril.fast.dormancy.rule=0
 ro.ril.hsxpa=0
+
+#Enforce apps
+ro.control_privapp_permissions=enforce
