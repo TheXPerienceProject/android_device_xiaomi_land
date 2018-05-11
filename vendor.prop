@@ -236,3 +236,6 @@ ro.vendor.qti.sys.fw.bservice_age=5000
 
 #property for game detection feature
 debug.enable.gamed=0
+
+# set max background services
+ro.config.max_starting_bg=8
