@@ -29,19 +29,6 @@ LOCAL_MODULE_CLASS := SHARED_LIBRARIES
 include $(BUILD_SHARED_LIBRARY)
 
 include $(CLEAR_VARS)
-LOCAL_SRC_FILES := \
-    bionic/bionic_time_conversions.cpp \
-    bionic/pthread_cond.cpp
-
-LOCAL_SHARED_LIBRARIES := libc
-LOCAL_MODULE := libshim_qcamera
-LOCAL_CLANG := false
-LOCAL_MODULE_TAGS := optional
-#LOCAL_VENDOR_MODULE := true
-LOCAL_32_BIT_ONLY := true
-include $(BUILD_SHARED_LIBRARY)
-
-include $(CLEAR_VARS)
 LOCAL_SRC_FILES := atomic.cpp
 LOCAL_MODULE := libshim_atomic
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES

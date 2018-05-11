@@ -139,7 +139,6 @@ PRODUCT_PACKAGES += \
     libmmcamera_interface \
     libmm-qcamera \
     libmmjpeg_interface \
-    libcShim \
     libshim_sensors \
     Snap
 
