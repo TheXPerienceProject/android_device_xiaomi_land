@@ -1453,9 +1453,7 @@ vendor/lib64/libsmemlog.so
 -app/datastatusnotification/datastatusnotification.apk:vendor/app/datastatusnotification/datastatusnotification.apk
 -app/SimSettings/SimSettings.apk:vendor/app/SimSettings/SimSettings.apk
 -app/QtiTelephonyService/QtiTelephonyService.apk:vendor/app/QtiTelephonyService/QtiTelephonyService.apk
--app/radioconfig/radioconfig.apk:vendor/app/radioconfig/radioconfig.apk
 etc/permissions/qcrilhook.xml:vendor/etc/permissions/qcrilhook.xml
-etc/permissions/radioconfig.xml:vendor/etc/permissions/radioconfig.xml
 etc/permissions/telephonyservice.xml:vendor/etc/permissions/telephonyservice.xml
 -framework/QtiTelephonyServicelibrary.jar:vendor/framework/QtiTelephonyServicelibrary.jar
 -framework/qcrilhook.jar:vendor/framework/qcrilhook.jar
@@ -1513,7 +1511,6 @@ vendor/radio/qcril_database/qcril.db
 
 # Radio - IMS - from TA-1003 (Nokia 6)
 -app/ims/ims.apk
--app/imssettings/imssettings.apk
 etc/permissions/qti-vzw-ims-internal.xml
 lib/com.qualcomm.qti.imscmservice@1.0.so
 lib/lib-imscamera.so

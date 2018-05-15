@@ -46,7 +46,6 @@ TARGET_NO_BOOTLOADER := true
 # Shims
 TARGET_LD_SHIM_LIBS := \
     /vendor/lib/libmmcamera2_imglib_modules.so|libshim_atomic.so \
-    /vendor/bin/mm-qcamera-daemon|libshim_qcamera.so \
     /vendor/bin/mm-qcamera-daemon|libshim_sensors.so
 
 # kernel
