@@ -16,20 +16,6 @@ LOCAL_PATH := $(call my-dir)
 
 include $(CLEAR_VARS)
 LOCAL_SRC_FILES := \
-    atomic.cpp \
-    android/sensor.cpp \
-    gui/SensorManager.cpp \
-    GraphicBuffer.cpp
-
-LOCAL_C_INCLUDES := gui
-LOCAL_SHARED_LIBRARIES := libgui libutils liblog libbinder libandroid libsensor
-LOCAL_MODULE := libshim_sensors
-#LOCAL_VENDOR_MODULE := true
-LOCAL_MODULE_CLASS := SHARED_LIBRARIES
-include $(BUILD_SHARED_LIBRARY)
-
-include $(CLEAR_VARS)
-LOCAL_SRC_FILES := \
     bionic/bionic_time_conversions.cpp \
     bionic/pthread_cond.cpp
 
@@ -37,13 +23,6 @@ LOCAL_SHARED_LIBRARIES := libc
 LOCAL_MODULE := libshim_qcamera
 LOCAL_CLANG := false
 LOCAL_MODULE_TAGS := optional
-#LOCAL_VENDOR_MODULE := true
+LOCAL_VENDOR_MODULE := true
 LOCAL_32_BIT_ONLY := true
-include $(BUILD_SHARED_LIBRARY)
-
-include $(CLEAR_VARS)
-LOCAL_SRC_FILES := atomic.cpp
-LOCAL_MODULE := libshim_atomic
-LOCAL_MODULE_CLASS := SHARED_LIBRARIES
-#LOCAL_VENDOR_MODULE := true
 include $(BUILD_SHARED_LIBRARY)
