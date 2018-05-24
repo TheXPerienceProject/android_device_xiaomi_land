@@ -15,7 +15,6 @@
  */
 #define LOG_TAG "android.hardware.biometrics.fingerprint@2.0-service.land"
 #define LOG_VERBOSE "android.hardware.biometrics.fingerprint@2.0-service.land"
-
 #include <hardware/hw_auth_token.h>
 #include <hardware/hardware.h>
 #include <hardware/fingerprint.h>
@@ -45,9 +44,9 @@ BiometricsFingerprint *BiometricsFingerprint::sInstance = nullptr;
 BiometricsFingerprint::BiometricsFingerprint() : mClientCallback(nullptr), mDevice(nullptr) {
     sInstance = this; // keep track of the most recent instance
     char vend [PROPERTY_VALUE_MAX];
-    property_get("ro.boot.fpsensor", vend, NULL);
+    property_get("ro.hardware.fingerprint", vend, NULL);
 
-    if (!strcmp(vend, "fpc")) {
+    if (!strcmp(vend, "searchf")) {
         is_goodix = false;
         mDevice = openHal();
     } else if (!strcmp(vend, "goodix")) {
@@ -181,7 +180,6 @@ Return<RequestStatus> BiometricsFingerprint::postEnroll() {
 }
 
 Return<uint64_t> BiometricsFingerprint::getAuthenticatorId() {
-	usleep(200000);
     return mDevice->get_authenticator_id(mDevice);
 }
 

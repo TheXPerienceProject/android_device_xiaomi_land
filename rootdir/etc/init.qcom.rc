@@ -731,31 +731,22 @@ service poweroffhandler /system/bin/poweroffhandler
 
 service gx_fpd /vendor/bin/gx_fpd
     class core
-    user root
-    group system system
-    oneshot
-    disabled
+    user system
+    group system drmrpc
 
 on property:persist.sys.fp.vendor=switchf
     stop gx_fpd
-    setprop persist.sys.fp.vendor searchf
-    start fingerprintd
-    start fps_hal
+    setprop sys.fp.vendor searchf
+    setprop fpc.fp.miui.token 0
     setprop ro.boot.fpsensor fpc
     setprop ro.hardware.fingerprint searchf
-    setprop persist.sys.fp.onstart=1
-
-on property:persist.sys.fp.vendor=goodix
-    setprop ro.boot.fpsensor gdx
-    setprop ro.hardware.fingerprint goodix
-    setprop persist.sys.fp.onstart=0
     start fps_hal
 
-on property:persist.sys.fp.onstart=0
-   start gx_fpd
-   start fps_hal
-
 on property:persist.sys.fp.onstart=1
+   setprop goodix.fp.miui.analyse 1
+   setprop goodix.fp.miui.token 0
+   setprop ro.boot.fpsensor gdx
+   setprop ro.hardware.fingerprint goodix
    start fps_hal
 
 # Start camera server as daemon

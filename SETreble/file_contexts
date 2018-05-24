@@ -15,15 +15,16 @@
 /dev/ttyACM[0-9]*                           u:object_r:gx_fpd_device:s0
 /dev/goodix_fp*                             u:object_r:gx_fpd_device:s0
 /data/goodix/*                              u:object_r:gx_fpd_data_file:s0
-/(vendor|system/vendor)/bin/gx_fpd               u:object_r:gx_fpd_exec:s0
+/(vendor|system/vendor)/bin/gx_fpd			u:object_r:gx_fpd_exec:s0
 /data/system/fingerprint(/.*)?              u:object_r:gx_fpd_data_file:s0
 /persist/data/gxfp(/.*)?                    u:object_r:gx_fpd_data_file:s0
 /persist/data/gxfp                          u:object_r:gx_fpd_data_file:s0
 #sys/devices/soc/soc:goodix_fp/goodix_fp 
 
 # Custom services
-/(vendor|system/vendor)/bin/hw/android\.hardware\.biometrics\.fingerprint@2.\0-service.land                 u:object_r:hal_fingerprint_default_exec:s0
-/(vendor|system/vendor)/bin/hw/android\.hardware\.dumpstate@1\.0-service.land      u:object_r:hal_dumpstate_impl_exec:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.biometrics\.fingerprint@2\.0-service\.land                 u:object_r:hal_fingerprint_land_exec:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.power@1\.0-service-qti      u:object_r:hal_power_default_exec:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.power@1\.1-service-qti      u:object_r:hal_power_default_exec:s0
 
 # Block devices
 /dev/block/bootdevice/by-name/persist		u:object_r:persist_block_device:s0
@@ -58,16 +59,14 @@
 /sys/devices/soc/soc:gpio-leds/leds/infrared/transmit    u:object_r:sysfs_leds:s0
 
 #kek
-/(vendor|system/vendor)/lib64/libQSEEComAPI.so u:object_r:tee_exec:s0
+/(vendor|system/vendor)/lib64/libQSEEComAPI\.so u:object_r:tee_exec:s0
 /(vendor|system/vendor)/bin/wcnss_service                                             u:object_r:wcnss_service_exec:s0
-/(vendor|system/vendor)/lib(64)?/android.hidl.manager@1.0.so           u:object_r:same_process_hal_file:s0
-/(vendor|system/vendor)/lib(64)?/android.hidl.base@1.0.so           u:object_r:same_process_hal_file:s0
+/(vendor|system/vendor)/lib(64)?/android\.hidl\.manager@1\.0.so           u:object_r:same_process_hal_file:s0
+/(vendor|system/vendor)/lib(64)?/android\.hidl\.base@1\.0.so           u:object_r:same_process_hal_file:s0
 
-#Vendor keylayout
-/vendor/usr/keylayout/uinput-fpc.kl                           u:object_r:vendor_keylayout_file:s0
-/vendor/usr/keylayout/uinput-gdx.kl                           u:object_r:vendor_keylayout_file:s0
-/vendor/usr/keylayout/msm8952-sku1-snd-card_Button_Jack.kl                          u:object_r:vendor_keylayout_file:s0
-/vendor/usr/keylayout/ist30xx_ts_input.kl                          u:object_r:vendor_keylayout_file:s0
+# Input files
+/(vendor|system/vendor)/usr/idc(/.*)?			u:object_r:idc_file:s0
+/(vendor|system/vendor)/usr/keylayout(/.*)?		u:object_r:vendor_keylayout_file:s0
 
 # Ir
 /dev/lirc[0-9]*					u:object_r:lirc_device:s0
