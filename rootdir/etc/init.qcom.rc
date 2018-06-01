@@ -736,7 +736,7 @@ service gx_fpd /vendor/bin/gx_fpd
 
 on property:persist.sys.fp.vendor=switchf
     stop gx_fpd
-    setprop sys.fp.vendor searchf
+	setprop sys.fp.vendor searchf
     setprop fpc.fp.miui.token 0
     setprop ro.boot.fpsensor fpc
     setprop ro.hardware.fingerprint searchf
