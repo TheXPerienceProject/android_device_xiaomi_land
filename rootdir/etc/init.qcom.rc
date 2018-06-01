@@ -40,7 +40,7 @@ on early-init
     chmod 0755 /sys/kernel/debug
 
     #Setup ZRAM
-    write /proc/sys/vm/page-cluster 0	
+    write /proc/sys/vm/page-cluster 0
 
 on init
 
@@ -74,7 +74,7 @@ on fs
     mkdir /persist/data 0700 system system
     mkdir /persist/bms 0700 root system
     restorecon_recursive /persist
-    
+
     wait /dev/block/bootdevice/by-name/dsp
     restorecon_recursive   /dsp
 
@@ -245,11 +245,11 @@ on property:sys.shutdown.requested=*
 
     # Wifi firmware reload path
     chown wifi wifi /sys/module/wlan/parameters/fwpath
-   
+
     # Mark wifi driver as unloaded - "ok" indicates loaded
     setprop wlan.driver.status not_ok
 
-    #Create directories for Location services 
+    #Create directories for Location services
     mkdir /data/vendor/location 0770 gps gps
     mkdir /data/vendor/location/mq 0770 gps gps
     mkdir /data/vendor/location/xtwifi 0770 gps gps
@@ -288,7 +288,7 @@ on property:sys.shutdown.requested=*
 
     #Create IOP  deamon related dirs legacy
     mkdir /data/misc/iop 0770 root system
-    
+
     #IOP OReo
     mkdir /data/vendor/iop 0770 root system
 
@@ -559,7 +559,7 @@ on property:vold.decrypt=trigger_restart_framework
 
 on property:persist.env.fastdorm.enabled=true
     setprop persist.radio.data_no_toggle 1
- 
+
 service dpmQmiMgr /vendor/bin/dpmQmiMgr
     class main
     user system
@@ -736,7 +736,8 @@ service gx_fpd /vendor/bin/gx_fpd
 
 on property:persist.sys.fp.vendor=switchf
     stop gx_fpd
-	setprop sys.fp.vendor searchf
+    setprop persist.sys.fp.vendor searchf
+    setprop sys.fp.vendor searchf
     setprop fpc.fp.miui.token 0
     setprop ro.boot.fpsensor fpc
     setprop ro.hardware.fingerprint searchf
@@ -776,7 +777,7 @@ service perfd /vendor/bin/perfd
     user root
     group root system
 
-service thermal-engine /vendor/bin/thermal-engine 
+service thermal-engine /vendor/bin/thermal-engine
     class main
     user root
     socket thermal-send-client stream 0666 system system
@@ -900,4 +901,3 @@ service mdtpd /vendor/bin/mdtpd
     class late_start
     user root
     group system radio drmrpc
-
