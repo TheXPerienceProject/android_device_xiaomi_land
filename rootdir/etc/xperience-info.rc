@@ -1,0 +1,59 @@
+# Author: Carlos "Klozz" Jesús
+# (C) The XPerience Project 2018
+#
+on boot
+    chown system system /sys/module/cpu_boost/parameters/input_boost_ms
+    chown system system /sys/devices/system/cpu/cpufreq/lisi/enable_prediction
+    chown system system /sys/module/alessa_thermal/parameters/enabled
+    chown system system /sys/module/alessa_thermal/vdd_restriction/enabled
+    chown system system/sys/module/alessa_thermal/parameters/core_limit_temp_degC
+    chown system system/sys/module/alessa_thermal/parameters/poll_ms
+    chmod 0664 /sys/module/cpu_boost/parameters/input_boost_ms
+    chmod 0664 /sys/devices/system/cpu/cpufreq/lisi/enable_prediction
+    chmod 0664 /sys/module/alessa_thermal/parameters/enabled
+    chmod 0664 /sys/module/alessa_thermal/vdd_restriction/enabled
+    chmod 0664 /sys/module/alessa_thermal/parameters/core_limit_temp_degC
+    chmod 0664 /sys/module/alessa_thermal/parameters/poll_ms
+
+#Disable alessa plug
+    write /sys/kernel/alessa_plug/hotplug_enabled 0
+
+# Configure input boost only addison support this
+    write /sys/module/cpu_boost/parameters/input_boost_freq "0:1344000 1:1344000 2:1344000 3:1344000 4:1094400 5:1094400 6:1094400 7:1094400"
+    write /sys/module/cpu_boost/parameters/input_boost_ms 150
+
+# Set Lisi and optimize it 652Mhz
+    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor "lisi"
+    write /sys/devices/system/cpu/cpu4/cpufreq/scaling_governor "Alessa"
+    write /sys/devices/system/cpu/cpu0/online 1
+    write /sys/devices/system/cpu/cpufreq/lisi/go_hispeed_load 85
+    write /sys/devices/system/cpu/cpufreq/lisi/above_hispeed_delay 19000 1497600:39000
+    write /sys/devices/system/cpu/cpufreq/lisi/timer_slack 80000
+    write /sys/devices/system/cpu/cpufreq/lisi/min_sample_time 39000
+    write /sys/devices/system/cpu/cpufreq/lisi/ignore_hispeed_on_notif 0
+    write /sys/devices/system/cpu/cpufreq/lisi/boost 0
+    write /sys/devices/system/cpu/cpufreq/lisi/fast_ramp_down 0
+    write /sys/devices/system/cpu/cpufreq/lisi/align_windows 0
+    write /sys/devices/system/cpu/cpufreq/lisi/use_migration_notif 1
+    write /sys/devices/system/cpu/cpufreq/lisi/enable_prediction 1
+    write /sys/devices/system/cpu/cpufreq/lisi/use_sched_load 1
+    write /sys/devices/system/cpu/cpufreq/lisi/max_freq_hysteresis 5900
+    write /sys/devices/system/cpu/cpufreq/lisi/boostpulse_duration 80000
+    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq 422400
+    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq 345600
+
+    #  configure governor settings for little cluster
+    write /sys/devices/system/cpu/cpu0/cpufreq/lisi/target_loads 45 960000:85
+    write /sys/devices/system/cpu/cpu0/cpufreq/lisi/hispeed_freq 960000
+    write /sys/devices/system/cpu/cpu4/cpufreq/lisi/timer_rate 20000
+
+    # configure governor settings for big cluster
+    write /sys/devices/system/cpu/cpu4/cpufreq/lisi/target_loads 45 768000:85
+    write /sys/devices/system/cpu/cpu4/cpufreq/lisi/hispeed_freq 768000
+    write /sys/devices/system/cpu/cpu4/cpufreq/lisi/timer_rate 40000
+
+# configure Alessa thermal and disable msm thermal
+    write /sys/module/msm_thermal/parameters/enabled 0
+    write /sys/module/alessa_thermal/parameters/enabled 1
+    write /sys/module/alessa_thermal/parameters/core_limit_temp_degC 65
+    write /sys/module/alessa_thermal/parameters/poll_ms 160
