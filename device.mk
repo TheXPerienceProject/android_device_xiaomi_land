@@ -192,7 +192,7 @@ PRODUCT_PACKAGES += \
     libjni_livedisplay
 
 # DOZE
-#PRODUCT_PACKAGES += \
+PRODUCT_PACKAGES += \
     XiaomiDoze
 
 # DRM
