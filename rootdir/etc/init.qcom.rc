@@ -916,7 +916,7 @@ service vendor.imsrcsservice /vendor/bin/imsrcsd
      #seclabel u:r:ims:s0
 
 on property:vendor.ims.DATA_DAEMON_STATUS=1
-   start vendor.ims_rtp_daemon
+   restart vendor.ims_rtp_daemon
    start vendor.imsrcsservice
 
 #IMS
