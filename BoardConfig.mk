@@ -169,6 +169,7 @@ SF_VSYNC_EVENT_PHASE_OFFSET_NS   := 6000000
 
 # Encryption
 TARGET_HW_DISK_ENCRYPTION := true
+TARGET_KEYMASTER_WAIT_FOR_QSEE := true
 
 # Extended filesystem support
 TARGET_EXFAT_DRIVER := sdfat

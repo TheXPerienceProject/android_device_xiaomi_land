@@ -1082,36 +1082,38 @@ vendor/lib64/libdpmqmihal.so
 vendor/lib/com.qualcomm.qti.dpm.api@1.0_vendor.so
 vendor/lib/libdpmqmihal.so
 
-# DRM - from santoni (Redmi 4X) - HTC U11- OnePlus3T
+# DRM - from Addison (Moto Z Play) OPN27.76-12-2 release
+lib/vendor.qti.hardware.qteeconnector@1.0.so
+vendor/bin/hw/vendor.qti.hardware.qteeconnector@1.0-service
 vendor/bin/qseecomd
-vendor/bin/mdtpd|4287f9496af4642c63114f4ded06ee5566f99560
-vendor/bin/qseeproxydaemon|3bcecc1b1e8c384d92f6f4fbceea9269f55e1c68
+vendor/etc/init/vendor.qti.hardware.qteeconnector@1.0-service.rc
+vendor/lib/hw/gatekeeper.msm8953.so:vendor/lib/hw/gatekeeper.msm8937.so
+vendor/lib/hw/keystore.msm8953.so:vendor/lib/hw/keystore.msm8937.so
+vendor/lib/hw/vendor.qti.hardware.qteeconnector@1.0-impl.so
+vendor/lib/mediadrm/libwvdrmengine.so
 vendor/lib/libcppf.so
-vendor/lib/libqisl.so
-vendor/lib/librpmb.so
-vendor/lib/libspl.so
-vendor/lib/libssd.so
-vendor/lib/libStDrvInt.so
-vendor/lib/liboemcrypto.so|95f5ead8c12ca55fd5af080de4ba70129a548620
+vendor/lib/libdrmfs.so
+vendor/lib/libdrmtime.so
+vendor/lib/libGPreqcancel.so
+vendor/lib/libGPreqcancel_svc.so
+vendor/lib/liboemcrypto.so
 vendor/lib/libQSEEComAPI.so
-vendor/lib64/lib-sec-disp.so
-vendor/lib64/libGPreqcancel.so
-vendor/lib64/libGPreqcancel_svc.so
-vendor/lib64/libGPTEE.so|358528521b139414830e0546a6489747ec984648
-vendor/lib64/libmdtp.so|ea5a8dbb66e9500298ad70d424506be64f99ce1e
-vendor/lib64/libmdtp_crypto.so|8c07c4c720716e53217d8176fb5ebcc2f4cfd77f
-vendor/lib64/libQSEEComAPI.so
-vendor/lib64/libSecureUILib.so
-vendor/lib64/libStDrvInt.so
+vendor/lib/librpmb.so
+vendor/lib/libssd.so
+vendor/lib/vendor.qti.hardware.qteeconnector@1.0_vendor.so
+lib64/vendor.qti.hardware.qteeconnector@1.0.so
+endor/lib64/hw/gatekeeper.msm8996.so:vendor/lib64/hw/gatekeeper.msm8937.so
+vendor/lib64/hw/keystore.msm8996.so:vendor/lib64/hw/keystore.msm8937.so
+vendor/lib64/hw/vendor.qti.hardware.qteeconnector@1.0-impl.so
+vendor/lib64/mediadrm/libwvdrmengine.so
 vendor/lib64/libdrmfs.so
 vendor/lib64/libdrmtime.so
-vendor/lib64/libqisl.so
-vendor/lib64/librpmb.so|aa4a8a24fcd64902d3553220f3f281ce6b5899a4
-vendor/lib64/libspl.so
-vendor/lib64/libsecureui.so
-vendor/lib64/libsecureui_svcsock.so
+vendor/lib64/libGPreqcancel.so
+vendor/lib64/libGPreqcancel_svc.so
+vendor/lib64/libQSEEComAPI.so
+vendor/lib64/librpmb.so
 vendor/lib64/libssd.so
-vendor/lib64/libtzdrmgenprov.so|28476f814435420885c4b9551e88b016e9705c54
+vendor/lib64/vendor.qti.hardware.qteeconnector@1.0_vendor.so
 
 # Display calibration
 -etc/qdcm_calib_data_hx8394F_HD720p_video_BOE.xml:vendor/etc/qdcm_calib_data_hx8394F_HD720p_video_BOE.xml
@@ -1138,10 +1140,6 @@ lib64/libfpservice.so:vendor/lib64/libfpservice.so
 -lib/vendor.qti.hardware.fm@1.0.so|a32ae5e1a604cc0fa0f1e0704616b5af4f0188a9
 vendor/lib/hw/vendor.qti.hardware.fm@1.0-impl.so|f64cc14d4c2ac1387a618ac90bd8688efd9fab1e
 vendor/lib/vendor.qti.hardware.fm@1.0_vendor.so|8ac093a196439dc403b2fa099d838c33242efa82
-
-# Gatekeeper
-vendor/lib/hw/gatekeeper.msm8937.so
-vendor/lib64/hw/gatekeeper.msm8937.so
 
 # GPS - from OnePlus3T
 lib/vendor.qti.gnss@1.0.so
@@ -1270,10 +1268,6 @@ usr/keylayout/gpio-keys.kl
 usr/keylayout/qpnp_pon.kl
 usr/keylayout/synaptics_dsx.kl
 usr/keylayout/synaptics_rmi4_i2c.kl
-
-# Keystore - from OP3
-vendor/lib/hw/keystore.msm8996.so:vendor/lib/hw/keystore.msm8937.so|BD92D1CCBC294E6BCB0FDB4018749646D1BA0193
-vendor/lib64/hw/keystore.msm8996.so:vendor/lib64/hw/keystore.msm8937.so|ADE812BB2991C103F6AF397E9662460ED0E48D5F
 
 # Listen
 vendor/lib/hw/sound_trigger.primary.msm8937.so
