@@ -269,8 +269,7 @@ PRODUCT_PACKAGES += \
     init.qcom.rc \
     init.qcom.sh \
     init.recovery.qcom.rc \
-    ueventd.qcom.rc \
-    xperience-info
+    ueventd.qcom.rc
 
 # IPA Manager
 PRODUCT_PACKAGES += \
