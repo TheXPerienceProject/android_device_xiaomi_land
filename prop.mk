@@ -184,7 +184,8 @@ vendor.vidc.dec.downscalar_height=1088 \
 vendor.vidc.disable.split.mode=1 \
 vendor.vidc.enc.disable.pq=true \
 persist.media.treble_omx=false \
-vidc.enc.dcvs.extra-buff-count=2
+vidc.enc.dcvs.extra-buff-count=2 \
+vendor.mediacodec.binder.size=1
 
 #netmgrd
 PRODUCT_PROPERTY_OVERRIDES += \
