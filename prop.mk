@@ -23,6 +23,7 @@ ro.vendor.audio.sdk.ssr=false \
 ro.vendor.audio.sdk.fluencetype=fluence \
 persist.vendor.audio.fluence.voicecall=true \
 persist.vendor.audio.fluence.voicerec=true \
+persist.vendor.audio.hw.binder.size_kbyte=1024 \
 persist.vendor.audio.fluence.speaker=true \
 persist.vendor.bt.enable.splita2dp=false \
 ro.config.media_vol_steps=25 \
