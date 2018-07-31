@@ -359,7 +359,7 @@ PRODUCT_PACKAGES += \
 
 # Power HIDL
 PRODUCT_PACKAGES += \
-    android.hardware.power@1.0-service-qti
+    android.hardware.power@1.0-service.land
 
 # RCS
 PRODUCT_PACKAGES += \
