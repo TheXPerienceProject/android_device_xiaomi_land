@@ -52,14 +52,6 @@ using android::base::GetProperty;
 using android::init::property_set;
 using android::base::Trim;
 
-//Take care about 3gb ram
-int is3GB()
-{
-    struct sysinfo sys;
-    sysinfo(&sys);
-    return sys.totalram > 2048ull * 1024 * 1024;
-}
-
 //cmdline parser
 void import_kernel_cmdline1(bool in_qemu,
                            const std::function<void(const std::string&, const std::string&, bool)>& fn) {
@@ -132,20 +124,15 @@ void property_override(char const prop[], char const value[])
 
 void read_ramconfig()
 {
-    if (is3GB()) {
-        property_set("dalvik.vm.heapstartsize", "8m");
-        property_set("dalvik.vm.heapgrowthlimit", "288m");
-        property_set("dalvik.vm.heapsize", "768m");
-        property_set("dalvik.vm.heaptargetutilization", "0.75");
-        property_set("dalvik.vm.heapminfree", "512k");
-        property_set("dalvik.vm.heapmaxfree", "8m");
+  struct sysinfo sys;
+  sysinfo(&sys);
+
+    if (sys.totalram > 2048ull * 1024 * 1024){
+        property_set("dalvik.vm.heapgrowthlimit", "256m");
+        property_set("dalvik.vm.heapminfree", "4m");
     } else {
-        property_set("dalvik.vm.heapstartsize", "8m");
         property_set("dalvik.vm.heapgrowthlimit", "192m");
-        property_set("dalvik.vm.heapsize", "512m");
-        property_set("dalvik.vm.heaptargetutilization", "0.75");
         property_set("dalvik.vm.heapminfree", "2m");
-        property_set("dalvik.vm.heapmaxfree", "8m");
     }
 }
 
@@ -216,4 +203,9 @@ void vendor_load_properties()
     read_ramconfig();
     init_alarm_boot_properties();
     variant_properties();
+    //VM values
+    property_set("dalvik.vm.heapstartsize", "16m");
+    property_set("dalvik.vm.heapsize", "512m");
+    property_set("dalvik.vm.heaptargetutilization", "0.75");
+    property_set("dalvik.vm.heapmaxfree", "8m");
 }
