@@ -163,20 +163,17 @@ void variant_properties()
     //Variants
     if (board_id == "S88537AA1") {
         property_set("ro.miui.support_fingerprint", "true");
-        property_set("ro.build.display.wtid", "SW_S88537AA1_V090_M20_MP_XM");
         property_set("persist.sys.fp.goodix", "0");
         property_set("persist.sys.fp.onstart", "1");
         property_set("persist.sys.fp.vendor", "searchf");
         property_set("ro.boot.fpsensor", "fpc");
     } else if (board_id == "S88537AB1") {
         property_set("ro.miui.support_fingerprint", "true");
-        property_set("ro.build.display.wtid", "SW_S88537AB1_V090_M20_MP_XM");
         property_set("persist.sys.fp.goodix", "0");
         property_set("persist.sys.fp.onstart", "1");
         property_set("persist.sys.fp.vendor", "searchf");
         property_set("ro.boot.fpsensor", "fpc");
     } else if (board_id == "S88537AC1") {
-        property_set("ro.build.display.wtid", "SW_S88537AC1_V090_M20_MP_XM");
         property_set("ro.miui.support_fingerprint", "false");
         property_set("persist.sys.fp.goodix", "1");
         property_set("persist.sys.fp.onstart", "0");
@@ -185,7 +182,6 @@ void variant_properties()
         property_set("ro.hardware.fingerprint", "goodix");
     } else if (board_id == "S88537BA1") {
         property_set("ro.miui.support_fingerprint", "true");
-        property_set("ro.build.display.wtid", "SW_S88537BA1_V090_M20_MP_XM");
         property_set("persist.sys.fp.goodix", "0");
         property_set("persist.sys.fp.onstart", "1");
         property_set("persist.sys.fp.vendor", "searchf");
@@ -193,14 +189,12 @@ void variant_properties()
         property_set("mm.enable.qcom_parser", "196495");
     } else if (board_id == "S88537CA1") {
         property_set("ro.miui.support_fingerprint", "true");
-        property_set("ro.build.display.wtid", "SW_S88537CA1_V090_M20_MP_XM");
         property_set("persist.sys.fp.goodix", "0");
         property_set("persist.sys.fp.onstart", "1");
         property_set("persist.sys.fp.vendor", "searchf");
         property_set("ro.boot.fpsensor", "fpc");
         property_set("mm.enable.qcom_parser", "196495");
     } else if (board_id == "S88537EC1") {
-        property_set("ro.build.display.wtid", "SW_S88537EC1_V090_M20_MP_XM");
         property_set("ro.miui.support_fingerprint", "false");
         property_set("mm.enable.qcom_parser", "196495");
     }
