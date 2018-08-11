@@ -78,6 +78,8 @@ qcom.bluetooth.soc=smd
 
 #Camera
 PRODUCT_PROPERTY_OVERRIDES += \
+persist.camera.expose.aux=1 \
+vendor.camera.aux.packagelist=com.skype.raider,com.google.android.talk,com.whatsapp,com.google.android.GoogleCamera \
 camera.hal1.packagelist=com.skype.raider,com.google.android.talk,com.whatsapp \
 camera.display.umax=1920x1080 \
 camera.display.lmax=1280x720 \
@@ -163,7 +165,8 @@ vendor.vidc.dec.downscalar_width=1920 \
 vendor.vidc.dec.downscalar_height=1088 \
 vendor.vidc.disable.split.mode=1 \
 vendor.vidc.enc.disable.pq=true \
-persist.media.treble_omx=false
+persist.media.treble_omx=false \
+vidc.enc.dcvs.extra-buff-count=2
 
 #netmgrd
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -205,7 +208,8 @@ persist.dbg.vt_avail_ovr=1 \
 persist.dbg.wfc_avail_ovr=0 \
 persist.radio.calls.on.ims=0 \
 persist.radio.jbims=0 \
-persist.radio.videopause.mode=1
+persist.radio.videopause.mode=1 \
+persist.vendor.qti.telephony.vt_cam_interface=1
 
 #RIL
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -225,6 +229,7 @@ persist.vendor.radio.sib16_support=1 \
 persist.vendor.radio.custom_ecc=1 \
 ril.subscription.types=NV,RUIM \
 rild.libpath=/vendor/lib64/libril-qc-qmi-1.so \
+rild.libargs=-d/dev/smd0 \
 ril.ecclist=000,08,100,101,102,110,112,118,119,120,122,911,999 \
 ril.ecclist1=000,08,100,101,102,110,112,118,119,120,122,911,999 \
 ro.ril.disable.power.collapse=0 \
@@ -235,3 +240,25 @@ service.qti.ims.enabled=1 \
 telephony.lteOnCdmaDevice=1 \
 ro.ril.fast.dormancy.rule=0 \
 ro.ril.hsxpa=0
+
+#enforce apps
+PRODUCT_PROPERTY_OVERRIDES += \
+ro.control_privapp_permissions=enforce
+
+#Trim props
+PRODUCT_PROPERTY_OVERRIDES += \
+ro.vendor.qti.sys.fw.use_trim_settings=true \
+ro.vendor.qti.sys.fw.empty_app_percent=50 \
+ro.vendor.qti.sys.fw.trim_empty_percent=100 \
+ro.vendor.qti.sys.fw.trim_cache_percent=100 \
+ro.vendor.qti.sys.fw.trim_enable_memory=2147483648
+
+#Enable B service adj transition by defaul
+PRODUCT_PROPERTY_OVERRIDES += \
+ro.vendor.qti.sys.fw.bservice_enable=true \
+ro.vendor.qti.sys.fw.bservice_limit=5 \
+ro.vendor.qti.sys.fw.bservice_age=5000
+
+#set max background services
+PRODUCT_PROPERTY_OVERRIDES += \
+ro.config.max_starting_bg=8
