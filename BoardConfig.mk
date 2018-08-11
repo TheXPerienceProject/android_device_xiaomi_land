@@ -258,6 +258,11 @@ BOARD_ROOT_EXTRA_FOLDERS := dsp firmware persist
 #include device/qcom/sepolicy/sepolicy.mk
 #include device/qcom/sepolicy/legacy-sepolicy.mk
 
+# Shim
+TARGET_LD_SHIM_LIBS := \
+/vendor/lib64/vendor.qti.gnss@1.0_vendor.so|libgnss_shim.so \
+/system/lib64/vendor.qti.gnss@1.0.so|libgnss_shim.so
+
 # Treble
 BOARD_PROPERTY_OVERRIDES_SPLIT_ENABLED := true
 PRODUCT_FULL_TREBLE_OVERRIDE := true
