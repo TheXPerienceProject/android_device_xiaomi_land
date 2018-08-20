@@ -202,14 +202,14 @@ service vendor.per_mgr /vendor/bin/pm-service
     user system
     group system net_raw
     ioprio rt 4
-    seclabel u:r:per_mgr:s0
+    #seclabel u:r:per_mgr:s0
 
 service vendor.per_proxy /vendor/bin/pm-proxy
     class core
     user system
     group system
     disabled
-    seclabel u:r:per_mgr:s0
+    #seclabel u:r:per_mgr:s0
 
 on property:init.svc.per_mgr=running
     start vendor.per_proxy
@@ -633,12 +633,12 @@ service vendor.rmt_storage /vendor/bin/rmt_storage
     shutdown critical
     ioprio rt 0
     group wakelock
-    seclabel u:r:rmt_storage:s0
+    #seclabel u:r:rmt_storage:s0
 
 service vendor.tftp_server /vendor/bin/tftp_server
    class core
    user root
-   seclabel u:r:rfs_access:s0
+   #seclabel u:r:rfs_access:s0
 
 on property:wc_transport.start_hci=true
     start vendor.start_hci_filter
@@ -650,7 +650,7 @@ service vendor.start_hci_filter /vendor/bin/wcnss_filter
     class late_start
     user bluetooth
     group bluetooth diag system wakelock
-    seclabel u:r:bluetooth:s0
+    #seclabel u:r:bluetooth:s0
     disabled
 
 #FM
@@ -662,7 +662,7 @@ on property:hw.fm.init=1
 
 service vendor.netmgrd /vendor/bin/netmgrd
     class main
-    seclabel u:r:netmgrd:s0
+    #seclabel u:r:netmgrd:s0
 
 service vendor.qti /vendor/bin/qti
     class main
@@ -673,7 +673,7 @@ service vendor.sensors /vendor/bin/sensors.qcom
     class core
     user root
     group root
-    seclabel u:r:sensors:s0
+    #seclabel u:r:sensors:s0
 
 service vendor.qvop-daemon /vendor/bin/qvop-daemon
     class late_start
@@ -705,7 +705,7 @@ service vendor.loc_launcher /vendor/bin/loc_launcher
     #loc_launcher will start as root and set its uid to gps
     class late_start
     group gps inet diag wifi
-    seclabel u:r:location:s0
+    #seclabel u:r:location:s0
 
 service vendor.qcom-sh /vendor/bin/init.qcom.sh
     class late_start
@@ -725,7 +725,7 @@ service vendor.usb_uicc_enable /vendor/bin/sh /system/etc/init.qcom.uicc.sh
     user root
     disabled
     oneshot
-    seclabel u:r:qti_init_shell:s0
+    #seclabel u:r:qti_init_shell:s0
 
 on property:sys.usb_uicc.enabled=1
     start vendor.usb_uicc_enable
@@ -738,12 +738,12 @@ service vendor.hcidump /vendor/bin/sh /system/etc/hcidump.sh
     group bluetooth system net_bt_admin net_admin
     disabled
     oneshot
-    seclabel u:r:qti_init_shell_exec:s0
+    #seclabel u:r:qti_init_shell_exec:s0
 
 service vendor.charger /sbin/chargeonlymode
     class charger
     group graphics system
-    seclabel u:r:healthd:s0
+    #seclabel u:r:healthd:s0
 
 #+first boot,jiangtao.wt,add 20150810
 on property:sys.installed.running=1
@@ -768,13 +768,13 @@ service vendor.cnd /vendor/bin/cnd
     class main
     user system
     group system wifi inet radio wakelock net_admin
-    seclabel u:r:cnd:s0
+    #seclabel u:r:cnd:s0
 
 service vendor.qseeproxydaemon /vendor/bin/qseeproxydaemon
     class late_start
     user system
     group system
-    seclabel u:r:qseeproxy:s0
+    #seclabel u:r:qseeproxy:s0
 
 # Add poweroffhandler
 service vendor.poweroffhandler /system/bin/poweroffhandler
@@ -806,7 +806,7 @@ service vendor.qcamerasvr /vendor/bin/mm-qcamera-daemon
     class late_start
     user camera
     group camera system inet input graphics
-    seclabel u:r:mm-qcamerad:s0
+    #seclabel u:r:mm-qcamerad:s0
     setenv LD_PRELOAD "vendor/lib/libshim_qcamera.so"
 
 # Allow usb charging to be disabled peristently
@@ -820,7 +820,7 @@ service vendor.qseecomd /vendor/bin/qseecomd
     class core
     user root
     group root
-    seclabel u:r:tee:s0
+    #seclabel u:r:tee:s0
 
 service vendor.perfd /vendor/bin/perfd
     class main
@@ -840,7 +840,7 @@ service vendor.time_daemon /vendor/bin/time_daemon
     class main
     user root
     group root
-    seclabel u:r:time_daemon:s0
+    #seclabel u:r:time_daemon:s0
 
 service vendor.wcnss-service /vendor/bin/wcnss_service
     class main
@@ -854,7 +854,7 @@ service vendor.imsqmidaemon /vendor/bin/imsqmidaemon
       user system
       socket ims_qmid stream 0660 system radio
       group radio log diag
-      seclabel u:r:ims:s0
+      #seclabel u:r:ims:s0
 
 service vendor.imsdatadaemon /vendor/bin/imsdatadaemon
       class main
@@ -862,7 +862,7 @@ service vendor.imsdatadaemon /vendor/bin/imsdatadaemon
       socket ims_datad stream 0660 system radio
       group system wifi radio inet log diag
       disabled
-      seclabel u:r:ims:s0
+      #seclabel u:r:ims:s0
 
 on property:vendor.ims.QMI_DAEMON_STATUS=1
       start vendor.imsdatadaemon
@@ -872,14 +872,14 @@ service vendor.ims_rtp_daemon /vendor/bin/ims_rtp_daemon
      user system
      group radio diag inet log
      disabled
-     seclabel u:r:hal_imsrtp:s0
+     #seclabel u:r:hal_imsrtp:s0
 
 service vendor.imsrcsservice /vendor/bin/imsrcsd
      class main
      user system
      group radio diag inet log
      disabled
-     seclabel u:r:ims:s0
+     #seclabel u:r:ims:s0
 
 on property:vendor.ims.DATA_DAEMON_STATUS=1
    start vendor.ims_rtp_daemon
@@ -892,7 +892,7 @@ service vendor.ppd /vendor/bin/mm-pp-dpps
     user system
     socket pps stream 0660 system system
     group system graphics
-    seclabel u:r:mm-pp-daemon:s0
+    #seclabel u:r:mm-pp-daemon:s0
 
 on property:init.svc.surfaceflinger=stopped
     stop vendor.ppd
@@ -928,13 +928,13 @@ service vendor.adsprpcd /vendor/bin/adsprpcd
     class main
     user media
     group media
-    seclabel u:r:adsprpcd:s0
+    #seclabel u:r:adsprpcd:s0
 
 service vendor.hvdcp_opti /vendor/bin/hvdcp_opti
     class main
     user root
     group system wakelock
-    seclabel u:r:hvdcp:s0
+    #seclabel u:r:hvdcp:s0
 
 service vendor.energy-awareness /vendor/bin/energy-awareness
     class main
