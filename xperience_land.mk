@@ -28,7 +28,7 @@ PRODUCT_BRAND := Xiaomi
 BOARD_VENDOR := Xiaomi
 PRODUCT_DEVICE := land
 PRODUCT_MANUFACTURER := Xiaomi
-PRODUCT_NAME := xpe_land
+PRODUCT_NAME := xperience_land
 
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 
