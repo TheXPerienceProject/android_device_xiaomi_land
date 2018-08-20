@@ -1,5 +1,4 @@
-# Copyright (C) 2013-2016, The CyanogenMod Project
-# Copyright (C) 2018, The LineageOS Project
+# Copyright (C) 2016 The CyanogenMod Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -20,12 +19,12 @@ LOCAL_SRC_FILES := \
     bionic/bionic_time_conversions.cpp \
     bionic/pthread_cond.cpp
 
-LOCAL_32_BIT_ONLY := true
-LOCAL_CLANG := false
-LOCAL_MODULE := libshim_qcamera
-LOCAL_MODULE_TAGS := optional
 LOCAL_SHARED_LIBRARIES := libc
+LOCAL_MODULE := libshim_qcamera
+LOCAL_CLANG := false
+LOCAL_MODULE_TAGS := optional
 LOCAL_VENDOR_MODULE := true
+LOCAL_32_BIT_ONLY := true
 include $(BUILD_SHARED_LIBRARY)
 
 include $(CLEAR_VARS)
