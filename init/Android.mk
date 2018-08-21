@@ -20,8 +20,7 @@ include $(CLEAR_VARS)
 
 LOCAL_C_INCLUDES := \
     system/core/base/include \
-    system/core/init \
-	libselinux
+    system/core/init
 
 LOCAL_CFLAGS := -Wall
 
@@ -29,6 +28,6 @@ LOCAL_MODULE := libinit_land
 LOCAL_MODULE_TAGS := optional
 LOCAL_SRC_FILES := init_land.cpp
 
-LOCAL_STATIC_LIBRARIES := libbase
+LOCAL_STATIC_LIBRARIES := libbase libselinux
 
 include $(BUILD_STATIC_LIBRARY)

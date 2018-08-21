@@ -45,7 +45,6 @@
 #include "property_service.h"
 #include "vendor_init.h"
 #include "log.h"
-#include "util.h"
 
 static std::string board_id;
 using android::base::GetProperty;
