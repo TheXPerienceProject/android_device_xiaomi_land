@@ -33,3 +33,11 @@ LOCAL_MODULE := libgnss_shim
 LOCAL_MODULE_TAGS := optional
 LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_SHARED_LIBRARY)
+
+include $(CLEAR_VARS)
+LOCAL_SRC_FILES := sensorservice.cpp
+LOCAL_SHARED_LIBRARIES := libutils
+LOCAL_MODULE := libslimdaemon_shim
+LOCAL_MODULE_TAGS := optional
+LOCAL_PROPRIETARY_MODULE := true
+include $(BUILD_SHARED_LIBRARY)

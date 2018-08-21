@@ -261,7 +261,8 @@ BOARD_ROOT_EXTRA_FOLDERS := dsp firmware persist
 # Shim
 TARGET_LD_SHIM_LIBS := \
 /vendor/lib64/vendor.qti.gnss@1.0_vendor.so|libgnss_shim.so \
-/system/lib64/vendor.qti.gnss@1.0.so|libgnss_shim.so
+/system/lib64/vendor.qti.gnss@1.0.so|libgnss_shim.so \
+/vendor/bin/slim_daemon|libslimdaemon_shim.so
 
 # Treble
 BOARD_PROPERTY_OVERRIDES_SPLIT_ENABLED := true
