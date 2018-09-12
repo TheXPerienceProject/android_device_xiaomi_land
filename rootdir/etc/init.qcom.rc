@@ -712,6 +712,11 @@ service vendor.qcom-sh /vendor/bin/init.qcom.sh
     user root
     oneshot
 
+service vendor.xperience-post-boot /vendor/bin/init.xperience.postboot.sh
+    class late_start
+    user root
+    oneshot
+
 service vendor.ril-daemon2 /vendor/bin/hw/rild -c 2
     class main
     socket rild2 stream 660 root radio

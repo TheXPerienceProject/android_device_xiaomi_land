@@ -267,7 +267,8 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     init.qcom.power.rc \
     init.qcom.usb.rc \
-    init.qcom.usb.sh
+    init.qcom.usb.sh \
+    init.xperience.postboot.sh
 
 PRODUCT_PACKAGES += \
     fstab.qcom \
