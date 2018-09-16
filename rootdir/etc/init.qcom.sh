@@ -394,7 +394,7 @@ function 8937_sched_dcvs_eas()
 {
     # enable governor for perf cluster
     echo 1 > /sys/devices/system/cpu/cpu0/online
-    echo "schedutil" > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
+    echo "schedalessa" > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
     echo 0 > /sys/devices/system/cpu/cpu0/cpufreq/schedutil/rate_limit_us
     #set the hispeed_freq
     echo 1094400 > /sys/devices/system/cpu/cpu0/cpufreq/schedutil/hispeed_freq
@@ -402,7 +402,7 @@ function 8937_sched_dcvs_eas()
     echo 85 > /sys/devices/system/cpu/cpu0/cpufreq/schedutil/hispeed_load
     ## enable governor for power cluster
     echo 1 > /sys/devices/system/cpu/cpu4/online
-    echo "schedutil" > /sys/devices/system/cpu/cpu4/cpufreq/scaling_governor
+    echo "schedalessa" > /sys/devices/system/cpu/cpu4/cpufreq/scaling_governor
     echo 0 > /sys/devices/system/cpu/cpu4/cpufreq/schedutil/rate_limit_us
     #set the hispeed_freq
     echo 768000 > /sys/devices/system/cpu/cpu4/cpufreq/schedutil/hispeed_freq
