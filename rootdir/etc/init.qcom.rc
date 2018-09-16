@@ -622,7 +622,7 @@ on property:persist.env.fastdorm.enabled=true
 service vendor.dpmQmiMgr /vendor/bin/dpmQmiMgr
     class main
     user system
-    group system
+    group radio system
 
 service vendor.irsc_util /vendor/bin/irsc_util "/vendor/etc/sec_config"
     class core
@@ -669,7 +669,7 @@ service vendor.netmgrd /vendor/bin/netmgrd
 service vendor.qti /vendor/bin/qti
     class main
     user radio
-    group radio net_raw diag usb net_admin
+    group radio oem_2901 diag usb net_admin
 
 service vendor.sensors /vendor/bin/sensors.qcom
     class core
@@ -840,6 +840,10 @@ service vendor.thermal-engine /vendor/bin/thermal-engine
     socket thermal-recv-passive-client stream 0666 system system
     socket thermal-send-rule stream 0660 system system
     group root
+
+on property:init.svc.surfaceflinger=restarting
+    stop hwcomposer-2-1
+    start hwcomposer-2-1
 
 service vendor.time_daemon /vendor/bin/time_daemon
     class main
