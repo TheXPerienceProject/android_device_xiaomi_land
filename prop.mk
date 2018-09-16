@@ -50,6 +50,26 @@ vendor.audio.offload.multiaac.enable=true \
 vendor.audio.dolby.ds2.hardbypass=true \
 vendor.audio.flac.sw.decoder.24bit=true
 
+#minimum duration for offload playback in secs
+PRODUCT_PROPERTY_OVERRIDES += \
+audio.offload.min.duration.secs=30
+
+#enable offload audio video playback by default
+PRODUCT_PROPERTY_OVERRIDES += \
+audio.offload.video=true
+
+#enable music through deep buffer
+PRODUCT_PROPERTY_OVERRIDES += \
+audio.deep_buffer.media=true
+
+#set AudioFlinger client heap size
+PRODUCT_PROPERTY_OVERRIDES += \
+ro.af.client_heap_size_kbyte=7168
+
+# Reduce client buffer size for fast audio output tracks
+PRODUCT_PROPERTY_OVERRIDES += \
+af.fast_track_multiplier=1
+
 #APTX
 PRODUCT_PROPERTY_OVERRIDES += \
 persist.bt.enableAptXHD=true \
