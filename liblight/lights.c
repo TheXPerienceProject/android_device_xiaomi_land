@@ -33,7 +33,6 @@
 #include <sys/types.h>
 
 #include <hardware/lights.h>
-#include "lights_prv.h"
 
 #ifndef DEFAULT_LOW_PERSISTENCE_MODE_BRIGHTNESS
 #define DEFAULT_LOW_PERSISTENCE_MODE_BRIGHTNESS 0x80
