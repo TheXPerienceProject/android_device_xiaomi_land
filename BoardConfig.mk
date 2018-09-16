@@ -277,7 +277,8 @@ DEVICE_MANIFEST_FILE := device/xiaomi/land/manifest.xml
 DEVICE_MATRIX_FILE := device/xiaomi/land/compatibility_matrix.xml
 
 # Wi-Fi
-BOARD_HAS_QCOM_WLAN := true
+BOARD_USES_AOSP_WLAN_HAL := true
+TARGET_PROVIDES_WCNSS_SERVICE_SOURCE := true
 BOARD_HAS_QCOM_WLAN_SDK := true
 BOARD_WLAN_DEVICE := qcwcn
 BOARD_HOSTAPD_DRIVER := NL80211
