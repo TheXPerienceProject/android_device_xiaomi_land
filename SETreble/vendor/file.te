@@ -1,16 +1,19 @@
 type debugfs_wlan, debugfs_type, fs_type;
-type fpc_data_file, file_type, data_file_type;
+type fpc_data_file, file_type, data_file_type, core_data_file_type;
+type custom_netmgrd_data_file, file_type, data_file_type, core_data_file_type;
+type custom_qfp-daemon_data_file, file_type, data_file_type, core_data_file_type;
 type fpce_socket, file_type;
 type fpc_socket, file_type;
 type fpc_sysfs, fs_type, sysfs_type;
-type proc_touchpanel, fs_type, sysfs_type;
-type gx_fpd_data_file, file_type, data_file_type;
+type proc_touchpanel, fs_type, sysfs_type, proc_type;
+type gx_fpd_data_file, file_type, data_file_type, core_data_file_type;
 type sysfs_fp, sysfs_type, fs_type;
 type debugfs_rmts, debugfs_type, fs_type;
-type vendor_keylayout_file, file_type, data_file_type;
+type keylayout_file, file_type, vendor_file_type;
 type idc_file, file_type, vendor_file_type;
 # Power
-type perfd_data_file, file_type, data_file_type;
-type proc_irq, fs_type;
+type perfd_data_file, file_type, data_file_type, core_data_file_type;
+type proc_irq, fs_type, proc_type;
 type proc_kernel_sched, fs_type;
+type device_proc_kernel_sched, fs_type, proc_type;
 type sysfs_power_management, sysfs_type, fs_type;

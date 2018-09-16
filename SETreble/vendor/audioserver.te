@@ -1,7 +1,6 @@
 #============= audioserver ==============
-allow audioserver debugfs_tracing:file { open write };
 allow audioserver sysfs:dir { open read };
-allow audioserver sysfs:file { getattr open read };
+allow audioserver sysfs:file { getattr };
 allow audioserver unlabeled:dir { read open search getattr };
 allow audioserver unlabeled:file { read open getattr };
 

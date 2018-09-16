@@ -249,10 +249,10 @@ TARGET_RELEASETOOLS_EXTENSIONS := device/qcom/common
 BOARD_ROOT_EXTRA_FOLDERS := dsp firmware persist
 
 # SELinux
-ifeq ($(PRODUCT_FULL_TREBLE_OVERRIDE), true)
+#ifeq ($(PRODUCT_FULL_TREBLE_OVERRIDE), true)
 BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/SETreble/vendor
 BOARD_PLAT_PRIVATE_SEPOLICY_DIR += $(DEVICE_PATH)/SETreble/private
-endif
+#endif
 ifeq ($(PRODUCT_FULL_TREBLE_OVERRIDE), false)
     BOARD_SEPOLICY_DIRS += \
         $(DEVICE_PATH)/sepolicy

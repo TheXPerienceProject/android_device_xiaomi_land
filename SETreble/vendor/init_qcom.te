@@ -5,14 +5,14 @@ type init_qcom_exec, exec_type, vendor_file_type, file_type;
 init_daemon_domain(init_qcom)
 
 # Allow to use chown & dac_override
-allow init_qcom self:capability { chown dac_override };
+allow init_qcom self:capability chown;
 
 # Allow to write in /proc/sys/kernel/printk
 allow init_qcom proc:file w_file_perms;
 
 # Allow to read, write and setattr in /proc/touchpanel
-allow init_qcom proc_touchpanel:dir { rw_dir_perms setattr };
-allow init_qcom proc_touchpanel:file { rw_file_perms setattr };
+allow init_qcom proc_touchpanel:dir { open getattr read search ioctl lock };
+allow init_qcom proc_touchpanel:file { getattr map };
 
 # Allow to read, write and create in /data/vendor/radio
 allow init_qcom vendor_radio_data_file:dir create_dir_perms;
