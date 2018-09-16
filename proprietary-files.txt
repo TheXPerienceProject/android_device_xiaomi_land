@@ -118,6 +118,7 @@ vendor/lib64/libaptXHD_encoder.so
 vendor/lib64/libbtnv.so
 
 # CNE from OnePlus3T (OxygenOS 5 Beta)
+-priv-app/CNEService/CNEService.apk|cd015cf0e96e4fe3c62f840131f5af890f453d65
 etc/permissions/com.quicinc.cne.xml
 -framework/com.quicinc.cne.api-V1.0-java.jar
 -framework/com.quicinc.cne.jar
@@ -1494,6 +1495,7 @@ vendor/lib64/vendor.qti.hardware.radio.uim_remote_server@1.0_vendor.so
 vendor/radio/qcril_database/qcril.db
 
 # Radio - IMS - from TA-1003 (Nokia 6)
+-app/ims/ims.apk|3806a916da8adc1e1787ec45a074a55968a0e752
 etc/permissions/qti-vzw-ims-internal.xml
 lib/com.qualcomm.qti.imscmservice@1.0.so
 lib/lib-imscamera.so
