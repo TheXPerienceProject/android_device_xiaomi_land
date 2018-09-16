@@ -104,10 +104,11 @@ persist.hwc.enable_vds=1 \
 persist.hwc.mdpcomp.enable=true \
 persist.debug.wfd.enable=1 \
 sdm.debug.disable_skip_validate=1 \
+vendor.display.disable_skip_validate=1 \
 ro.sf.hwc_set_default_colormode=true \
 vendor.display.enable_default_color_mode=1 \
 debug.gralloc.gfx_ubwc_disable=1 \
-debug.gralloc.enable_fb_ubwc=0 \
+vendor.gralloc.enable_fb_ubwc=0 \
 persist.camera.preview.ubwc=0 \
 persist.camera.video.ubwc=0
 
