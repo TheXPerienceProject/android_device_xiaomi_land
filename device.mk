@@ -215,7 +215,7 @@ PRODUCT_PACKAGES += \
 
 # Fingerprint
 PRODUCT_PACKAGES += \
-    android.hardware.biometrics.fingerprint@2.0-service.land
+    android.hardware.biometrics.fingerprint@2.1-service.land
 
 TARGET_FS_CONFIG_GEN += \
     device/xiaomi/land/fs_config/file_caps.fs
