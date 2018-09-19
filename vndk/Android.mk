@@ -1,9 +1,9 @@
 VNDK_SP_LIBRARIES := \
     android.hardware.graphics.allocator@2.0 \
     android.hardware.graphics.common@1.0 \
-		android.hardware.graphics.common@1.1 \
+    android.hardware.graphics.common@1.1 \
     android.hardware.graphics.mapper@2.0 \
-		android.hardware.graphics.mapper@2.1 \
+    android.hardware.graphics.mapper@2.1 \
     android.hardware.renderscript@1.0 \
     android.hidl.memory@1.0 \
     libRSCpuRef \
@@ -33,7 +33,7 @@ EXTRA_VENDOR_LIBRARIES := \
     libsqlite \
     libicuuc \
     libicui18n \
-	libdisplayconfig \
+    libdisplayconfig \
     android.hidl.base@1.0 \
     android.hidl.manager@1.0 \
     android.hardware.sensors@1.0 \
@@ -42,8 +42,7 @@ EXTRA_VENDOR_LIBRARIES := \
     android.hardware.thermal@1.1 \
     android.hardware.ir@1.0 \
     vendor.display.color@1.0 \
-    vendor.display.config@1.0 \
-    vendor.qti.hardware.iop@1.0
+    vendor.display.config@1.0
 
 #-------------------------------------------------------------------------------
 # VNDK Modules
