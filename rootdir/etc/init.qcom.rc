@@ -610,11 +610,17 @@ on property:persist.sys.chgdisabled=0
 
 on property:vold.decrypt=trigger_restart_framework
     start vendor.wcnss-service
-    stop camera-provider-2-4
-    start camera-provider-2-4
     stop vendor.camera-provider-2-4 
     start vendor.camera-provider-2-4
+    stop vendor.wifi_hal_legacy
+    start vendor.wifi_hal_legacy
+
 #idk if the system declares this as vendor at the moment when i write this im not checket yet
+on nonencrypted
+    stop vendor.camera-provider-2-4
+    start vendor.camera-provider-2-4
+    stop vendor.wifi_hal_legacy
+    start vendor.wifi_hal_legacy
 
 on property:persist.env.fastdorm.enabled=true
     setprop persist.radio.data_no_toggle 1
