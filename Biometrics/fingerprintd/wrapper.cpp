@@ -21,13 +21,16 @@
 #include <hardware/fingerprint.h>
 #include <binder/IServiceManager.h>
 
-#include "../BiometricsFingerprint.h"
 #include "FingerprintDaemonProxy.h"
 #include "IFingerprintDaemon.h"
+#include "IFingerprintDaemonCallback.h"
+#include "FingerprintDaemonCallbackProxy.h"
 
 using namespace android;
 
-static sp<IFingerprintDaemon> g_service = NULL;
+sp<IFingerprintDaemon> g_service = NULL;
+
+fingerprint_device_t* getWrapperService();
 
 class BinderDiednotify: public IBinder::DeathRecipient {
     public:
@@ -43,8 +46,10 @@ fingerprint_device_t* getWrapperService(fingerprint_notify_t notify) {
     int64_t ret = 0;
     do {
         if (g_service == NULL) {
+            ALOGE("getService g_servie is NULL");
+
             sp<IServiceManager> sm = defaultServiceManager();
-            sp<IBinder> binder = sm->getService(FingerprintDaemonProxy::descriptor);
+            sp<IBinder> binder = sm->getService(android::FingerprintDaemonProxy::descriptor);
             if (binder == NULL) {
                 ALOGE("getService failed");
                 sleep(1);
@@ -55,8 +60,10 @@ fingerprint_device_t* getWrapperService(fingerprint_notify_t notify) {
 
             if (g_service != NULL) {
                 ALOGE("getService succeed");
-
-                g_service->init(notify);
+                sp<android::FingerprintDaemonCallbackProxy> callback =
+                        new FingerprintDaemonCallbackProxy();
+                FingerprintDaemonCallbackProxy::setDevice(notify);
+                g_service->init(callback);
 
                 ret = g_service->openHal();
                 if (ret == 0) {
