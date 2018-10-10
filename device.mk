@@ -153,10 +153,9 @@ PRODUCT_PACKAGES += \
 
 # Camera HIDL HAL
 PRODUCT_PACKAGES += \
-    camera.device@1.0-impl \
-    camera.device@3.2-impl \
     android.hardware.camera.provider@2.4-impl \
     android.hardware.camera.provider@2.4-service \
+    camera.device@3.2-impl \
     vendor.qti.hardware.camera.device@1.0 \
     vendor.qti.hardware.camera.device@1.0_vendor
 
@@ -185,15 +184,23 @@ PRODUCT_PACKAGES += \
 #Display HIDL
 PRODUCT_PACKAGES += \
     android.hardware.graphics.allocator@2.0-impl \
-    android.hardware.graphics.mapper@2.0-impl \
+    android.hardware.graphics.allocator@2.0-service \
     android.hardware.graphics.composer@2.1-impl \
     android.hardware.graphics.composer@2.1-service \
-    android.hardware.graphics.allocator@2.0-service \
+    android.hardware.graphics.mapper@2.0-impl \
+    android.hardware.memtrack@1.0-impl \
+    android.hardware.memtrack@1.0-service \
     android.hardware.memtrack@1.0-impl \
     android.hardware.memtrack@1.0-service \
     android.hardware.renderscript@1.0-impl \
-    vendor.display.config@1.0 \
     vendor.display.config@1.0_vendor
+
+# Display QTI
+PRODUCT_PACKAGES += \
+    vendor.qti.hardware.display.allocator@1.0 \
+    vendor.qti.hardware.display.composer@1.0 \
+    vendor.display.config@1.4 \
+    vendor.qti.hardware.display.mapper@1.0
 
 # Display calibration
 PRODUCT_PACKAGES += \
@@ -414,7 +421,7 @@ PRODUCT_BOOT_JARS += \
 
 # TextClassifier
 PRODUCT_PACKAGES += \
-    textclassifier.smartselection.bundle1
+    textclassifier.bundle1
 
 # Thermal
 PRODUCT_COPY_FILES += \
@@ -445,7 +452,12 @@ PRODUCT_COPY_FILES += \
 
 # WiFi HAL
 PRODUCT_PACKAGES += \
-    android.hardware.wifi@1.0-service
+    android.hardware.wifi@1.0-service \
+    vendor.qti.hardware.wifi.supplicant@1.0 \
+    vendor.qti.hardware.wifi.supplicant@2.0 \
+    vendor.qti.hardware.wifi.supplicant@2.0_vendor \
+    vendor.qti.hardware.wifi.supplicant@1.0_vendor \
+    vendor.qti.hardware.wifi.hostapd@1.0
 
 # Wi-Fi
 PRODUCT_PACKAGES += \
