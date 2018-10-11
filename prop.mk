@@ -126,6 +126,7 @@ persist.hwc.mdpcomp.enable=true \
 persist.debug.wfd.enable=1 \
 sdm.debug.disable_skip_validate=1 \
 vendor.display.disable_skip_validate=1 \
+vendor.display.perf_hint_window=50 \
 ro.sf.hwc_set_default_colormode=true \
 vendor.display.enable_default_color_mode=1 \
 debug.gralloc.gfx_ubwc_disable=1 \
@@ -208,7 +209,8 @@ ro.vendor.qti.sys.fw.use_trim_settings=true \
 ro.vendor.qti.sys.fw.empty_app_percent=50 \
 ro.vendor.qti.sys.fw.trim_empty_percent=100 \
 ro.vendor.qti.sys.fw.trim_cache_percent=100 \
-ro.vendor.qti.sys.fw.trim_enable_memory=2147483648
+ro.vendor.qti.sys.fw.trim_enable_memory=2147483648 \
+ro.vendor.qti.sys.fw.bg_apps_limit=60
 
 #system props for time-services
 PRODUCT_PROPERTY_OVERRIDES += \
