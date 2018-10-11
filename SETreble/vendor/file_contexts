@@ -22,10 +22,11 @@
 #sys/devices/soc/soc:goodix_fp/goodix_fp 
 
 # Custom services
-/(vendor|system/vendor)/bin/hw/android\.hardware\.biometrics\.fingerprint@2\.0-service\.land                 u:object_r:hal_fingerprint_land_exec:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.biometrics\.fingerprint@2\.0-service\.xiaomi_land                u:object_r:hal_fingerprint_land_exec:s0
 
 # Block devices
 /dev/block/bootdevice/by-name/persist		u:object_r:persist_block_device:s0
+/dev/block/platform/soc/7824900.sdhci/by-name/persist                                   u:object_r:persist_block_device:s0
 
 # Data files
 /data/misc/netmgr/log\.txt			                          u:object_r:custom_netmgrd_data_file:s0
@@ -34,6 +35,7 @@
 /tombstones             u:object_r:rootfs:s0
 /dsp                    u:object_r:rootfs:s0
 /firmware(/.*)?         u:object_r:firmware_file:s0
+/vendor/firmware(/.*)?         u:object_r:firmware_file:s0
 
 # RMT Storage
 /sys/kernel/debug/rmt_storage/rmts                              u:object_r:debugfs_rmts:s0
@@ -69,7 +71,7 @@
 /dev/lirc[0-9]*					u:object_r:lirc_device:s0
 
 # CPU tunable for EAS
-/sys/devices/system/cpu/cpu[0-3]/cpufreq/schedutil(/.*)?            u:object_r:sysfs_devices_system_cpu:s0
+/sys/devices/system/cpu/cpu[0-7]/cpufreq/schedutil(/.*)?            u:object_r:sysfs_devices_system_cpu:s0
  # perfd
 /(vendor|system/vendor)/bin/hw/android\.hardware\.power@1\.0-service.land         u:object_r:hal_power_default_exec:s0
 /(vendor|system/vendor)/bin/perfd                                   u:object_r:perfd_exec:s0
