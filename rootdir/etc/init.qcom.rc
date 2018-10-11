@@ -572,9 +572,6 @@ on boot
     chown system system /dev/goodix_fp
     chmod 0644 /dev/goodix_fp
 
-    setprop persist.sys.fp.vendor none
-    start vendor.gx_fpd
-
 on class_start:late_start
     write /proc/sys/net/ipv6/conf/default/accept_ra_defrtr 1
 
@@ -803,14 +800,30 @@ service vendor.gx_fpd /vendor/bin/gx_fpd
 on property:persist.sys.fp.vendor=switchf
     stop vendor.gx_fpd
     setprop persist.sys.fp.vendor searchf
+    setprop sys.fp.vendor searchf
+    setprop fpc.fp.miui.token 0
     setprop ro.boot.fpsensor fpc
     setprop ro.hardware.fingerprint searchf
-    start vendor.fps_hal
+    start fps_hal
+
+on property:persist.sys.fp.vendor=searchf
+    stop vendor.gx_fpd
+    setprop persist.sys.fp.vendor searchf
+    setprop ro.boot.fpsensor fpc
+    setprop ro.hardware.fingerprint searchf
+    start fps_hal
 
 on property:persist.sys.fp.vendor=goodix
     setprop ro.boot.fpsensor gdx
     setprop ro.hardware.fingerprint goodix
-    start vendor.fps_hal
+    start fps_hal
+
+on property:sys.fp.onstart=1
+   setprop goodix.fp.miui.analyse 1
+   setprop goodix.fp.miui.token 0
+   setprop ro.boot.fpsensor gdx
+   setprop ro.hardware.fingerprint goodix
+   start fps_hal
 
 # Start camera server as daemon
 service vendor.qcamerasvr /vendor/bin/mm-qcamera-daemon
