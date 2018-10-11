@@ -36,7 +36,6 @@ sys/devices/soc/soc:goodix_fp/goodix_fp     u:object_r:fpc_sysfs:s0
 /tombstones             u:object_r:rootfs:s0
 /dsp                    u:object_r:rootfs:s0
 /firmware(/.*)?         u:object_r:firmware_file:s0
-/vendor/firmware(/.*)?         u:object_r:firmware_file:s0
 
 # RMT Storage
 /sys/kernel/debug/rmt_storage/rmts                              u:object_r:debugfs_rmts:s0
