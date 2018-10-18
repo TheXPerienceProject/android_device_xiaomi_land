@@ -377,11 +377,7 @@ PRODUCT_COPY_FILES += \
 
 # Power HAL
 PRODUCT_PACKAGES += \
-    power.msm8937
-
-# Power HIDL
-PRODUCT_PACKAGES += \
-    android.hardware.power@1.0-service.land
+    android.hardware.power@1.1-service-qti
 
 # RCS
 PRODUCT_PACKAGES += \
