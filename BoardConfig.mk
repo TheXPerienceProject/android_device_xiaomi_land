@@ -248,17 +248,9 @@ TARGET_RELEASETOOLS_EXTENSIONS := device/qcom/common
 BOARD_ROOT_EXTRA_FOLDERS := dsp firmware persist
 
 # SELinux
-#ifeq ($(PRODUCT_FULL_TREBLE_OVERRIDE), true)
+include device/qcom/sepolicy/sepolicy.mk
 BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/SETreble/vendor
 BOARD_PLAT_PRIVATE_SEPOLICY_DIR += $(DEVICE_PATH)/SETreble/private
-#endif
-ifeq ($(PRODUCT_FULL_TREBLE_OVERRIDE), false)
-    BOARD_SEPOLICY_DIRS += \
-        $(DEVICE_PATH)/sepolicy
-endif
-
-include device/qcom/sepolicy/sepolicy.mk
-#include device/qcom/sepolicy/legacy-sepolicy.mk
 
 # Shim
 TARGET_LD_SHIM_LIBS := \
