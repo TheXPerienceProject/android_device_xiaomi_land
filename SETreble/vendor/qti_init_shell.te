@@ -3,6 +3,9 @@ allow qti_init_shell diag_prop:property_service set;
 allow qti_init_shell self:socket create_socket_perms_no_ioctl;
 allow qti_init_shell vfat:file { getattr open read};
 allow qti_init_shell sysfs:file write;
+allow qti sysfs:file { write create read open };
 allow qti_init_shell unlabeled:file { getattr open };
+allow qti_init_shell vendor_radio_data_file:dir { write add_name create read open getattr };
+allow qti_init_shell vendor_radio_data_file:file { create read write open getattr setattr };
 
 set_prop(qti_init_shell, ctl_default_prop)
