@@ -135,7 +135,7 @@
     <hal format="hidl">
         <name>android.hardware.health</name>
         <transport>hwbinder</transport>
-        <version>2.0</version>
+        <version>1.0</version>
         <interface>
             <name>IHealth</name>
             <instance>default</instance>
@@ -241,7 +241,7 @@
     <hal format="hidl">
         <name>android.hardware.soundtrigger</name>
         <transport>hwbinder</transport>
-        <version>2.0</version>
+        <version>2.1</version>
         <interface>
             <name>ISoundTriggerHw</name>
             <instance>default</instance>
@@ -250,7 +250,7 @@
     <hal format="hidl">
         <name>android.hardware.thermal</name>
         <transport>hwbinder</transport>
-        <version>1.0</version>
+        <version>1.1</version>
         <interface>
             <name>IThermal</name>
             <instance>default</instance>
@@ -370,15 +370,6 @@
         <version>1.0</version>
         <interface>
             <name>IDisplayPostproc</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-    <hal format="hidl">
-        <name>vendor.xperience.power</name>
-        <transport>hwbinder</transport>
-        <version>1.0</version>
-        <interface>
-            <name>IXPeriencePower</name>
             <instance>default</instance>
         </interface>
     </hal>
@@ -522,6 +513,15 @@
         <interface>
             <name>IRTPService</name>
             <instance>imsrtpservice</instance>
+        </interface>
+    </hal>
+    <hal format="hidl">
+        <name>vendor.xperience.power</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>IXPeriencePower</name>
+            <instance>default</instance>
         </interface>
     </hal>
 </manifest>
