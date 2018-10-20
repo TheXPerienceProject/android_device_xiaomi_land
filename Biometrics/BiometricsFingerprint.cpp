@@ -15,6 +15,7 @@
  */
 #define LOG_TAG "android.hardware.biometrics.fingerprint@2.0-service.land"
 #define LOG_VERBOSE "android.hardware.biometrics.fingerprint@2.0-service.land"
+
 #include <hardware/hw_auth_token.h>
 #include <hardware/hardware.h>
 #include <hardware/fingerprint.h>
@@ -34,6 +35,8 @@ namespace V2_1 {
 namespace implementation {
 
 // Supported fingerprint HAL version
+static const uint16_t kVersion = HARDWARE_MODULE_API_VERSION(2, 1);
+// Supported fingerprint HAL version
 static bool is_goodix = false;
 
 using RequestStatus =
@@ -44,7 +47,7 @@ BiometricsFingerprint *BiometricsFingerprint::sInstance = nullptr;
 BiometricsFingerprint::BiometricsFingerprint() : mClientCallback(nullptr), mDevice(nullptr) {
     sInstance = this; // keep track of the most recent instance
     char vend [PROPERTY_VALUE_MAX];
-    property_get("ro.hardware.fingerprint", vend, NULL);
+    property_get("ro.hardware.fingerprint", vend, "");
 
     if (!strcmp(vend, "searchf")) {
         is_goodix = false;
@@ -156,6 +159,7 @@ FingerprintAcquiredInfo BiometricsFingerprint::VendorAcquiredFilter(
 
 Return<uint64_t> BiometricsFingerprint::setNotify(
         const sp<IBiometricsFingerprintClientCallback>& clientCallback) {
+    std::lock_guard<std::mutex> lock(mClientCallbackMutex);
     mClientCallback = clientCallback;
     // This is here because HAL 2.1 doesn't have a way to propagate a
     // unique token for its driver. Subsequent versions should send a unique
@@ -180,6 +184,7 @@ Return<RequestStatus> BiometricsFingerprint::postEnroll() {
 }
 
 Return<uint64_t> BiometricsFingerprint::getAuthenticatorId() {
+    usleep(140000);
     return mDevice->get_authenticator_id(mDevice);
 }
 
@@ -293,6 +298,7 @@ fingerprint_device_t* BiometricsFingerprint::openHal() {
 void BiometricsFingerprint::notify(const fingerprint_msg_t *msg) {
     BiometricsFingerprint* thisPtr = static_cast<BiometricsFingerprint*>(
             BiometricsFingerprint::getInstance());
+            std::lock_guard<std::mutex> lock(thisPtr->mClientCallbackMutex);
     if (thisPtr == nullptr || thisPtr->mClientCallback == nullptr) {
         ALOGE("Receiving callbacks before the client callback is registered.");
         return;
