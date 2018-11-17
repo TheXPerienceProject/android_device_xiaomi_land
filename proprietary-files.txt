@@ -1350,6 +1350,8 @@ vendor/lib64/libconnctrl.so
 vendor/lib64/libQtiTether.so
 
 # Perf
+-framework/QPerformance.jar
+-framework/UxPerformance.jar
 lib/vendor.qti.hardware.perf@1.0.so
 lib64/vendor.qti.hardware.perf@1.0.so
 vendor/bin/energy-awareness
