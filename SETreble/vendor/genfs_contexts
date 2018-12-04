@@ -24,5 +24,3 @@ genfscon sysfs /devices/soc/msm-bcl-20/power_supply                u:object_r:sy
 genfscon sysfs /devices/soc/msm-bcl-19/power_supply                u:object_r:sysfs_batteryinfo:s0
 genfscon sysfs /devices/soc/c200000.qcom,lpass/subsys1/            u:object_r:sysfs_batteryinfo:s0
 
-#pronto driver
-genfscon sysfs /devices/soc/a21b000.qcom,pronto/subsys2/name      u:object_r:sysfs_net:s0
