@@ -248,9 +248,6 @@ BOARD_SEPOLICY_DIRS += \
 include device/qcom/sepolicy/sepolicy.mk
 include device/qcom/sepolicy/legacy-sepolicy.mk
 
-# Time
-BOARD_USES_QC_TIME_SERVICES := true
-
 # Treble
 BOARD_PROPERTY_OVERRIDES_SPLIT_ENABLED := true
 PRODUCT_COMPATIBILITY_MATRIX_LEVEL_OVERRIDE := 27
