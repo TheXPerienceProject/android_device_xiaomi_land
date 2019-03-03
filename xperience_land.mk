@@ -24,6 +24,12 @@ $(call inherit-product, vendor/xperience/config/common_full_phone.mk)
 # Inherit from land device
 $(call inherit-product, device/xiaomi/land/device.mk)
 
+#CAF prop CAF includes
+include device/qcom/common/common.mk
+
+# Wpa will crash without this.
+DISABLE_EAP_PROXY := true
+
 PRODUCT_BRAND := Xiaomi
 BOARD_VENDOR := Xiaomi
 PRODUCT_DEVICE := land
