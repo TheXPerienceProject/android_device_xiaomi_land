@@ -1,6 +1,9 @@
 allow servicemanager init:dir search;
 allow servicemanager init:file { open read };
 allow servicemanager init:process getattr;
+allow servicemanager hal_fingerprint_default:dir search;
+allow servicemanager hal_fingerprint_default:file { read open };
+allow servicemanager hal_fingerprint_default:process getattr;
 allow servicemanager mdtpdaemon:dir search;
 allow servicemanager mdtpdaemon:file { open read };
 allow servicemanager mdtpdaemon:process getattr;
@@ -12,3 +15,5 @@ allow servicemanager mm-qcamerad:file { open read };
 allow servicemanager mm-qcamerad:process getattr;
 allow servicemanager qseeproxy:dir search;
 allow servicemanager qseeproxy:file { open read };
+allow servicemanager qseeproxy:process getattr;
+
