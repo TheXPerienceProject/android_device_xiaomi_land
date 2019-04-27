@@ -409,6 +409,15 @@ on boot
     chown system graphics /sys/class/graphics/fb1/cec/wr_msg
     chmod 0600 /sys/class/graphics/fb1/cec/wr_msg
 
+   # Add a cpuset for the camera daemon
+   # We want all cores for camera
+   mkdir /dev/cpuset/camera-daemon
+   write /dev/cpuset/camera-daemon/cpus 0-3
+   write /dev/cpuset/camera-daemon/mems 0
+   chown cameraserver cameraserver /dev/cpuset/camera-daemon
+   chown cameraserver cameraserver /dev/cpuset/camera-daemon/tasks
+   chmod 0660 /dev/cpuset/camera-daemon/tasks
+
     chown system graphics /sys/class/graphics/fb0/idle_time
     chown system graphics /sys/class/graphics/fb0/dyn_pu
     chown system graphics /sys/class/graphics/fb0/modes
@@ -599,17 +608,13 @@ on property:persist.sys.chgdisabled=0
 
 on property:vold.decrypt=trigger_restart_framework
     start vendor.wcnss-service
-    stop vendor.camera-provider-2-4 
-    start vendor.camera-provider-2-4
-    stop vendor.wifi_hal_legacy
-    start vendor.wifi_hal_legacy
+    restart vendor.camera-provider-2-4
+    restart vendor.wifi_hal_legacy
 
 #restart wifi and camera services in non encrypted devices 
 on property:ro.crypto.state=unencrypted
-    stop vendor.camera-provider-2-4
-    start vendor.camera-provider-2-4
-    stop vendor.wifi_hal_legacy
-    start vendor.wifi_hal_legacy
+    restart vendor.camera-provider-2-4
+    restart vendor.wifi_hal_legacy
 
 on property:persist.env.fastdorm.enabled=true
     setprop persist.radio.data_no_toggle 1

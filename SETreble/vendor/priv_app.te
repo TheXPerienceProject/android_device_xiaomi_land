@@ -5,3 +5,6 @@ allow priv_app device:dir open;
 allow priv_app firmware_file:file { getattr open read };
 allow priv_app proc_interrupts:file open;
 allow priv_app proc_modules:file { getattr open read };
+
+get_prop(priv_app, camera_prop)
+
